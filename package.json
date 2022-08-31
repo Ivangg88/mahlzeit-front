@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --passWithNoTests",
+    "test": "react-scripts test --coverage --watchAll=false --passWithNoTests",
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },
@@ -43,5 +43,13 @@
   },
   "devDependencies": {
     "husky": "^8.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.tsx",
+      "src/**/*.ts",
+      "!src/index.tsx",
+      "!src/reportWebVitals.ts"
+    ]
   }
 }
