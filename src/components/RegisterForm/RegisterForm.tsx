@@ -37,6 +37,7 @@ const RegisterForm = () => {
   return (
     <RegisterFormStyled>
       <form
+        data-testid="form-register"
         onSubmit={(event) => submit(event, apiUrl)}
         className="register-form"
         autoComplete="off"
@@ -59,7 +60,7 @@ const RegisterForm = () => {
           </div>
 
           <div className="register-form__input-field">
-            <label htmlFor="name" className="label">
+            <label htmlFor="email" className="label">
               Email:
             </label>
             <input
@@ -83,7 +84,7 @@ const RegisterForm = () => {
               type="password"
               value={userData.password}
               className="register-form__input"
-              placeholder="********"
+              placeholder="min 8 caracteres"
               onChange={(event) => addDataFromInputs(event)}
             />
           </div>
@@ -98,7 +99,7 @@ const RegisterForm = () => {
               name="passwordConfirm"
               value={userData.passwordConfirm}
               className="register-form__input"
-              placeholder="********"
+              placeholder="confirmar contraseña"
               onChange={(event) => addDataFromInputs(event)}
             />
           </div>
