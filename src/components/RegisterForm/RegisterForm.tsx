@@ -68,7 +68,7 @@ const RegisterForm = () => {
           para login.
         </span>
 
-        <Button text="Crear perfil" />
+        <Button type="submit" text="Crear perfil" />
       </form>
     </RegisterFormStyled>
   );
