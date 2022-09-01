@@ -7,7 +7,7 @@ const App = (): JSX.Element => {
     <Routes>
       <Route path="/" element={<Navigate to="/register" />} />
       <Route path="/register" element={<RegisterPage />} />
-      <Route path="/notfound" element={<NotFoundPage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 };
