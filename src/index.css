@@ -6,12 +6,11 @@ body {
   margin: 0;
 }
 
-.contruction-page {
-  display: inline-block;
-  background-image: url(../public/images/SITIO-EN-CONSTRUCCION.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  min-width: 100%;
-  min-height: 100vh;
+#root {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+input {
+  font-family: inherit;
 }
