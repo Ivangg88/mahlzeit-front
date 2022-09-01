@@ -39,14 +39,19 @@ describe("Given a RegisterForm component", () => {
       const emailInput: HTMLInputElement = screen.getByLabelText("Email:");
       const passwordInput: HTMLInputElement =
         screen.getByLabelText("Contraseña:");
+      const passwordConfirmInput: HTMLInputElement = screen.getByLabelText(
+        "Confirmar contraseña:"
+      );
 
       await userEvent.type(nameInput, userName);
       await userEvent.type(emailInput, userEmail);
       await userEvent.type(passwordInput, userPassword);
+      await userEvent.type(passwordConfirmInput, userPassword);
 
       expect(nameInput.value).toBe(userName);
       expect(emailInput.value).toBe(userEmail);
       expect(passwordInput.value).toBe(userPassword);
+      expect(passwordConfirmInput.value).toBe(userPassword);
     });
   });
 
