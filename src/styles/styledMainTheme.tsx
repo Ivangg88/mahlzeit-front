@@ -4,7 +4,7 @@ const styledMainTheme = {
   thirdColor: "#E99E9E",
   fontMainColor: "#330000",
   fontSecondColor: "#A00043",
-  fontMainType: "Roboto",
+  fontMainType: "Chewy",
   fontSeconType: "Roboto",
 };
 

@@ -3,12 +3,8 @@ import NotFoundPageStyled from "./NotFoundPageStyled";
 const NotFoundPage = (): JSX.Element => {
   return (
     <NotFoundPageStyled>
-      <img
-        src="./angry-flork.webp"
-        alt="angry flork"
-        width={600}
-        height={800}
-      />
+      <span className="notfound">Error 404</span>
+      <span className="notfound">Page not found</span>
     </NotFoundPageStyled>
   );
 };
