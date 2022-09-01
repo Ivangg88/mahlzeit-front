@@ -1,9 +1,11 @@
+import { response } from "msw";
 import { User } from "../types/interfaces";
 
 const useUsers = () => {
   const sendUserToAPI = async (user: User, apiUrl: string) => {
+    let response: Response;
     try {
-      const response = await fetch(apiUrl + "/users/register", {
+      response = await fetch(`${apiUrl}/users/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
@@ -13,9 +15,10 @@ const useUsers = () => {
         throw new Error();
       }
     } catch (error) {
-      return false;
+      return 400;
     }
-    return true;
+
+    return response.status;
   };
 
   return { sendUSerToAPI: sendUserToAPI };
