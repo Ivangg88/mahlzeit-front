@@ -1,20 +1,20 @@
 import { useState } from "react";
-import UserRegister from "../../types/interfaces";
+import useUsers from "../../hooks/useUsers";
+import { User, UserRegister } from "../../types/interfaces";
 import Button from "../Button/Button";
 import RegisterFormStyled from "./RegisterFormStyled";
-
-const submit = (event: React.FormEvent<HTMLFormElement>) => {
-  event.preventDefault();
-};
 
 const RegisterForm = () => {
   let userInitial: UserRegister = {
     userName: "",
     email: "",
     password: "",
+    passwordConfirm: "",
   };
 
+  const apiUrl = process.env.REACT_APP_API_URL!;
   const [userData, setUserData] = useState<UserRegister>(userInitial);
+  const { sendUSerToAPI } = useUsers();
 
   const addDataFromInputs = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -22,10 +22,22 @@ const RegisterForm = () => {
     setUserData({ ...userData, [event.target.name]: event.target.value });
   };
 
+  const user: User = {
+    userName: userData.userName,
+    email: userData.email,
+    password: userData.password,
+  };
+
+  const submit = (event: React.FormEvent<HTMLFormElement>, url: string) => {
+    event.preventDefault();
+    sendUSerToAPI(user, url);
+    setUserData(userInitial);
+  };
+
   return (
     <RegisterFormStyled>
       <form
-        onSubmit={(event) => submit(event)}
+        onSubmit={(event) => submit(event, apiUrl)}
         className="register-form"
         autoComplete="off"
       >
@@ -39,6 +51,7 @@ const RegisterForm = () => {
               id="name"
               name="userName"
               type="text"
+              value={userData.userName}
               className="register-form__input"
               placeholder="Cristina"
               onChange={(event) => addDataFromInputs(event)}
@@ -53,6 +66,7 @@ const RegisterForm = () => {
               id="email"
               name="email"
               type="text"
+              value={userData.email}
               className="register-form__input"
               placeholder="cristina@mail.com"
               onChange={(event) => addDataFromInputs(event)}
@@ -67,6 +81,7 @@ const RegisterForm = () => {
               id="password"
               name="password"
               type="password"
+              value={userData.password}
               className="register-form__input"
               placeholder="********"
               onChange={(event) => addDataFromInputs(event)}
@@ -80,6 +95,8 @@ const RegisterForm = () => {
             <input
               id="passwordConfirm"
               type="password"
+              name="passwordConfirm"
+              value={userData.passwordConfirm}
               className="register-form__input"
               placeholder="********"
               onChange={(event) => addDataFromInputs(event)}
