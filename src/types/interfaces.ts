@@ -1,7 +1,9 @@
-interface UserRegister {
+export interface User {
   userName: string;
   email: string;
   password: string;
 }
 
-export default UserRegister;
+export interface UserRegister extends User {
+  passwordConfirm: string;
+}

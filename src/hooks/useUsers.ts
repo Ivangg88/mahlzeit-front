@@ -1,7 +1,7 @@
-import UserRegister from "../types/interfaces";
+import { User } from "../types/interfaces";
 
-const useUser = () => {
-  const sendUserToAPI = async (user: UserRegister, apiUrl: string) => {
+const useUsers = () => {
+  const sendUserToAPI = async (user: User, apiUrl: string) => {
     try {
       const response = await fetch(apiUrl + "/users/register", {
         method: "POST",
@@ -21,4 +21,4 @@ const useUser = () => {
   return { sendUSerToAPI: sendUserToAPI };
 };
 
-export default useUser;
+export default useUsers;
