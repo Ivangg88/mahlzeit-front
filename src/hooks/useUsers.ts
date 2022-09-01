@@ -1,4 +1,3 @@
-import { response } from "msw";
 import { User } from "../types/interfaces";
 
 const useUsers = () => {
