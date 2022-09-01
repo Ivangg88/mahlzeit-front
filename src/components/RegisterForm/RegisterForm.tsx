@@ -1,3 +1,5 @@
+import { useState } from "react";
+import UserRegister from "../../types/interfaces";
 import Button from "../Button/Button";
 import RegisterFormStyled from "./RegisterFormStyled";
 
@@ -6,6 +8,20 @@ const submit = (event: React.FormEvent<HTMLFormElement>) => {
 };
 
 const RegisterForm = () => {
+  let userInitial: UserRegister = {
+    userName: "",
+    email: "",
+    password: "",
+  };
+
+  const [userData, setUserData] = useState<UserRegister>(userInitial);
+
+  const addDataFromInputs = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
+    setUserData({ ...userData, [event.target.name]: event.target.value });
+  };
+
   return (
     <RegisterFormStyled>
       <form
@@ -19,14 +35,28 @@ const RegisterForm = () => {
             <label htmlFor="name" className="label">
               Nombre:
             </label>
-            <input id="name" type="text" className="register-form__input" />
+            <input
+              id="name"
+              name="userName"
+              type="text"
+              className="register-form__input"
+              placeholder="Cristina"
+              onChange={(event) => addDataFromInputs(event)}
+            />
           </div>
 
           <div className="register-form__input-field">
             <label htmlFor="name" className="label">
               Email:
             </label>
-            <input id="email" type="text" className="register-form__input" />
+            <input
+              id="email"
+              name="email"
+              type="text"
+              className="register-form__input"
+              placeholder="cristina@mail.com"
+              onChange={(event) => addDataFromInputs(event)}
+            />
           </div>
 
           <div className="register-form__input-field">
@@ -35,8 +65,11 @@ const RegisterForm = () => {
             </label>
             <input
               id="password"
+              name="password"
               type="password"
               className="register-form__input"
+              placeholder="********"
+              onChange={(event) => addDataFromInputs(event)}
             />
           </div>
 
@@ -48,6 +81,8 @@ const RegisterForm = () => {
               id="passwordConfirm"
               type="password"
               className="register-form__input"
+              placeholder="********"
+              onChange={(event) => addDataFromInputs(event)}
             />
           </div>
         </div>
