@@ -8,7 +8,8 @@ const useUsers = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Origin":
+            "https://igarcia-final-project-202207.netlify.app/",
         },
         body: JSON.stringify(user),
       });
