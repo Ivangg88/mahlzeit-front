@@ -1,16 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { UserLogged } from "../../types/interfaces";
+import { UserLoged } from "../../types/interfaces";
 
-const userInitialState: UserLogged = {
-  isLogged: false,
+const userInitialState: UserLoged = {
   userName: "",
+  token: "",
 };
 
 const userSlice = createSlice({
   name: "user",
   initialState: userInitialState,
   reducers: {
-    loginUser: (previousState, action: PayloadAction<boolean>) => ({
+    loginUser: (previousState, action: PayloadAction<UserLoged>) => ({
       ...previousState,
       isLogged: action.payload,
     }),

@@ -4,13 +4,13 @@ export interface User {
   password: string;
 }
 
-export type UserLogin = Omit<User, "email" | "password">;
+export type UserLogin = Omit<User, "email">;
 
 export interface UserRegister extends User {
   passwordConfirm: string;
 }
 
-export interface UserLogged {
+export interface UserLoged {
   userName: string;
-  isLogged: boolean;
+  token: string;
 }

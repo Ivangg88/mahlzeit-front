@@ -1,4 +1,4 @@
-import { UserLogged } from "../../types/interfaces";
+import { UserLoged } from "../../types/interfaces";
 import { loginUserActionCreator, userReducer } from "./userSlice";
 
 describe("Given a loginUserActionCreator", () => {
@@ -20,9 +20,10 @@ describe("Given a loginUserActionCreator", () => {
 describe("Given a userReducer function", () => {
   describe("When is called with an action type 'user/loginUser' and a payload 'true", () => {
     test("Then it should return a copy of the previousState with the property isLogged = true", () => {
-      const previousUser: UserLogged = {
+      const previousUser: UserLoged = {
         userName: "",
         isLogged: false,
+        token: "",
       };
       const expectedUser = {
         ...previousUser,

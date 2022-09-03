@@ -15,11 +15,11 @@ describe("Given a function sendUserToAPI", () => {
       const expectedResponse = 201;
       const {
         result: {
-          current: { sendUSerToAPI },
+          current: { sendUserToAPI },
         },
       } = renderHook(() => useUsers());
 
-      const response = await sendUSerToAPI(user, apiUrl);
+      const response = await sendUserToAPI(user, apiUrl);
 
       expect(response).toBe(expectedResponse);
     });
@@ -35,7 +35,7 @@ describe("Given a function sendUserToAPI", () => {
       const expectedResponse = 400;
       const {
         result: {
-          current: { sendUSerToAPI },
+          current: { sendUserToAPI: sendUSerToAPI },
         },
       } = renderHook(() => useUsers());
 
