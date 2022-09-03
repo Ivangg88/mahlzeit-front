@@ -1,6 +1,20 @@
 import { renderHook } from "@testing-library/react";
+import { Provider } from "react-redux";
+import { store } from "../app/store";
 import { User } from "../types/interfaces";
 import useUsers from "./useUsers";
+
+interface WrapperProps {
+  children: JSX.Element | JSX.Element[];
+}
+
+let Wrapper: ({ children }: WrapperProps) => JSX.Element;
+
+beforeEach(() => {
+  Wrapper = ({ children }: WrapperProps): JSX.Element => {
+    return <Provider store={store}>{children}</Provider>;
+  };
+});
 
 describe("Given a function sendUserToAPI", () => {
   const apiUrl = process.env.REACT_APP_API_URL!;
@@ -17,7 +31,7 @@ describe("Given a function sendUserToAPI", () => {
         result: {
           current: { sendUserToAPI },
         },
-      } = renderHook(() => useUsers());
+      } = renderHook(() => useUsers(), { wrapper: Wrapper });
 
       const response = await sendUserToAPI(user, apiUrl);
 
@@ -35,11 +49,11 @@ describe("Given a function sendUserToAPI", () => {
       const expectedResponse = 400;
       const {
         result: {
-          current: { sendUserToAPI: sendUSerToAPI },
+          current: { sendUserToAPI },
         },
-      } = renderHook(() => useUsers());
+      } = renderHook(() => useUsers(), { wrapper: Wrapper });
 
-      const response = await sendUSerToAPI(incorrectUser, apiUrl);
+      const response = await sendUserToAPI(incorrectUser, apiUrl);
 
       expect(response).toBe(expectedResponse);
     });
