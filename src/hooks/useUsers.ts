@@ -1,4 +1,4 @@
-import { useAppDispatch } from "../store/hooks";
+import { useAppDispatch } from "../app/hooks";
 import { loginUserActionCreator } from "../store/user/userSlice";
 import { User, UserLoged, UserLogin } from "../types/interfaces";
 import decodeToken from "../utils/authorization";
