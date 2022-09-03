@@ -31,7 +31,7 @@ const useUsers = () => {
     let response: Response;
 
     try {
-      response = await fetch(`${apiUrl}/users/register`, {
+      response = await fetch(`${apiUrl}/users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,7 +39,7 @@ const useUsers = () => {
         body: JSON.stringify(user),
       });
 
-      if (response.status !== 201) {
+      if (response.status !== 200) {
         throw new Error();
       }
 

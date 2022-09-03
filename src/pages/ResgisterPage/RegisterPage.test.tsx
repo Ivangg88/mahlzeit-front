@@ -22,7 +22,7 @@ beforeEach(() => {
 
 describe("Given a componente RegisterPage", () => {
   describe("When rendered", () => {
-    test("Then it should show a REgisterForm component", () => {
+    test("Then it should show a RegisterForm component", () => {
       const title = "Crea tu perfil";
 
       render(<RegisterPage />, { wrapper: Wrapper });
