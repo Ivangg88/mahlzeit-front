@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import NotFoundPage from "./NotFoundPage";
 
 describe("Given a component NotFoundPage", () => {
@@ -7,7 +8,12 @@ describe("Given a component NotFoundPage", () => {
       const text1 = "Error 404";
       const text2 = "Page not found";
 
-      render(<NotFoundPage />);
+      render(
+        <BrowserRouter>
+          {" "}
+          <NotFoundPage />
+        </BrowserRouter>
+      );
 
       const expectedText1 = screen.getByText(text1);
       const expectedText2 = screen.getByText(text2);
