@@ -71,6 +71,7 @@ const LoginForm = () => {
             />
           </div>
         </div>
+
         <Button type="submit" text="Entrar" />
       </form>
     </LoginFormStyled>
