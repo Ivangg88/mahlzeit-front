@@ -53,6 +53,13 @@ const LoginFormStyled = styled.div`
     .label {
       color: inherit;
     }
+
+    &__navigator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
   }
 `;
 

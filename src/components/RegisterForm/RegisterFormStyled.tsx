@@ -44,12 +44,18 @@ const RegisterFormStyled = styled.div`
     }
 
     &__input {
-      height: 37px;
+      min-height: 37px;
       padding-left: 5px;
       border: none;
       border-radius: 5px;
     }
 
+    &__navigator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      
     .label {
       color: inherit;
     }
