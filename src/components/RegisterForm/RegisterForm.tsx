@@ -14,7 +14,7 @@ const RegisterForm = () => {
 
   const apiUrl = process.env.REACT_APP_API_URL!;
   const [userData, setUserData] = useState<UserRegister>(userInitial);
-  const { sendUSerToAPI } = useUsers();
+  const { sendUserToAPI: sendUSerToAPI } = useUsers();
 
   const addDataFromInputs = (
     event: React.ChangeEvent<HTMLInputElement>

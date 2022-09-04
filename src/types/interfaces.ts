@@ -4,6 +4,13 @@ export interface User {
   password: string;
 }
 
+export type UserLogin = Omit<User, "email">;
+
 export interface UserRegister extends User {
   passwordConfirm: string;
+}
+
+export interface UserLoged {
+  userName: string;
+  token: string;
 }

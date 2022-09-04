@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { store } from "../../app/store";
-import RegisterPage from "./RegisterPage";
+import LoginPage from "./LoginPage";
 
 interface WrapperProps {
   children: JSX.Element | JSX.Element[];
@@ -20,12 +20,12 @@ beforeEach(() => {
   };
 });
 
-describe("Given a componente RegisterPage", () => {
+describe("Given a component LoginPage", () => {
   describe("When rendered", () => {
-    test("Then it should show a RegisterForm component", () => {
-      const title = "Crea tu perfil";
+    test("Then it should show a LoginForm component", () => {
+      const title = "Login";
 
-      render(<RegisterPage />, { wrapper: Wrapper });
+      render(<LoginPage />, { wrapper: Wrapper });
 
       screen.getByRole("heading", { name: title });
     });
