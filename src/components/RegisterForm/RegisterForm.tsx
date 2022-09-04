@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import useUsers from "../../hooks/useUsers";
 import { User, UserRegister } from "../../types/interfaces";
 import Button from "../Button/Button";
+import UserFormFeedback from "../UserFormFeedback/UserFormFeedback";
 import RegisterFormStyled from "./RegisterFormStyled";
 
 const RegisterForm = () => {
@@ -87,6 +89,7 @@ const RegisterForm = () => {
               placeholder="min 8 caracteres"
               onChange={(event) => addDataFromInputs(event)}
             />
+            <UserFormFeedback isActive={true} text="Mínimo 8 caracteres" />
           </div>
 
           <div className="register-form__input-field">
@@ -102,24 +105,17 @@ const RegisterForm = () => {
               placeholder="confirmar contraseña"
               onChange={(event) => addDataFromInputs(event)}
             />
+            <UserFormFeedback
+              isActive={true}
+              text="Las contraseñas no coinciden"
+            />
           </div>
         </div>
-        <link
-          className="register-form__link"
-          rel="stylesheet"
-          href="#"
-          title="click aquí"
-        />
-        <span className="link-dialog">
-          ¿Ya registrado?{" "}
-          <link
-            className="register-form__link"
-            rel="stylesheet"
-            href="#"
-            title="click aquí"
-          />
-          para login.
-        </span>
+
+        <div className="register-form__navigator">
+          <span>¿Ya registrado?</span>
+          <NavLink to={"/login"}>Click aquí para login</NavLink>
+        </div>
 
         <Button type="submit" text="Crear perfil" />
       </form>
