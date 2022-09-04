@@ -14,3 +14,8 @@ export interface UserLoged {
   userName: string;
   token: string;
 }
+
+export interface PasswordCheck {
+  passWordMin: boolean;
+  passWordCompare: boolean;
+}
