@@ -54,6 +54,7 @@ const useUsers = () => {
       return 400;
     }
   };
+
   return { sendUserToAPI, loginUser };
 };
 
