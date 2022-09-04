@@ -1,5 +1,5 @@
 import { rest } from "msw";
-import { User, UserLoged } from "../types/interfaces";
+import { User } from "../types/interfaces";
 
 export const handlers = [
   rest.post(
