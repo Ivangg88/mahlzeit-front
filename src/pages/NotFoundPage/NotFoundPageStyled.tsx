@@ -8,11 +8,16 @@ const NotFoundPageStyled = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: ${(props) => props.theme.fontMainColor};
 
   .notfound {
     font-size: 50px;
     font-family: ${(props) => props.theme.fontMainType};
-    color: ${(props) => props.theme.fontMainColor};
+  }
+
+  .navigate {
+    font-size: 25px;
+    color: inherit;
   }
 `;
 
