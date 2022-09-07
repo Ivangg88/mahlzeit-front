@@ -9,7 +9,7 @@ const ItemList = () => {
   return (
     <ItemListStyled>
       {items.map((item) => (
-        <li>
+        <li data-testid="test-list" key={item.name}>
           <ItemCard item={item} />
         </li>
       ))}
