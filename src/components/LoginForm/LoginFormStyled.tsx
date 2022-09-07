@@ -6,13 +6,13 @@ const LoginFormStyled = styled.div`
   display: flex;
   justify-content: center;
   background-color: ${(props) => props.theme.thirdColor};
-  font-family: ${(props) => props.theme.fontMainType};
+  font-family: ${(props) => props.theme.fontSecondType};
   color: ${(props) => props.theme.fontMainColor};
   border-radius: 15px;
 
   .login-form {
-    color: inherit;
     font-family: inherit;
+    color: inherit;
     padding: 20px;
     height: 100%;
     width: 100%;
@@ -22,6 +22,7 @@ const LoginFormStyled = styled.div`
     gap: 15px;
 
     &__title {
+      font-family: ${(props) => props.theme.fontMainType};
       font-size: 30px;
       margin: 0;
     }
@@ -44,6 +45,7 @@ const LoginFormStyled = styled.div`
     }
 
     &__input {
+      font-family: inherit;
       height: 37px;
       padding-left: 5px;
       border: none;
@@ -52,6 +54,7 @@ const LoginFormStyled = styled.div`
 
     .label {
       color: inherit;
+      font-family: ${(props) => props.theme.fontSecondType};
     }
 
     &__navigator {

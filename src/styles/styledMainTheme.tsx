@@ -8,7 +8,7 @@ const styledMainTheme = {
   fontMainColor: "#330000",
   fontSecondColor: "#A00043",
   fontMainType: "Chewy",
-  fontSeconType: "Roboto",
+  fontSecondType: "Roboto",
 };
 
 export default styledMainTheme;
