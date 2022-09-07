@@ -15,6 +15,7 @@ const LoadingStyled = styled.div`
   gap: 50px;
   background-color: ${(props) => props.theme.secondColor};
   color: ${(props) => props.theme.fontMainColor};
+  font-family: ${(props) => props.theme.fontMainType};
   z-index: 3;
   overflow: auto;
 

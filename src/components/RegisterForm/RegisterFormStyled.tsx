@@ -56,9 +56,10 @@ const RegisterFormStyled = styled.div`
       flex-direction: column;
       align-items: center;
       gap: 10px;
-      
-    .label {
-      color: inherit;
+
+      .label {
+        color: inherit;
+      }
     }
   }
 `;
