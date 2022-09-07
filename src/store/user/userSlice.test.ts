@@ -31,9 +31,9 @@ describe("Given a userReducer function", () => {
 
       const action = loginUserActionCreator(newUser);
 
-      const receivdUser = userReducer(newUser, action);
+      const receivedUser = userReducer(newUser, action);
 
-      expect(receivdUser).toStrictEqual(newUser);
+      expect(receivedUser).toStrictEqual(newUser);
     });
   });
 });

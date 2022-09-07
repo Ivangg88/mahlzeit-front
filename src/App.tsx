@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-
 import RegisterPage from "./pages/ResgisterPage/RegisterPage";
 const App = (): JSX.Element => {
   return (
