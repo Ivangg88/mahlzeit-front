@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Item } from "../../types/interfaces";
+import Wrapper from "../../utils/Wrapper";
 import ItemList from "./ItemList";
 
 const mockItems: Item[] = [
@@ -36,7 +37,7 @@ afterEach(() => {
 describe("Given a component ItemList", () => {
   describe("When rendered", () => {
     test("Then it should show too many ItemCards as elements has the array of items", () => {
-      render(<ItemList />);
+      render(<ItemList />, { wrapper: Wrapper });
 
       const expectedElements = screen.getAllByTestId("test-list");
 
