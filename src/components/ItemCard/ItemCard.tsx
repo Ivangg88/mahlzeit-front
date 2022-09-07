@@ -6,22 +6,11 @@ import {
   faMaximize,
 } from "@fortawesome/free-solid-svg-icons";
 import ItemCardStyled from "./ItemCardStyled";
-import { Item, ProtoItem } from "../../types/interfaces";
+import { Item } from "../../types/interfaces";
 
 interface ItemCardProps {
-  item: ProtoItem;
+  item: Item;
 }
-
-const sampleItem: ProtoItem = {
-  name: "Croquetas de pimiento",
-  dificulty: "Fácil",
-  persons: 4,
-  autor: "Carmen Farala",
-  ingredients: [],
-  process: { steps: [] },
-  image:
-    "https://dam.cocinafacil.com.mx/wp-content/uploads/2018/06/chiles-jalapenos-rellenos-de-queso.jpg",
-};
 
 const ItemCard = ({ item }: ItemCardProps): JSX.Element => {
   return (
