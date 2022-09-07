@@ -20,6 +20,10 @@ const ItemCardStyled = styled.section`
     justify-content: space-between;
   }
 
+  .item-card__icon {
+    cursor: pointer;
+  }
+
   .container {
     display: flex;
     gap: 15px;
@@ -68,6 +72,18 @@ const ItemCardStyled = styled.section`
   .info-list__info {
     display: flex;
     gap: 10px;
+  }
+
+  .button {
+    background-color: ${(props) => props.theme.secondColor};
+    color: ${(props) => props.theme.fontMainColor};
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: ${(props) => props.theme.firstColor};
   }
 `;
 
