@@ -18,7 +18,7 @@ const useItems = () => {
 
         dispatch(loadItemsActionCreator(items));
       } catch (error) {
-        return;
+        return error;
       }
     },
     [dispatch]

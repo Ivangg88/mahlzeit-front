@@ -74,7 +74,7 @@ describe("Given a useUsers hook", () => {
     });
   });
 
-  describe("When te functiion loginUser is called", () => {
+  describe("When the function loginUser is called", () => {
     describe("With a valid  user and password", () => {
       test("Then it should call the dispatch with a user with token", async () => {
         const user: UserLogin = {
