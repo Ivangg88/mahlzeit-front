@@ -1,3 +1,6 @@
+import "@fontsource/chewy";
+import "@fontsource/roboto";
+
 const styledMainTheme = {
   firstColor: "#F4EBEB",
   secondColor: "#F5D5D5",
