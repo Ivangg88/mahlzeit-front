@@ -6,9 +6,11 @@ const ButtonStyled = styled.button`
   background-color: ${(props) => props.theme.secondColor};
   color: ${(props) => props.theme.fontMainColor};
   border-radius: 15px;
+  font-family: ${(props) => props.theme.fontSecondType};
   font-size: 18px;
   align-content: center;
   border: none;
+  cursor: pointer;
 `;
 
 export default ButtonStyled;
