@@ -12,10 +12,6 @@ const useItems = () => {
         const response = await fetch(apiUrl);
         const items: Item[] = await response.json();
 
-        if (items.length === 0) {
-          throw new Error();
-        }
-
         dispatch(loadItemsActionCreator(items));
       } catch (error) {
         return error;
