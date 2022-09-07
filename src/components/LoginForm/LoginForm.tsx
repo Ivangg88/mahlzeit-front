@@ -72,10 +72,6 @@ const LoginForm = () => {
               onChange={(event) => addDataFromInputs(event)}
             />
           </div>
-          <UserFormFeedback
-            isActive={true}
-            text="Usuario o contraseña incorrectos"
-          />
         </div>
 
         <div className="login-form__navigator">
