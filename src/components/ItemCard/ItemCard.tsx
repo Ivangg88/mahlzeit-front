@@ -6,18 +6,38 @@ import {
   faMaximize,
 } from "@fortawesome/free-solid-svg-icons";
 import ItemCardStyled from "./ItemCardStyled";
+import { Item, ProtoItem } from "../../types/interfaces";
 
-const ItemCard = (): JSX.Element => {
+interface ItemCardProps {
+  item: ProtoItem;
+}
+
+const sampleItem: ProtoItem = {
+  name: "Croquetas de pimiento",
+  dificulty: "Fácil",
+  persons: 4,
+  autor: "Carmen Farala",
+  ingredients: [],
+  process: { steps: [] },
+  image:
+    "https://dam.cocinafacil.com.mx/wp-content/uploads/2018/06/chiles-jalapenos-rellenos-de-queso.jpg",
+};
+
+const ItemCard = ({ item }: ItemCardProps): JSX.Element => {
   return (
     <ItemCardStyled>
       <h1 className="item-card__title">
-        Croquetas de pimientos
-        <FontAwesomeIcon width={20} icon={faMaximize}></FontAwesomeIcon>
+        {item.name}
+        <FontAwesomeIcon
+          className="item-card__icon"
+          width={20}
+          icon={faMaximize}
+        ></FontAwesomeIcon>
       </h1>
       <div className="container">
         <img
-          src="https://dam.cocinafacil.com.mx/wp-content/uploads/2018/06/chiles-jalapenos-rellenos-de-queso.jpg"
-          alt="Imagen del item"
+          src={item.image}
+          alt={item.name}
           className="item-card__image"
           width={165}
           height={165}
@@ -26,15 +46,11 @@ const ItemCard = (): JSX.Element => {
           <ul className="details-list">
             <li className="details-list__detail">
               <FontAwesomeIcon width={5} icon={faCircle}></FontAwesomeIcon>
-              <span>4 Personas</span>
+              <span>{`${item.persons} Personas`}</span>
             </li>
             <li className="details-list__detail">
               <FontAwesomeIcon width={5} icon={faCircle}></FontAwesomeIcon>
-              <span>Fácil</span>
-            </li>
-            <li className="details-list__detail">
-              <FontAwesomeIcon width={5} icon={faCircle}></FontAwesomeIcon>
-              <span>250 Kcal</span>
+              <span>{item.dificulty}</span>
             </li>
           </ul>
           <ul className="info-list">
@@ -44,11 +60,11 @@ const ItemCard = (): JSX.Element => {
                 height={16}
                 icon={faUser}
               ></FontAwesomeIcon>
-              <span>Autor</span>
+              <span>{item.autor}</span>
             </li>
             <li className="info-list__info">
               <FontAwesomeIcon height={16} icon={faStar}></FontAwesomeIcon>
-              <span>Añadir a favortios</span>
+              <button className="button">Añadir a favoritos</button>
             </li>
           </ul>
         </div>
