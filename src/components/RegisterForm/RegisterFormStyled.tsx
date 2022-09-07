@@ -6,7 +6,7 @@ const RegisterFormStyled = styled.div`
   display: flex;
   justify-content: center;
   background-color: ${(props) => props.theme.thirdColor};
-  font-family: ${(props) => props.theme.fontMainType};
+  font-family: ${(props) => props.theme.fontSecondType};
   color: ${(props) => props.theme.fontMainColor};
   border-radius: 15px;
 
@@ -22,6 +22,7 @@ const RegisterFormStyled = styled.div`
     gap: 15px;
 
     &__title {
+      font-family: ${(props) => props.theme.fontMainType};
       font-size: 30px;
       margin: 0;
     }
