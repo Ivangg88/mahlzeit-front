@@ -7,6 +7,7 @@ const HeaderStyled = styled.header`
   border: 1px solid ${(props) => props.theme.fontMainColor};
   color: ${(props) => props.theme.fontMainColor};
   background-color: ${(props) => props.theme.firstColor};
+  font-family: ${(props) => props.theme.fontMainType};
   position: relative;
   display: flex;
   justify-content: space-between;
