@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import useUsers from "../../hooks/useUsers";
-import { PasswordCheck, User, UserRegister } from "../../types/interfaces";
+import { User, UserRegister } from "../../types/interfaces";
 import Button from "../Button/Button";
-import UserFormFeedback from "../UserFormFeedback/UserFormFeedback";
 import RegisterFormStyled from "./RegisterFormStyled";
 
 const RegisterForm = () => {
@@ -14,16 +13,8 @@ const RegisterForm = () => {
     passwordConfirm: "",
   };
 
-  const initialPasswordCheck: PasswordCheck = {
-    passWordMin: false,
-    passWordCompare: false,
-  };
-
   const apiUrl = process.env.REACT_APP_API_URL!;
   const [userData, setUserData] = useState<UserRegister>(userInitial);
-
-  const [{ passWordCompare, passWordMin }, setPasswordCheck] =
-    useState<PasswordCheck>(initialPasswordCheck);
 
   const { sendUserToAPI: sendUSerToAPI } = useUsers();
 
@@ -43,22 +34,6 @@ const RegisterForm = () => {
     event.preventDefault();
     sendUSerToAPI(user, url);
     setUserData(userInitial);
-  };
-
-  const confirmPassword = () => {
-    if (userData.password !== userData.passwordConfirm) {
-      setPasswordCheck({ ...initialPasswordCheck, passWordCompare: true });
-    } else {
-      setPasswordCheck({ ...initialPasswordCheck, passWordCompare: false });
-    }
-  };
-
-  const isPasswordMin = () => {
-    if (userData.password.length < 7 && userData.password.length > 1) {
-      setPasswordCheck({ ...initialPasswordCheck, passWordMin: true });
-    } else {
-      setPasswordCheck({ ...initialPasswordCheck, passWordMin: false });
-    }
   };
 
   return (
@@ -112,14 +87,7 @@ const RegisterForm = () => {
               value={userData.password}
               className="register-form__input"
               placeholder="min 8 caracteres"
-              onChange={(event) => {
-                addDataFromInputs(event);
-                isPasswordMin();
-              }}
-            />
-            <UserFormFeedback
-              isActive={passWordMin}
-              text="Mínimo 8 caracteres"
+              onChange={(event) => addDataFromInputs(event)}
             />
           </div>
 
@@ -134,14 +102,7 @@ const RegisterForm = () => {
               value={userData.passwordConfirm}
               className="register-form__input"
               placeholder="confirmar contraseña"
-              onChange={(event) => {
-                addDataFromInputs(event);
-                confirmPassword();
-              }}
-            />
-            <UserFormFeedback
-              isActive={passWordCompare}
-              text="Las contraseñas no coinciden"
+              onChange={(event) => addDataFromInputs(event)}
             />
           </div>
         </div>

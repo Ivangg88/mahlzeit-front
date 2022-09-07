@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import useUsers from "../../hooks/useUsers";
 import { UserLogin } from "../../types/interfaces";
 import Button from "../Button/Button";
-import UserFormFeedback from "../UserFormFeedback/UserFormFeedback";
 import LoginFormStyled from "./LoginFormStyled";
 
 const LoginForm = () => {
@@ -72,10 +71,6 @@ const LoginForm = () => {
               onChange={(event) => addDataFromInputs(event)}
             />
           </div>
-          <UserFormFeedback
-            isActive={true}
-            text="Usuario o contraseña incorrectos"
-          />
         </div>
 
         <div className="login-form__navigator">
