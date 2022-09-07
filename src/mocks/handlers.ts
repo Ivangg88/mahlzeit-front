@@ -1,5 +1,18 @@
 import { rest } from "msw";
-import { User } from "../types/interfaces";
+import { Item, User } from "../types/interfaces";
+
+const items: Item[] = [
+  {
+    id: "",
+    name: "Mock item",
+    dificulty: "Fácil",
+    autor: "",
+    persons: 0,
+    image: "",
+    ingredients: [],
+    process: { steps: [] },
+  },
+];
 
 export const handlers = [
   rest.post(
@@ -29,6 +42,15 @@ export const handlers = [
       const status = userName === "" ? 400 : 200;
 
       return res(ctx.status(status), ctx.json({ user: { token: "1a2b3c4d" } }));
+    }
+  ),
+
+  rest.get(
+    `${process.env.REACT_APP_API_URL}/items/getAll`,
+    async (req, res, ctx) => {
+      const status = 201;
+
+      return res(ctx.status(status), ctx.json(items));
     }
   ),
 ];
