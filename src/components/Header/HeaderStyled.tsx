@@ -27,7 +27,6 @@ const HeaderStyled = styled.header`
   a:active {
     text-decoration: none;
     color: ${(props) => props.theme.fontMainColor};
-    font-weight: bold;
   }
 
   .header__title {
