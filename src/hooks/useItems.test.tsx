@@ -1,6 +1,7 @@
 import { renderHook } from "@testing-library/react";
 import { loadItemsActionCreator } from "../store/item/itemSlice";
 import { Item } from "../types/interfaces";
+import Wrapper from "../utils/Wrapper";
 import useItems from "./useItems";
 
 const mockDispatch = jest.fn();
@@ -31,7 +32,7 @@ describe("Given a hook useItems", () => {
         result: {
           current: { getItems },
         },
-      } = renderHook(useItems);
+      } = renderHook(useItems, { wrapper: Wrapper });
 
       await getItems(apiUrl);
 
@@ -46,7 +47,7 @@ describe("Given a hook useItems", () => {
           result: {
             current: { getItems },
           },
-        } = renderHook(useItems);
+        } = renderHook(useItems, { wrapper: Wrapper });
 
         const error = await getItems(apiUrl);
 
