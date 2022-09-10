@@ -12,7 +12,7 @@ const reciptesSlice = createSlice({
   },
 });
 
-export const itemReducer = reciptesSlice.reducer;
+export const reciptesReducer = reciptesSlice.reducer;
 
 export const { loadReciptes: loadReciptesActionCreator } =
   reciptesSlice.actions;

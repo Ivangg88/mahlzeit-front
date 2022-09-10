@@ -7,15 +7,15 @@ import RecipteListStyled from "./ReciptesListStyled";
 
 const ReciptesList = () => {
   const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/getAll`;
-  const { getItems } = useReciptes();
+  const { getReciptes } = useReciptes();
 
   useEffect(() => {
     (async () => {
-      await getItems(apiUrl);
+      await getReciptes(apiUrl);
     })();
-  }, [getItems, apiUrl]);
+  }, [getReciptes, apiUrl]);
 
-  const items = useAppSelector((state: RootState) => state.itemReducer);
+  const items = useAppSelector((state: RootState) => state.reciptes);
 
   return (
     <RecipteListStyled>

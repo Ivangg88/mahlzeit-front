@@ -1,5 +1,5 @@
 import { Recipte } from "../../types/interfaces";
-import { itemReducer, loadReciptesActionCreator } from "./recipteSlice";
+import { reciptesReducer, loadReciptesActionCreator } from "./recipteSlice";
 
 describe("Given a loadREciptesActionCreator", () => {
   describe("When is called", () => {
@@ -48,7 +48,7 @@ describe("Given a itemReducer function", () => {
 
       const action = loadReciptesActionCreator(items);
 
-      const receivedItems = itemReducer(items, action);
+      const receivedItems = reciptesReducer(items, action);
 
       expect(receivedItems).toStrictEqual(items);
     });
