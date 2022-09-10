@@ -11,10 +11,10 @@ jest.mock("react-redux", () => ({
   useDispatch: () => mockDispatch,
 }));
 
-describe("Given a hook useItems", () => {
+describe("Given a hook useReciptes", () => {
   describe("When the function getAll is called with an url", () => {
-    const apiUrl = `${process.env.REACT_APP_API_URL}/items/getAll`;
-    test("Then it should call the dispatch with a loadItemsActionCreator with an array of items as payload", async () => {
+    const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/getAll`;
+    test("Then it should call the dispatch with a loadReciptesActionCreator with an array of items as payload", async () => {
       const items: Recipte[] = [
         {
           id: "Mock id",
@@ -31,11 +31,11 @@ describe("Given a hook useItems", () => {
 
       const {
         result: {
-          current: { getItems },
+          current: { getReciptes },
         },
       } = renderHook(useReciptes, { wrapper: Wrapper });
 
-      await getItems(apiUrl);
+      await getReciptes(apiUrl);
 
       expect(mockDispatch).toHaveBeenCalledWith(
         loadReciptesActionCreator(items)
@@ -48,11 +48,11 @@ describe("Given a hook useItems", () => {
 
         const {
           result: {
-            current: { getItems },
+            current: { getReciptes },
           },
         } = renderHook(useReciptes, { wrapper: Wrapper });
 
-        const error = await getItems(apiUrl);
+        const error = await getReciptes(apiUrl);
 
         expect(error).toBeInstanceOf(Error);
       });

@@ -1,7 +1,6 @@
 import { useCallback } from "react";
 import { useAppDispatch } from "../app/hooks";
 import { loadReciptesActionCreator } from "../store/recipte/recipteSlice";
-import { Recipte } from "../types/interfaces";
 
 const useReciptes = () => {
   const dispatch = useAppDispatch();
@@ -10,9 +9,9 @@ const useReciptes = () => {
     async (apiUrl: string) => {
       try {
         const response = await fetch(apiUrl);
-        const items: Recipte[] = await response.json();
+        const { reciptes } = await response.json();
 
-        dispatch(loadReciptesActionCreator(items));
+        dispatch(loadReciptesActionCreator(reciptes));
       } catch (error) {
         return error;
       }
@@ -20,7 +19,7 @@ const useReciptes = () => {
     [dispatch]
   );
 
-  return { getItems: getReciptes };
+  return { getReciptes };
 };
 
 export default useReciptes;
