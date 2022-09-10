@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ItemListStyled = styled.ul`
+const ReciptesListStyled = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -11,4 +11,4 @@ const ItemListStyled = styled.ul`
   }
 `;
 
-export default ItemListStyled;
+export default ReciptesListStyled;

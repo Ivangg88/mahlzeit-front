@@ -1,5 +1,5 @@
 import Header from "../../components/Header/Header";
-import ItemList from "../../components/ItemList/ItemList";
+import ReciptesList from "../../components/ReciptesList/ReciptesList";
 import HomePageStyled from "./HomePageStyled";
 
 const HomePage = () => {
@@ -7,7 +7,7 @@ const HomePage = () => {
     <HomePageStyled>
       {" "}
       <Header />
-      <ItemList />
+      <ReciptesList />
     </HomePageStyled>
   );
 };

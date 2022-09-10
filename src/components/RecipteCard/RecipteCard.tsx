@@ -5,16 +5,16 @@ import {
   faCircle,
   faMaximize,
 } from "@fortawesome/free-solid-svg-icons";
-import ItemCardStyled from "./ItemCardStyled";
-import { Item } from "../../types/interfaces";
+import RecipteCardStyled from "./RecipteCardStyled";
+import { Recipte } from "../../types/interfaces";
 
 interface ItemCardProps {
-  item: Item;
+  item: Recipte;
 }
 
-const ItemCard = ({ item }: ItemCardProps): JSX.Element => {
+const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
   return (
-    <ItemCardStyled>
+    <RecipteCardStyled>
       <h1 className="item-card__title">
         {item.name}
         <FontAwesomeIcon
@@ -25,7 +25,7 @@ const ItemCard = ({ item }: ItemCardProps): JSX.Element => {
       </h1>
       <div className="container">
         <img
-          src={item.image}
+          src={item.image as string}
           alt={item.name}
           className="item-card__image"
           width={165}
@@ -58,8 +58,8 @@ const ItemCard = ({ item }: ItemCardProps): JSX.Element => {
           </ul>
         </div>
       </div>
-    </ItemCardStyled>
+    </RecipteCardStyled>
   );
 };
 
-export default ItemCard;
+export default RecipteCard;

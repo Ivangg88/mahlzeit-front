@@ -1,16 +1,17 @@
 import { rest } from "msw";
-import { Item, User } from "../types/interfaces";
+import { Recipte, User } from "../types/interfaces";
 
-const items: Item[] = [
+const items: Recipte[] = [
   {
-    id: "",
+    id: "Mock id",
     name: "Mock item",
     dificulty: "Fácil",
     autor: "",
     persons: 0,
     image: "",
-    ingredients: [],
-    process: { steps: [] },
+    ingredients: "",
+    process: "",
+    backupImage: "",
   },
 ];
 

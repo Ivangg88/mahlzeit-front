@@ -1,19 +1,20 @@
-import { Item } from "../../types/interfaces";
-import { itemReducer, loadItemsActionCreator } from "./itemSlice";
+import { Recipte } from "../../types/interfaces";
+import { itemReducer, loadReciptesActionCreator } from "./recipteSlice";
 
-describe("Given a loadItemsActionCreator", () => {
+describe("Given a loadREciptesActionCreator", () => {
   describe("When is called", () => {
-    test("Then it should return an action with the type item/loadItems", () => {
-      const actionType = "item/loadItems";
-      const newItem: Item = {
+    test("Then it should return an action with the type recipte/loadReciptes", () => {
+      const actionType = "recipte/loadReciptes";
+      const newItem: Recipte = {
         id: "",
         name: "",
         dificulty: "Medio",
         autor: "",
         image: "",
         persons: 0,
-        ingredients: [],
-        process: { steps: [] },
+        ingredients: "",
+        process: "",
+        backupImage: "",
       };
 
       const expectedAction = {
@@ -21,7 +22,7 @@ describe("Given a loadItemsActionCreator", () => {
         payload: [newItem],
       };
 
-      const action = loadItemsActionCreator([newItem]);
+      const action = loadReciptesActionCreator([newItem]);
 
       expect(action).toStrictEqual(expectedAction);
     });
@@ -31,7 +32,7 @@ describe("Given a loadItemsActionCreator", () => {
 describe("Given a itemReducer function", () => {
   describe("When is called with an action type 'item/loadItems' and a payload with an item", () => {
     test("Then it should return a copy of the loaded items", () => {
-      const items: Item[] = [
+      const items: Recipte[] = [
         {
           id: "",
           name: "",
@@ -39,12 +40,13 @@ describe("Given a itemReducer function", () => {
           autor: "",
           image: "",
           persons: 0,
-          ingredients: [],
-          process: { steps: [] },
+          ingredients: "",
+          process: "",
+          backupImage: "",
         },
       ];
 
-      const action = loadItemsActionCreator(items);
+      const action = loadReciptesActionCreator(items);
 
       const receivedItems = itemReducer(items, action);
 

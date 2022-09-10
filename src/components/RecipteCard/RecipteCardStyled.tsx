@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-const ItemCardStyled = styled.section`
+const RecipteCardStyled = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: ${(props) => props.theme.secondColor};
   color: ${(props) => props.theme.fontMainColor};
+  font-family: ${(props) => props.theme.fontSecondType};
   border-radius: 15px;
   padding: 20px;
   width: 400px;
@@ -13,6 +14,8 @@ const ItemCardStyled = styled.section`
   margin: 0;
 
   .item-card__title {
+    font-family: ${(props) => props.theme.fontMainType};
+
     text-align: center;
     margin: 0;
     margin-bottom: 10px;
@@ -87,4 +90,4 @@ const ItemCardStyled = styled.section`
   }
 `;
 
-export default ItemCardStyled;
+export default RecipteCardStyled;

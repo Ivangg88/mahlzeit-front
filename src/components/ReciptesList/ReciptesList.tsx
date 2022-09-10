@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useAppSelector } from "../../app/hooks";
 import { RootState } from "../../app/store";
-import useItems from "../../hooks/useItems";
-import ItemCard from "../ItemCard/ItemCard";
-import ItemListStyled from "./ItemListStyled";
+import useReciptes from "../../hooks/useReciptes";
+import RecipteCard from "../RecipteCard/RecipteCard";
+import RecipteListStyled from "./ReciptesListStyled";
 
-const ItemList = () => {
-  const apiUrl = `${process.env.REACT_APP_API_URL}/items/getAll`;
-  const { getItems } = useItems();
+const ReciptesList = () => {
+  const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/getAll`;
+  const { getItems } = useReciptes();
 
   useEffect(() => {
     (async () => {
@@ -18,14 +18,14 @@ const ItemList = () => {
   const items = useAppSelector((state: RootState) => state.itemReducer);
 
   return (
-    <ItemListStyled>
+    <RecipteListStyled>
       {items.map((item) => (
         <li data-testid="test-list" key={item.name}>
-          <ItemCard item={item} />
+          <RecipteCard item={item} />
         </li>
       ))}
-    </ItemListStyled>
+    </RecipteListStyled>
   );
 };
 
-export default ItemList;
+export default ReciptesList;
