@@ -4,7 +4,7 @@ import { Recipte } from "../../types/interfaces";
 const reciptesInitialState: Recipte[] = [];
 
 const reciptesSlice = createSlice({
-  name: "item",
+  name: "recipte",
   initialState: reciptesInitialState,
   reducers: {
     loadReciptes: (previousState, action: PayloadAction<Recipte[]>) =>

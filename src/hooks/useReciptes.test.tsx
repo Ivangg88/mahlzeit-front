@@ -17,7 +17,7 @@ describe("Given a hook useItems", () => {
     test("Then it should call the dispatch with a loadItemsActionCreator with an array of items as payload", async () => {
       const items: Recipte[] = [
         {
-          id: "",
+          id: "Mock id",
           name: "Mock item",
           dificulty: "Fácil",
           autor: "",

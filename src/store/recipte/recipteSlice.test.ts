@@ -1,10 +1,10 @@
 import { Recipte } from "../../types/interfaces";
 import { itemReducer, loadReciptesActionCreator } from "./recipteSlice";
 
-describe("Given a loadItemsActionCreator", () => {
+describe("Given a loadREciptesActionCreator", () => {
   describe("When is called", () => {
-    test("Then it should return an action with the type item/loadItems", () => {
-      const actionType = "item/loadItems";
+    test("Then it should return an action with the type recipte/loadReciptes", () => {
+      const actionType = "recipte/loadReciptes";
       const newItem: Recipte = {
         id: "",
         name: "",
