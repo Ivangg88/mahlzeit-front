@@ -47,11 +47,11 @@ export const handlers = [
   ),
 
   rest.get(
-    `${process.env.REACT_APP_API_URL}/items/getAll`,
+    `${process.env.REACT_APP_API_URL}/reciptes/getAll`,
     async (req, res, ctx) => {
       const status = 201;
 
-      return res(ctx.status(status), ctx.json(items));
+      return res(ctx.status(status), ctx.json({ reciptes: items }));
     }
   ),
 ];

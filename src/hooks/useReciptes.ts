@@ -19,7 +19,7 @@ const useReciptes = () => {
     [dispatch]
   );
 
-  return { getItems: getReciptes };
+  return { getReciptes };
 };
 
 export default useReciptes;
