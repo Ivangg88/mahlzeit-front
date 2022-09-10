@@ -1,8 +1,8 @@
 import { renderHook } from "@testing-library/react";
-import { loadItemsActionCreator } from "../store/item/itemSlice";
-import { Item } from "../types/interfaces";
+import { loadReciptesActionCreator } from "../store/recipte/recipteSlice";
+import { Recipte } from "../types/interfaces";
 import Wrapper from "../utils/Wrapper";
-import useItems from "./useItems";
+import useReciptes from "./useReciptes";
 
 const mockDispatch = jest.fn();
 
@@ -15,7 +15,7 @@ describe("Given a hook useItems", () => {
   describe("When the function getAll is called with an url", () => {
     const apiUrl = `${process.env.REACT_APP_API_URL}/items/getAll`;
     test("Then it should call the dispatch with a loadItemsActionCreator with an array of items as payload", async () => {
-      const items: Item[] = [
+      const items: Recipte[] = [
         {
           id: "",
           name: "Mock item",
@@ -23,8 +23,9 @@ describe("Given a hook useItems", () => {
           autor: "",
           persons: 0,
           image: "",
-          ingredients: [],
-          process: { steps: [] },
+          ingredients: "",
+          process: "",
+          backupImage: "",
         },
       ];
 
@@ -32,11 +33,13 @@ describe("Given a hook useItems", () => {
         result: {
           current: { getItems },
         },
-      } = renderHook(useItems, { wrapper: Wrapper });
+      } = renderHook(useReciptes, { wrapper: Wrapper });
 
       await getItems(apiUrl);
 
-      expect(mockDispatch).toHaveBeenCalledWith(loadItemsActionCreator(items));
+      expect(mockDispatch).toHaveBeenCalledWith(
+        loadReciptesActionCreator(items)
+      );
     });
 
     describe("And receives a bad response", () => {
@@ -47,7 +50,7 @@ describe("Given a hook useItems", () => {
           result: {
             current: { getItems },
           },
-        } = renderHook(useItems, { wrapper: Wrapper });
+        } = renderHook(useReciptes, { wrapper: Wrapper });
 
         const error = await getItems(apiUrl);
 

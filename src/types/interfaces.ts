@@ -20,28 +20,17 @@ export interface PasswordCheck {
   passWordCompare: boolean;
 }
 
-type Units = "ml" | "l" | "g" | "Kg" | "ud" | "uds";
-
-export interface Ingredient {
-  name: string;
-  quantity: number;
-  units: Units;
-}
-
-export interface Process {
-  steps: string[];
-}
-
-export interface ProtoItem {
+export interface ProtoRecipte {
   name: string;
   persons: number;
-  dificulty: "Fácil" | "Medio" | "Difícil";
+  dificulty: string;
   autor: string;
-  ingredients: Ingredient[];
-  process: Process;
-  image: string;
+  ingredients: string;
+  process: string;
+  image: File | string;
 }
 
-export interface Item extends ProtoItem {
+export interface Recipte extends ProtoRecipte {
   id: string;
+  backupImage: string;
 }

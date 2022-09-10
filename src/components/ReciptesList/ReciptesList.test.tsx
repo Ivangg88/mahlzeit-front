@@ -1,18 +1,19 @@
 import { render, screen } from "@testing-library/react";
-import { Item } from "../../types/interfaces";
+import { Recipte } from "../../types/interfaces";
 import Wrapper from "../../utils/Wrapper";
-import ItemList from "./ItemList";
+import ReciptesList from "./ReciptesList";
 
-const mockItems: Item[] = [
+const mockItems: Recipte[] = [
   {
     id: "Mock id",
     name: "Mock item",
     autor: "Mock autor",
     dificulty: "Difícil",
     image: "url",
-    ingredients: [],
+    ingredients: "",
     persons: 0,
-    process: { steps: [] },
+    process: "",
+    backupImage: "",
   },
   {
     id: "Mock id 2",
@@ -20,9 +21,10 @@ const mockItems: Item[] = [
     autor: "Mock autor 2",
     dificulty: "Difícil",
     image: "url 2",
-    ingredients: [],
+    ingredients: "",
+    process: "",
+    backupImage: "",
     persons: 0,
-    process: { steps: [] },
   },
 ];
 jest.mock("../../app/hooks", () => ({
@@ -37,7 +39,7 @@ afterEach(() => {
 describe("Given a component ItemList", () => {
   describe("When rendered", () => {
     test("Then it should show too many ItemCards as elements has the array of items", () => {
-      render(<ItemList />, { wrapper: Wrapper });
+      render(<ReciptesList />, { wrapper: Wrapper });
 
       const expectedElements = screen.getAllByTestId("test-list");
 
