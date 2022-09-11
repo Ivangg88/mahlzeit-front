@@ -1,5 +1,6 @@
 import { ProtoRecipte } from "../../../types/interfaces";
 import Button from "../../Button/Button";
+import ImageFormStyled from "./ImageFormStyled";
 
 interface ImageFromProps {
   recipte: ProtoRecipte;
@@ -15,14 +16,14 @@ const ImageForm = ({
   submit,
 }: ImageFromProps): JSX.Element => {
   return (
-    <form
-      data-testid="form-recipt"
+    <ImageFormStyled
+      data-testid="form-recipte"
       onSubmit={(event) => submit(event)}
-      className="recipt-form"
+      className="recipte-form"
       autoComplete="off"
     >
-      <h1 className="recipt-form__title">Añade tu imagen</h1>
-      <div className="recipt-form__inputs-container">
+      <h1 className="recipte-form__title">Añade tu imagen</h1>
+      <div className="recipte-form__inputs-container">
         <div className="recipte-form__input-field">
           <label htmlFor="Process" className="label">
             Añadir imagen:
@@ -36,14 +37,15 @@ const ImageForm = ({
           />
         </div>
       </div>
-
-      <Button
-        type="button"
-        text="Anterior"
-        actionOnClick={() => previousPage(3)}
-      />
-      <Button type="submit" text="Crear Receta" />
-    </form>
+      <div className="recipte-form__buttons-container">
+        <Button
+          type="button"
+          text="Anterior"
+          actionOnClick={() => previousPage(3)}
+        />
+        <Button type="submit" text="Crear Receta" />
+      </div>
+    </ImageFormStyled>
   );
 };
 
