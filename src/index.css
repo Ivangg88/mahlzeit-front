@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: "Roboto";
+}
+
 body {
   margin: 0;
 }
@@ -11,6 +15,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 input {
   font-family: inherit;
 }

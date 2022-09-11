@@ -13,12 +13,12 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="navigation__link" to={"/myReciptes"}>
+            <NavLink className="navigation__link" to={"/my-reciptes"}>
               Mis Recetas
             </NavLink>
           </li>
           <li>
-            <NavLink className="navigation__link" to={"/createRecipte"}>
+            <NavLink className="navigation__link" to={"/create"}>
               Crear Receta
             </NavLink>
           </li>

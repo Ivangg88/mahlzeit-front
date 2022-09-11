@@ -25,7 +25,11 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
       </h1>
       <div className="container">
         <img
-          src={item.image as string}
+          src={(process.env.REACT_APP_API_URL! + "/" + item.image) as string}
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null;
+            currentTarget.src = item.backupImage;
+          }}
           alt={item.name}
           className="item-card__image"
           width={165}
