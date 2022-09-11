@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
+import useReciptes from "../../hooks/useReciptes";
 import { ProtoRecipte } from "../../types/interfaces";
 import ImageForm from "./ImageForm/ImageForm";
 import IngredientsForm from "./IngredientsForm/IngredientsForm";
@@ -20,6 +21,7 @@ const RecipteForm = (): JSX.Element => {
   const apiUrl = process.env.REACT_APP_API_URL!;
   const [recipte, setRecipte] = useState<ProtoRecipte>(initialRecipte);
   const [currentPage, setPage] = useState<number>(1);
+  const { createRecipte } = useReciptes();
   const user = useAppSelector((state) => state.user);
   const navigate = useNavigate();
 
@@ -55,7 +57,7 @@ const RecipteForm = (): JSX.Element => {
   };
 
   formData.append("name", recipte.name);
-  formData.append("autor", user.userName);
+  formData.append("autor", "no autor");
   formData.append("dificulty", recipte.dificulty);
   formData.append("ingredients", recipte.ingredients);
   formData.append("persons", recipte.persons.toString());
@@ -63,7 +65,8 @@ const RecipteForm = (): JSX.Element => {
 
   const submit = (event: React.FormEvent<HTMLFormElement>, url: string) => {
     event.preventDefault();
-    navigate("/home");
+    createRecipte(formData, url);
+    setTimeout(() => navigate("/home"), 2000);
   };
 
   switch (currentPage) {
