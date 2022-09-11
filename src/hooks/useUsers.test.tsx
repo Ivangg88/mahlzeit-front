@@ -1,29 +1,22 @@
 import { renderHook } from "@testing-library/react";
-import { Provider } from "react-redux";
-import { store } from "../app/store";
 import { loginUserActionCreator } from "../store/user/userSlice";
 import { User, UserLoged, UserLogin } from "../types/interfaces";
+import Wrapper from "../utils/Wrapper";
 import useUsers from "./useUsers";
-
-interface WrapperProps {
-  children: JSX.Element | JSX.Element[];
-}
-
-let Wrapper: ({ children }: WrapperProps) => JSX.Element;
-
-beforeEach(() => {
-  Wrapper = ({ children }: WrapperProps): JSX.Element => {
-    return <Provider store={store}>{children}</Provider>;
-  };
-});
 
 const mockUserToken: UserLoged = {
   token: "1a2b3c4d",
   userName: "Mock user",
 };
 const mockDispatch = jest.fn();
+const mockNavigate = jest.fn();
 
 jest.mock("../utils/authorization", () => () => mockUserToken);
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockNavigate,
+}));
 
 jest.mock("react-redux", () => ({
   ...jest.requireActual("react-redux"),
@@ -95,6 +88,7 @@ describe("Given a useUsers hook", () => {
         );
       });
     });
+
     describe("With an invalid user", () => {
       test("Then it should return a 400", async () => {
         const invalidUser: UserLogin = {
