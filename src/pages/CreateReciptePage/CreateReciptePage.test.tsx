@@ -1,31 +1,21 @@
 import { render, screen } from "@testing-library/react";
-import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { store } from "../../app/store";
-import RegisterPage from "./CreateReciptePage";
 
-interface WrapperProps {
-  children: JSX.Element | JSX.Element[];
-}
+import Wrapper from "../../utils/Wrapper";
+import CreateReciptePage from "./CreateReciptePage";
 
-let Wrapper: ({ children }: WrapperProps) => JSX.Element;
-
-beforeEach(() => {
-  Wrapper = ({ children }: WrapperProps): JSX.Element => {
-    return (
-      <Provider store={store}>
-        <BrowserRouter>{children}</BrowserRouter>
-      </Provider>
-    );
-  };
-});
-
-describe("Given a componente RegisterPage", () => {
+describe("Given a componente CreateReciptePage", () => {
   describe("When rendered", () => {
-    test("Then it should show a RegisterForm component", () => {
-      const title = "Crea tu perfil";
+    test("Then it should show a RecipteForm component", () => {
+      const title = "Ingredientes";
 
-      render(<RegisterPage />, { wrapper: Wrapper });
+      render(
+        <BrowserRouter>
+          {" "}
+          <CreateReciptePage />
+        </BrowserRouter>,
+        { wrapper: Wrapper }
+      );
 
       screen.getByRole("heading", { name: title });
     });
