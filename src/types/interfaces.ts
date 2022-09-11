@@ -34,3 +34,7 @@ export interface Recipte extends ProtoRecipte {
   id: string;
   backupImage: string;
 }
+
+export interface TokenResponse {
+  token: string;
+}
