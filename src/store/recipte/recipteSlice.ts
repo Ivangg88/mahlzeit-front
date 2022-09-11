@@ -9,10 +9,17 @@ const reciptesSlice = createSlice({
   reducers: {
     loadReciptes: (previousState, action: PayloadAction<Recipte[]>) =>
       action.payload,
+
+    loadRecipte: (previousState, action: PayloadAction<Recipte>) => [
+      ...previousState,
+      action.payload,
+    ],
   },
 });
 
 export const reciptesReducer = reciptesSlice.reducer;
 
-export const { loadReciptes: loadReciptesActionCreator } =
-  reciptesSlice.actions;
+export const {
+  loadReciptes: loadReciptesActionCreator,
+  loadRecipte: loadRecipteActionCreator,
+} = reciptesSlice.actions;
