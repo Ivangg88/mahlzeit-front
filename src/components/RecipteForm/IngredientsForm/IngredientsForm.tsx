@@ -1,5 +1,6 @@
 import { ProtoRecipte } from "../../../types/interfaces";
 import Button from "../../Button/Button";
+import IngredientsFormStyled from "./IngredientsFormStyled";
 
 interface IngredientsFromProps {
   recipte: ProtoRecipte;
@@ -18,14 +19,13 @@ const IngredientsForm = ({
   nextPage,
 }: IngredientsFromProps): JSX.Element => {
   return (
-    <form
+    <IngredientsFormStyled
       data-testid="form-recipt"
-      //onSubmit={(event) => submit(event, apiUrl)}
-      className="recipt-form"
+      className="recipte-form"
       autoComplete="off"
     >
-      <h1 className="recipt-form__title">Crea tu perfil</h1>
-      <div className="recipt-form__inputs-container">
+      <h1 className="recipte-form__title">Ingredientes</h1>
+      <div className="recipte-form__inputs-container">
         <div className="recipte-form__input-field">
           <label htmlFor="name" className="label">
             Nombre:
@@ -35,9 +35,8 @@ const IngredientsForm = ({
             name="name"
             type="text"
             value={recipte.name}
-            className="recipte
-  -form__input"
-            placeholder="Cristina"
+            className="recipte-form__input"
+            placeholder="Alcachofas con jamón"
             onChange={(event) => handleChange(event)}
           />
         </div>
@@ -51,9 +50,8 @@ const IngredientsForm = ({
             name="dificulty"
             type="text"
             value={recipte.dificulty}
-            className="recipte
-  -form__input"
-            placeholder="Cristina"
+            className="recipte-form__input"
+            placeholder="Dificultad"
             onChange={(event) => handleChange(event)}
           />
         </div>
@@ -67,8 +65,7 @@ const IngredientsForm = ({
             name="persons"
             type="number"
             value={recipte.persons}
-            className="recipte
-  -form__input"
+            className="recipte-form__input"
             placeholder="4"
             onChange={(event) => handleChange(event)}
           />
@@ -84,8 +81,7 @@ const IngredientsForm = ({
             cols={30}
             rows={20}
             value={recipte.ingredients}
-            className="recipte
-  -form__text-area"
+            className="recipte-form__ingredients"
             placeholder="Introduce los ingredientes separados por comas"
             onChange={(event) => handleChange(event)}
           />
@@ -100,7 +96,7 @@ const IngredientsForm = ({
           console.log("pulsado boton");
         }}
       />
-    </form>
+    </IngredientsFormStyled>
   );
 };
 
