@@ -25,7 +25,7 @@ const ImageForm = ({
       <h1 className="recipte-form__title">Añade tu imagen</h1>
       <div className="recipte-form__inputs-container">
         <div className="recipte-form__input-field">
-          <label htmlFor="Process" className="label">
+          <label htmlFor="image" className="label">
             Añadir imagen:
           </label>
           <input
