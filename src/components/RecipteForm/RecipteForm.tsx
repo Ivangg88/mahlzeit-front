@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
 import useReciptes from "../../hooks/useReciptes";
 import { ProtoRecipte } from "../../types/interfaces";
@@ -57,7 +57,7 @@ const RecipteForm = (): JSX.Element => {
   };
 
   formData.append("name", recipte.name);
-  formData.append("autor", "no autor");
+  formData.append("autor", user.userName);
   formData.append("dificulty", recipte.dificulty);
   formData.append("ingredients", recipte.ingredients);
   formData.append("persons", recipte.persons.toString());
