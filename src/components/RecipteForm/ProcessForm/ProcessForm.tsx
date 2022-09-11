@@ -1,5 +1,6 @@
 import { ProtoRecipte } from "../../../types/interfaces";
 import Button from "../../Button/Button";
+import ProcessFormStyled from "./ProcessFormStyled";
 
 interface ProcessFromProps {
   recipte: ProtoRecipte;
@@ -19,14 +20,13 @@ const ProcessForm = ({
   nextPage,
 }: ProcessFromProps): JSX.Element => {
   return (
-    <form
+    <ProcessFormStyled
       data-testid="form-recipt"
-      //onSubmit={(event) => submit(event, apiUrl)}
-      className="recipt-form"
+      className="recipte-form"
       autoComplete="off"
     >
-      <h1 className="recipt-form__title">Crea tu perfil</h1>
-      <div className="recipt-form__inputs-container">
+      <h1 className="recipte-form__title">Procedimiento</h1>
+      <div className="recipte-form__inputs-container">
         <div className="recipte-form__input-field">
           <label htmlFor="Process" className="label">
             Proceso:
@@ -41,18 +41,19 @@ const ProcessForm = ({
           />
         </div>
       </div>
-
-      <Button
-        type="button"
-        text="Anterior"
-        actionOnClick={() => previousPage(2)}
-      />
-      <Button
-        type="button"
-        text="Siguiente"
-        actionOnClick={() => nextPage(2)}
-      />
-    </form>
+      <div className="recipte-form__buttons-container">
+        <Button
+          type="button"
+          text="Anterior"
+          actionOnClick={() => previousPage(2)}
+        />
+        <Button
+          type="button"
+          text="Siguiente"
+          actionOnClick={() => nextPage(2)}
+        />
+      </div>
+    </ProcessFormStyled>
   );
 };
 

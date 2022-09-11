@@ -19,6 +19,7 @@ const RecipteForm = (): JSX.Element => {
   const apiUrl = process.env.REACT_APP_API_URL!;
   const [recipte, setRecipte] = useState<ProtoRecipte>(initialRecipte);
   const [currentPage, setPage] = useState<number>(1);
+  const user = useAppSelector((state) => state.user);
 
   const nextPage = (page: number) => {
     if (page === 3) {
@@ -35,8 +36,6 @@ const RecipteForm = (): JSX.Element => {
     setPage((page -= 1));
     return;
   };
-
-  const user = useAppSelector((state) => state.user);
 
   const addDataFromInputs = (
     event:
