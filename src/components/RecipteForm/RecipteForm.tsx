@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
 import { ProtoRecipte } from "../../types/interfaces";
 import ImageForm from "./ImageForm/ImageForm";
@@ -20,6 +21,7 @@ const RecipteForm = (): JSX.Element => {
   const [recipte, setRecipte] = useState<ProtoRecipte>(initialRecipte);
   const [currentPage, setPage] = useState<number>(1);
   const user = useAppSelector((state) => state.user);
+  const navigate = useNavigate();
 
   const nextPage = (page: number) => {
     if (page === 3) {
@@ -61,7 +63,7 @@ const RecipteForm = (): JSX.Element => {
 
   const submit = (event: React.FormEvent<HTMLFormElement>, url: string) => {
     event.preventDefault();
-    console.log(formData.get("file"));
+    navigate("/home");
   };
 
   switch (currentPage) {
