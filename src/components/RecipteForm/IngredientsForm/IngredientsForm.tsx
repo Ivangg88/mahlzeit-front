@@ -43,7 +43,7 @@ const IngredientsForm = ({
 
         <div className="recipte-form__input-field">
           <label htmlFor="dificulty" className="label">
-            Dificultad::
+            Dificultad:
           </label>
           <input
             id="dificulty"
@@ -93,7 +93,6 @@ const IngredientsForm = ({
         text="Siguiente"
         actionOnClick={() => {
           nextPage(1);
-          console.log("pulsado boton");
         }}
       />
     </IngredientsFormStyled>
