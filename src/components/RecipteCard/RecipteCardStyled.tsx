@@ -37,6 +37,7 @@ const RecipteCardStyled = styled.section`
   .item-card__image {
     flex: 1;
     border-radius: 100%;
+    object-fit: fill;
   }
 
   .list-container {

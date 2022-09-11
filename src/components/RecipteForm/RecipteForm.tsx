@@ -62,7 +62,7 @@ const RecipteForm = (): JSX.Element => {
 
   const submit = (event: React.FormEvent<HTMLFormElement>, url: string) => {
     event.preventDefault();
-    console.log(formData.getAll("file"));
+    console.log(formData.get("file"));
   };
 
   switch (currentPage) {
