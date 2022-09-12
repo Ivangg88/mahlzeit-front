@@ -2,6 +2,7 @@ import { renderHook } from "@testing-library/react";
 import { create } from "domain";
 import { BrowserRouter } from "react-router-dom";
 import {
+  deleteRecipteActionCreator,
   loadRecipteActionCreator,
   loadReciptesActionCreator,
 } from "../store/recipte/recipteSlice";
@@ -69,6 +70,40 @@ describe("Given a hook useReciptes", () => {
 
         expect(error).toBeInstanceOf(Error);
       });
+    });
+  });
+
+  describe("When the function delete is called with an id", () => {
+    const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/delete`;
+    test("Then it should call the method dispatch", async () => {
+      const id = "test-id";
+      const {
+        result: {
+          current: { deleteRecipte },
+        },
+      } = renderHook(useReciptes, { wrapper: Wrapper });
+
+      await deleteRecipte(id, apiUrl);
+
+      expect(mockDispatch).toHaveBeenCalledWith(deleteRecipteActionCreator(id));
+    });
+  });
+
+  describe("When its called with an empty id", () => {
+    const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/delete`;
+    test("Then it should response an instance of error", async () => {
+      const id = "";
+      global.fetch = jest.fn().mockResolvedValue([]);
+
+      const {
+        result: {
+          current: { deleteRecipte },
+        },
+      } = renderHook(useReciptes, { wrapper: Wrapper });
+
+      const error = await deleteRecipte(id, apiUrl);
+
+      expect(error).toBeInstanceOf(Error);
     });
   });
 });
