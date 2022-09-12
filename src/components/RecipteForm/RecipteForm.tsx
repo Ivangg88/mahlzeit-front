@@ -18,7 +18,7 @@ const RecipteForm = (): JSX.Element => {
     process: "",
   };
 
-  const apiUrl = process.env.REACT_APP_API_URL!;
+  const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/create`;
   const [recipte, setRecipte] = useState<ProtoRecipte>(initialRecipte);
   const [currentPage, setPage] = useState<number>(1);
   const { createRecipte } = useReciptes();
@@ -51,15 +51,19 @@ const RecipteForm = (): JSX.Element => {
   };
 
   formData.append("name", recipte.name);
-  formData.append("autor", user.userName);
+  formData.append("autor", user.userName ? user.userName : "no autor");
   formData.append("dificulty", recipte.dificulty);
   formData.append("ingredients", recipte.ingredients);
-  formData.append("persons", recipte.persons.toString());
+  formData.append(
+    "persons",
+    recipte.persons ? recipte.persons.toString() : "0"
+  );
   formData.append("process", recipte.process);
 
   const submit = (event: React.FormEvent<HTMLFormElement>, url: string) => {
     event.preventDefault();
     createRecipte(formData, url);
+    debugger;
     navigate("/home");
   };
 
