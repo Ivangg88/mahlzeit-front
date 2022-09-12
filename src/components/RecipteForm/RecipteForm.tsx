@@ -26,11 +26,13 @@ const RecipteForm = (): JSX.Element => {
   const navigate = useNavigate();
 
   const nextPage = (page: number) => {
-    setPage((page += 1));
+    page += 1;
+    setPage(page);
   };
 
   const previousPage = (page: number) => {
-    setPage((page -= 1));
+    page -= 1;
+    setPage(page);
   };
 
   const addDataFromInputs = (
