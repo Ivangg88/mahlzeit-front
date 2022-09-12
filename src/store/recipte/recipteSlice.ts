@@ -14,6 +14,10 @@ const reciptesSlice = createSlice({
       ...previousState,
       action.payload,
     ],
+
+    deleteRecipte: (previousState, action: PayloadAction<string>) => [
+      ...previousState.filter((recipte) => recipte.id !== action.payload),
+    ],
   },
 });
 
@@ -22,4 +26,5 @@ export const reciptesReducer = reciptesSlice.reducer;
 export const {
   loadReciptes: loadReciptesActionCreator,
   loadRecipte: loadRecipteActionCreator,
+  deleteRecipte: deleteRecipteActionCreator,
 } = reciptesSlice.actions;
