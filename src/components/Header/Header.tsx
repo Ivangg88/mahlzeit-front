@@ -13,7 +13,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="navigation__link" to={"/my-reciptes"}>
+            <NavLink className="navigation__link" to={"/detail"}>
               Mis Recetas
             </NavLink>
           </li>
