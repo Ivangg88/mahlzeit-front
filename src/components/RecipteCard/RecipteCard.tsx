@@ -7,12 +7,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import RecipteCardStyled from "./RecipteCardStyled";
 import { Recipte } from "../../types/interfaces";
+import useReciptes from "../../hooks/useReciptes";
 
 interface ItemCardProps {
   item: Recipte;
 }
 
 const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
+  const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/delete`;
+  const { deleteRecipte } = useReciptes();
   return (
     <RecipteCardStyled>
       <h1 className="item-card__title">
@@ -25,7 +28,7 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
       </h1>
       <div className="container">
         <img
-          src={`${process.env.REACT_APP_API_URL}/${item.image}` as string}
+          src={`${process.env.REACT_APP_API_URL}/${item.image}`}
           onError={({ currentTarget }) => {
             currentTarget.onerror = null;
             currentTarget.src = item.backupImage;
@@ -57,7 +60,12 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
             </li>
             <li className="info-list__info">
               <FontAwesomeIcon height={16} icon={faStar}></FontAwesomeIcon>
-              <button className="button">Añadir a favoritos</button>
+              <button
+                className="button"
+                onClick={() => deleteRecipte(item.id, apiUrl)}
+              >
+                Eliminar
+              </button>
             </li>
           </ul>
         </div>

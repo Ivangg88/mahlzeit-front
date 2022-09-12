@@ -3,6 +3,7 @@ import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../app/hooks";
 import {
+  deleteRecipteActionCreator,
   loadRecipteActionCreator,
   loadReciptesActionCreator,
 } from "../store/recipte/recipteSlice";
@@ -41,7 +42,25 @@ const useReciptes = () => {
     }
   };
 
-  return { getReciptes, createRecipte };
+  const deleteRecipte = async (id: string, apiUrl: string) => {
+    const config = {
+      params: { id: id },
+    };
+    try {
+      const response = await axios.delete(apiUrl, config);
+
+      if (response.status !== 201) {
+        throw new Error();
+      }
+
+      dispatch(deleteRecipteActionCreator(id));
+      navigator("/home");
+    } catch (error) {
+      return error;
+    }
+  };
+
+  return { getReciptes, createRecipte, deleteRecipte };
 };
 
 export default useReciptes;
