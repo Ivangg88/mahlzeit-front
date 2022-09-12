@@ -6,7 +6,7 @@ const RecipteCardStyled = styled.section`
   justify-content: center;
   background-color: ${(props) => props.theme.secondColor};
   color: ${(props) => props.theme.fontMainColor};
-  font-family: ${(props) => props.theme.fontSecondType};
+  font-family: inherit;
   border-radius: 15px;
   padding: 20px;
   width: 400px;
@@ -15,7 +15,6 @@ const RecipteCardStyled = styled.section`
 
   .item-card__title {
     font-family: ${(props) => props.theme.fontMainType};
-
     text-align: center;
     margin: 0;
     margin-bottom: 10px;
@@ -35,9 +34,11 @@ const RecipteCardStyled = styled.section`
   }
 
   .item-card__image {
+    min-width: 165px;
+    min-height: 165px;
     flex: 1;
-    border-radius: 100%;
-    object-fit: fill;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   .list-container {
