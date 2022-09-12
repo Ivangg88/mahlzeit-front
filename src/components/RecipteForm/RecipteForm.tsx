@@ -26,19 +26,11 @@ const RecipteForm = (): JSX.Element => {
   const navigate = useNavigate();
 
   const nextPage = (page: number) => {
-    if (page === 3) {
-      return;
-    }
     setPage((page += 1));
-    return;
   };
 
   const previousPage = (page: number) => {
-    if (page === 1) {
-      return;
-    }
     setPage((page -= 1));
-    return;
   };
 
   const addDataFromInputs = (
@@ -66,7 +58,7 @@ const RecipteForm = (): JSX.Element => {
   const submit = (event: React.FormEvent<HTMLFormElement>, url: string) => {
     event.preventDefault();
     createRecipte(formData, url);
-    setTimeout(() => navigate("/home"), 2000);
+    navigate("/home");
   };
 
   switch (currentPage) {
@@ -104,7 +96,7 @@ const RecipteForm = (): JSX.Element => {
     default:
       break;
   }
-  return <h1>Error Formulario no encontrado</h1>;
+  return <h1>Error formulario no encontrado</h1>;
 };
 
 export default RecipteForm;
