@@ -15,6 +15,18 @@ const items: Recipte[] = [
   },
 ];
 
+const recipte: Recipte = {
+  backupImage: "",
+  id: "",
+  autor: "Mock autor",
+  dificulty: "Mock dificulty",
+  image: " Mock image",
+  ingredients: "Mock ingredients",
+  name: " Mock name",
+  persons: 4,
+  process: "Mock process",
+};
+
 export const handlers = [
   rest.post(
     `${process.env.REACT_APP_API_URL}/users/register`,
@@ -52,6 +64,14 @@ export const handlers = [
       const status = 201;
 
       return res(ctx.status(status), ctx.json({ reciptes: items }));
+    }
+  ),
+  rest.post(
+    `${process.env.REACT_APP_API_URL}/reciptes/create`,
+    async (req, res, ctx) => {
+      const status = 200;
+
+      return res(ctx.status(status), ctx.json(recipte));
     }
   ),
 ];
