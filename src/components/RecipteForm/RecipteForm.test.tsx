@@ -127,29 +127,4 @@ describe("Given a component RecipteForm", () => {
       await userEvent.upload(input, new File([""], ""));
     });
   });
-
-  describe("When the currentPage doesn´t exist", () => {
-    test("Then it should show a heading with the text 'Error Formulario no encontrado'", async () => {
-      const title = "Error Formulario no encontrado";
-      const mockState = jest
-        .fn()
-        .mockResolvedValue([5, jest.fn().mockResolvedValue(5)]);
-
-      jest.mock("react", () => ({
-        ...jest.requireActual("react"),
-        useState: () => mockState,
-      }));
-
-      await render(
-        <BrowserRouter>
-          <RecipteForm />
-        </BrowserRouter>,
-        { wrapper: Wrapper }
-      );
-
-      const heading = screen.getByRole("heading", { name: title });
-
-      expect(heading).toBeInTheDocument();
-    });
-  });
 });
