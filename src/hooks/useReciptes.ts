@@ -60,7 +60,21 @@ const useReciptes = () => {
     }
   };
 
-  return { getReciptes, createRecipte, deleteRecipte };
+  const getRecipteById = async (id: string, apiUrl: string) => {
+    try {
+      const response = await axios.get(`${apiUrl}/${id}`);
+
+      if (response.status !== 200) {
+        throw new Error();
+      }
+      dispatch(loadReciptesActionCreator([response.data.recipte]));
+      navigator("/detail");
+    } catch (error) {
+      return error;
+    }
+  };
+
+  return { getReciptes, createRecipte, deleteRecipte, getRecipteById };
 };
 
 export default useReciptes;

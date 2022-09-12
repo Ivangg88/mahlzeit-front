@@ -89,4 +89,13 @@ export const handlers = [
       return res(ctx.status(status), ctx.json(response));
     }
   ),
+
+  rest.get(
+    `${process.env.REACT_APP_API_URL}/reciptes/getById/test-id`,
+    async (req, res, ctx) => {
+      const status = 200;
+      const response = { recipte };
+      return res(ctx.status(status), ctx.json(response));
+    }
+  ),
 ];

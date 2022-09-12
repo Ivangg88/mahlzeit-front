@@ -15,7 +15,10 @@ interface ItemCardProps {
 
 const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
   const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/delete`;
-  const { deleteRecipte } = useReciptes();
+  const urlId = `${process.env.REACT_APP_API_URL}/reciptes/getById`;
+
+  const { deleteRecipte, getRecipteById } = useReciptes();
+
   return (
     <RecipteCardStyled>
       <h1 className="item-card__title">
@@ -24,6 +27,9 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
           className="item-card__icon"
           width={20}
           icon={faMaximize}
+          onClick={() => {
+            getRecipteById(item.id, urlId);
+          }}
         ></FontAwesomeIcon>
       </h1>
       <div className="container">

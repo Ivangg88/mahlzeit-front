@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import CreateReciptePage from "./pages/CreateReciptePage/CreateReciptePage";
+import DetailPage from "./pages/DetailPage/DetailPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
@@ -10,6 +11,7 @@ const App = (): JSX.Element => {
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/detail" element={<DetailPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/create" element={<CreateReciptePage />} />
