@@ -63,7 +63,6 @@ const RecipteForm = (): JSX.Element => {
   const submit = (event: React.FormEvent<HTMLFormElement>, url: string) => {
     event.preventDefault();
     createRecipte(formData, url);
-    debugger;
     navigate("/home");
   };
 
