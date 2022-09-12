@@ -1,14 +1,25 @@
 import { renderHook } from "@testing-library/react";
-import { loadReciptesActionCreator } from "../store/recipte/recipteSlice";
+import { create } from "domain";
+import { BrowserRouter } from "react-router-dom";
+import {
+  loadRecipteActionCreator,
+  loadReciptesActionCreator,
+} from "../store/recipte/recipteSlice";
 import { Recipte } from "../types/interfaces";
 import Wrapper from "../utils/Wrapper";
 import useReciptes from "./useReciptes";
 
 const mockDispatch = jest.fn();
+const mockNavigate = jest.fn();
 
-jest.mock("react-redux", () => ({
-  ...jest.requireActual("react-redux"),
-  useDispatch: () => mockDispatch,
+jest.mock("../app/hooks", () => ({
+  ...jest.requireActual("../app/hooks"),
+  useAppDispatch: () => mockDispatch,
+}));
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockNavigate,
 }));
 
 describe("Given a hook useReciptes", () => {
@@ -33,7 +44,9 @@ describe("Given a hook useReciptes", () => {
         result: {
           current: { getReciptes },
         },
-      } = renderHook(useReciptes, { wrapper: Wrapper });
+      } = renderHook(useReciptes, {
+        wrapper: Wrapper,
+      });
 
       await getReciptes(apiUrl);
 

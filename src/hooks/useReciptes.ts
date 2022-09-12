@@ -1,10 +1,16 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../app/hooks";
-import { loadReciptesActionCreator } from "../store/recipte/recipteSlice";
+import {
+  loadRecipteActionCreator,
+  loadReciptesActionCreator,
+} from "../store/recipte/recipteSlice";
+import { Recipte } from "../types/interfaces";
 
 const useReciptes = () => {
   const dispatch = useAppDispatch();
+  const navigator = useNavigate();
 
   const getReciptes = useCallback(
     async (apiUrl: string) => {
@@ -21,18 +27,18 @@ const useReciptes = () => {
   );
 
   const createRecipte = async (data: FormData, apiUrl: string) => {
-    let response: Response;
     try {
-      response = await axios.post(`${apiUrl}/reciptes/create`, data);
+      const response: AxiosResponse<Recipte> = await axios.post(apiUrl, data);
 
-      if (response.status !== 201) {
+      if (response.status !== 200) {
         throw new Error();
       }
+
+      dispatch(loadRecipteActionCreator(response.data));
+      navigator("/home");
     } catch (error) {
       return 400;
     }
-
-    return response.status;
   };
 
   return { getReciptes, createRecipte };

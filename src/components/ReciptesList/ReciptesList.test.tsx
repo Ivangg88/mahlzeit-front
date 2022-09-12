@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import { Recipte } from "../../types/interfaces";
 import Wrapper from "../../utils/Wrapper";
 import ReciptesList from "./ReciptesList";
@@ -39,7 +40,12 @@ afterEach(() => {
 describe("Given a component ItemList", () => {
   describe("When rendered", () => {
     test("Then it should show too many ItemCards as elements has the array of items", () => {
-      render(<ReciptesList />, { wrapper: Wrapper });
+      render(
+        <BrowserRouter>
+          <ReciptesList />
+        </BrowserRouter>,
+        { wrapper: Wrapper }
+      );
 
       const expectedElements = screen.getAllByTestId("test-list");
 
