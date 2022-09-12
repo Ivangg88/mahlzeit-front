@@ -44,6 +44,7 @@ const RecipteCardStyled = styled.section`
   .list-container {
     flex: 2;
     display: flex;
+    gap: 10px;
     flex-direction: column;
     align-items: flex-start;
     padding-left: 30px;
@@ -71,7 +72,7 @@ const RecipteCardStyled = styled.section`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 15px;
+    gap: 5px;
   }
 
   .info-list__info {
