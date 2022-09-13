@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from "axios";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../app/hooks";
-import { failModal, sucessModal } from "../modals/modals";
+import { failModal } from "../modals/modals";
 import {
   deleteRecipteActionCreator,
   loadRecipteActionCreator,

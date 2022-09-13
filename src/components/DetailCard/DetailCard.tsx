@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinimize, faPencil } from "@fortawesome/free-solid-svg-icons";
+import { faMinimize } from "@fortawesome/free-solid-svg-icons";
 import RecipteCardStyled from "./DetailCardStyled";
 import { Recipte } from "../../types/interfaces";
 import useReciptes from "../../hooks/useReciptes";
