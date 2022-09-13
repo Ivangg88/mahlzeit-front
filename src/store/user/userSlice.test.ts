@@ -27,6 +27,7 @@ describe("Given a userReducer function", () => {
       const newUser: UserLoged = {
         userName: "Test user",
         token: "1a2b3c4d",
+        isLogged: true,
       };
 
       const action = loginUserActionCreator(newUser);
