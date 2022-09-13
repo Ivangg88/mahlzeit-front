@@ -4,7 +4,6 @@ import {
   loadReciptesActionCreator,
 } from "../store/recipte/recipteSlice";
 import { Recipte } from "../types/interfaces";
-import renderWithProviders from "../utils/testStore";
 import Wrapper from "../utils/Wrapper";
 import useReciptes from "./useReciptes";
 
