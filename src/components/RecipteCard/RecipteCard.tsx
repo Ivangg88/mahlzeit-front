@@ -18,10 +18,9 @@ interface ItemCardProps {
 
 const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
   const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/delete`;
-  //const urlId = `${process.env.REACT_APP_API_URL}/reciptes/getById`;
   const user = useAppSelector((state: RootState) => state.user);
 
-  const { deleteRecipte, getRecipteById } = useReciptes();
+  const { deleteRecipte } = useReciptes();
   const navigator = useNavigate();
 
   return (
@@ -33,7 +32,6 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
           width={20}
           icon={faMaximize}
           onClick={() => {
-            // getRecipteById(item.id, urlId);
             navigator(`/${item.id}`);
           }}
         ></FontAwesomeIcon>
