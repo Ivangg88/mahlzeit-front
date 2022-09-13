@@ -1,13 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
-  faStar,
   faCircle,
   faMaximize,
+  faFileCircleMinus,
 } from "@fortawesome/free-solid-svg-icons";
 import RecipteCardStyled from "./RecipteCardStyled";
 import { Recipte } from "../../types/interfaces";
 import useReciptes from "../../hooks/useReciptes";
+import { useAppSelector } from "../../app/hooks";
+import { RootState } from "../../app/store";
 
 interface ItemCardProps {
   item: Recipte;
@@ -16,6 +18,7 @@ interface ItemCardProps {
 const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
   const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/delete`;
   const urlId = `${process.env.REACT_APP_API_URL}/reciptes/getById`;
+  const user = useAppSelector((state: RootState) => state.user);
 
   const { deleteRecipte, getRecipteById } = useReciptes();
 
@@ -64,15 +67,20 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
               ></FontAwesomeIcon>
               <span>{item.autor}</span>
             </li>
-            <li className="info-list__info">
-              <FontAwesomeIcon height={16} icon={faStar}></FontAwesomeIcon>
-              <button
-                className="button"
-                onClick={() => deleteRecipte(item.id, apiUrl)}
-              >
-                Eliminar
-              </button>
-            </li>
+            {user.userName === item.autor && (
+              <li className="info-list__info">
+                <FontAwesomeIcon
+                  height={16}
+                  icon={faFileCircleMinus}
+                ></FontAwesomeIcon>
+                <button
+                  className="button"
+                  onClick={() => deleteRecipte(item.id, apiUrl)}
+                >
+                  Eliminar
+                </button>
+              </li>
+            )}
           </ul>
         </div>
       </div>

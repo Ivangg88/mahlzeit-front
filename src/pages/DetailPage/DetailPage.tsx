@@ -1,12 +1,15 @@
+import { useAppSelector } from "../../app/hooks";
+import { RootState } from "../../app/store";
+import DetailCard from "../../components/DetailCard/DetailCard";
 import Header from "../../components/Header/Header";
-import ReciptesList from "../../components/ReciptesList/ReciptesList";
 import DetailPageStyled from "./DetailPageStyled";
 
 const DetailPage = () => {
+  const items = useAppSelector((state: RootState) => state.reciptes);
   return (
     <DetailPageStyled>
       <Header />
-      <ReciptesList />
+      <DetailCard item={items[0]} />
     </DetailPageStyled>
   );
 };
