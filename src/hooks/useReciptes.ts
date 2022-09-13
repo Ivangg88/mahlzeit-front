@@ -72,22 +72,24 @@ const useReciptes = () => {
     }
   };
 
-  const getRecipteById = async (id: string, apiUrl: string) => {
-    try {
-      dispatch(openLoadingModalActionCreator());
-      const response = await axios.get(`${apiUrl}/${id}`);
+  const getRecipteById = useCallback(
+    async (id: string, apiUrl: string) => {
+      try {
+        dispatch(openLoadingModalActionCreator());
+        const response = await axios.get(`${apiUrl}/${id}`);
 
-      if (response.status !== 200) {
-        throw new Error();
+        if (response.status !== 200) {
+          throw new Error();
+        }
+
+        dispatch(loadReciptesActionCreator([response.data.recipte]));
+        setTimeout(() => dispatch(closeLoadingModalActionCreator()), 1000);
+      } catch (error) {
+        return error;
       }
-
-      dispatch(loadReciptesActionCreator([response.data.recipte]));
-      setTimeout(() => dispatch(closeLoadingModalActionCreator()), 1000);
-      navigator("/detail");
-    } catch (error) {
-      return error;
-    }
-  };
+    },
+    [dispatch]
+  );
 
   return { getReciptes, createRecipte, deleteRecipte, getRecipteById };
 };
