@@ -1,23 +1,37 @@
 import { fireEvent, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Recipte } from "../../types/interfaces";
 import renderWithProviders from "../../utils/testStore";
 import RecipteCard from "./RecipteCard";
 
+const mockNavigator = jest.fn();
+
+const mockDelete = {
+  deleteRecipte: jest.fn(),
+};
+
+jest.mock("../../hooks/useReciptes", () => () => mockDelete);
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockNavigator,
+}));
+
+const name = "Patatas bravas";
+const item: Recipte = {
+  name: name,
+  dificulty: "Fácil",
+  autor: "",
+  id: "",
+  image: "",
+  ingredients: "",
+  persons: 0,
+  process: "",
+  backupImage: "",
+};
+
 describe("Given a component ItemCard", () => {
   describe("When rendered and receives by props an item with the name 'Patatas bravas'", () => {
-    const name = "Patatas bravas";
-    const item: Recipte = {
-      name: name,
-      dificulty: "Fácil",
-      autor: "",
-      id: "",
-      image: "",
-      ingredients: "",
-      persons: 0,
-      process: "",
-      backupImage: "",
-    };
-
     test("Then it should show a card with a heading with the received name", () => {
       renderWithProviders(<RecipteCard item={item} />);
 
@@ -31,6 +45,30 @@ describe("Given a component ItemCard", () => {
       fireEvent.error(image);
 
       expect(image.getAttribute("src")).toBe(item.backupImage);
+    });
+  });
+
+  describe("Whent the user click on the icon maximize", () => {
+    test("Then it should call the navigator function", () => {
+      renderWithProviders(<RecipteCard item={item} />);
+
+      const button = screen.getAllByRole("button");
+
+      userEvent.click(button[0]);
+
+      expect(mockNavigator).toHaveBeenCalled();
+    });
+  });
+
+  describe("Whent the user click on the button 'Eliminar'", () => {
+    test("Then it should call the deleteRecipte function", async () => {
+      renderWithProviders(<RecipteCard item={item} />);
+
+      const button = screen.getAllByRole("button");
+
+      userEvent.click(button[1]);
+
+      expect(mockDelete.deleteRecipte).toHaveBeenCalled();
     });
   });
 });

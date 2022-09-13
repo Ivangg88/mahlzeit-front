@@ -31,8 +31,17 @@ const DetailCardStyled = styled.section`
     justify-content: space-between;
   }
 
+  .button-icon {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+  }
+
   .detail-card__icon {
     cursor: pointer;
+    height: 100%;
   }
 
   .detail-card__image {

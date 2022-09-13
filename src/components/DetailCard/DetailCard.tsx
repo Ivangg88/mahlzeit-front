@@ -21,11 +21,15 @@ const DetailCard = ({ item }: ItemCardProps): JSX.Element => {
     <RecipteCardStyled>
       <h1 className="detail-card__title">
         {item.name}
-        <FontAwesomeIcon
-          className="detail-card__icon"
-          icon={faMinimize}
-          onClick={() => navigator("/home")}
-        />
+
+        <button
+          className="button-icon"
+          onClick={() => {
+            navigator("/home");
+          }}
+        >
+          <FontAwesomeIcon className="detail-card__icon" icon={faMinimize} />
+        </button>
       </h1>
       <img
         src={item.backupImage}
@@ -33,10 +37,7 @@ const DetailCard = ({ item }: ItemCardProps): JSX.Element => {
         className="detail-card__image"
       />
       <div className="detail-card__ingredients">
-        <h2 className="detail-card__subtitle">
-          Ingredientes{" "}
-          <FontAwesomeIcon className="detail-card__icon" icon={faPencil} />
-        </h2>
+        <h2 className="detail-card__subtitle">Ingredientes</h2>
         <p>{item.ingredients}</p>
       </div>
       <div className="detail-card__process">

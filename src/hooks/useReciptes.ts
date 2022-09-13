@@ -77,9 +77,11 @@ const useReciptes = () => {
       dispatch(openLoadingModalActionCreator());
       const response = await axios.get(`${apiUrl}/${id}`);
 
-      if (response.status !== 200) {
-        throw new Error();
-      }
+
+        if (response.status !== 200) {
+          throw new Error();
+        }
+
       dispatch(loadReciptesActionCreator([response.data.recipte]));
       setTimeout(() => dispatch(closeLoadingModalActionCreator()), 1000);
       navigator("/detail");
@@ -87,6 +89,11 @@ const useReciptes = () => {
       return error;
     }
   };
+
+
+    },
+    [dispatch]
+  );
 
   return { getReciptes, createRecipte, deleteRecipte, getRecipteById };
 };
