@@ -1,5 +1,6 @@
 import { ProtoRecipte } from "../../../types/interfaces";
 import Button from "../../Button/Button";
+import FormularBanner from "../../FormularBanner/FormularBanner";
 import IngredientsFormStyled from "./IngredientsFormStyled";
 
 interface IngredientsFromProps {
@@ -88,13 +89,19 @@ const IngredientsForm = ({
         </div>
       </div>
 
-      <Button
-        type="button"
-        text="Siguiente"
-        actionOnClick={() => {
-          nextPage(1);
-        }}
-      />
+      <div className="button-container">
+        <Button
+          type="button"
+          text="Siguiente"
+          actionOnClick={() => {
+            nextPage(1);
+          }}
+        />
+      </div>
+
+      <div className="recipte-form__banner">
+        <FormularBanner currentPage={1} />
+      </div>
     </IngredientsFormStyled>
   );
 };
