@@ -10,6 +10,7 @@ import { Recipte } from "../../types/interfaces";
 import useReciptes from "../../hooks/useReciptes";
 import { useAppSelector } from "../../app/hooks";
 import { RootState } from "../../app/store";
+import { useNavigate } from "react-router-dom";
 
 interface ItemCardProps {
   item: Recipte;
@@ -17,10 +18,11 @@ interface ItemCardProps {
 
 const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
   const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/delete`;
-  const urlId = `${process.env.REACT_APP_API_URL}/reciptes/getById`;
+  //const urlId = `${process.env.REACT_APP_API_URL}/reciptes/getById`;
   const user = useAppSelector((state: RootState) => state.user);
 
   const { deleteRecipte, getRecipteById } = useReciptes();
+  const navigator = useNavigate();
 
   return (
     <RecipteCardStyled>
@@ -31,7 +33,8 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
           width={20}
           icon={faMaximize}
           onClick={() => {
-            getRecipteById(item.id, urlId);
+            // getRecipteById(item.id, urlId);
+            navigator(`/${item.id}`);
           }}
         ></FontAwesomeIcon>
       </h1>
