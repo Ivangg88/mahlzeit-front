@@ -27,14 +27,18 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
     <RecipteCardStyled>
       <h1 className="item-card__title">
         {item.name}
-        <FontAwesomeIcon
-          className="item-card__icon"
-          width={20}
-          icon={faMaximize}
+        <button
+          className="button-icon"
           onClick={() => {
             navigator(`/${item.id}`);
           }}
-        ></FontAwesomeIcon>
+        >
+          <FontAwesomeIcon
+            className="item-card__icon"
+            width={25}
+            icon={faMaximize}
+          ></FontAwesomeIcon>
+        </button>
       </h1>
       <div className="container">
         <img

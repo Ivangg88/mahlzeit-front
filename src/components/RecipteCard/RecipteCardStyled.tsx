@@ -22,8 +22,17 @@ const RecipteCardStyled = styled.section`
     justify-content: space-between;
   }
 
+  .button-icon {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+  }
+
   .item-card__icon {
     cursor: pointer;
+    height: 100%;
   }
 
   .container {
