@@ -46,7 +46,7 @@ const IngredientsFormStyled = styled.form`
     }
 
     &__ingredients {
-      min-height: 150px;
+      min-height: 100px;
       width: 360px;
       resize: none;
       padding-left: 5px;
@@ -54,11 +54,22 @@ const IngredientsFormStyled = styled.form`
       border-radius: 5px;
       margin-bottom: 20px;
     }
-  }
 
+    &__banner {
+      position: relative;
+      bottom: -30px;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
   Button {
     position: relative;
-    bottom: -80px;
+    bottom: -30px;
   }
 `;
 

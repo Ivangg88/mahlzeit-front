@@ -19,7 +19,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="navigation__link" to={"/detail"}>
+            <NavLink className="navigation__link" to={""}>
               Mis Recetas
             </NavLink>
           </li>

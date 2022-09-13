@@ -1,5 +1,6 @@
 import { ProtoRecipte } from "../../../types/interfaces";
 import Button from "../../Button/Button";
+import FormularBanner from "../../FormularBanner/FormularBanner";
 import ImageFormStyled from "./ImageFormStyled";
 
 interface ImageFromProps {
@@ -45,6 +46,8 @@ const ImageForm = ({
         />
         <Button type="submit" text="Crear Receta" />
       </div>
+
+      <FormularBanner currentPage={3} />
     </ImageFormStyled>
   );
 };

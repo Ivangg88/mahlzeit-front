@@ -1,5 +1,6 @@
 import { ProtoRecipte } from "../../../types/interfaces";
 import Button from "../../Button/Button";
+import FormularBanner from "../../FormularBanner/FormularBanner";
 import ProcessFormStyled from "./ProcessFormStyled";
 
 interface ProcessFromProps {
@@ -53,6 +54,8 @@ const ProcessForm = ({
           actionOnClick={() => nextPage(2)}
         />
       </div>
+
+      <FormularBanner currentPage={2} />
     </ProcessFormStyled>
   );
 };
