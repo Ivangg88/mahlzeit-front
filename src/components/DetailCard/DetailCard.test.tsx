@@ -1,8 +1,7 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { fireEvent, screen } from "@testing-library/react";
 import { Recipte } from "../../types/interfaces";
-import Wrapper from "../../utils/Wrapper";
-import RecipteCard from "./DetailCard";
+import renderWithProviders from "../../utils/testStore";
+import DetailCard from "./DetailCard";
 
 describe("Given a component DetailCard", () => {
   describe("When rendered and receives by props an item with the name 'Patatas bravas'", () => {
@@ -19,23 +18,13 @@ describe("Given a component DetailCard", () => {
       backupImage: "",
     };
     test("Then it should show a card with a heading with the received name", () => {
-      render(
-        <BrowserRouter>
-          <RecipteCard item={item} />
-        </BrowserRouter>,
-        { wrapper: Wrapper }
-      );
+      renderWithProviders(<DetailCard item={item} />);
 
       screen.getByRole("heading", { name: item.name });
     });
 
     test("And if the image src returns an error it should use the backupImage as src", () => {
-      render(
-        <BrowserRouter>
-          <RecipteCard item={item} />
-        </BrowserRouter>,
-        { wrapper: Wrapper }
-      );
+      renderWithProviders(<DetailCard item={item} />);
 
       const image = screen.getByRole("img");
       fireEvent.error(image);

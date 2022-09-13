@@ -1,7 +1,13 @@
 import { NavLink } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { RootState } from "../../app/store";
+import { logoutUserActionCreator } from "../../store/user/userSlice";
 import HeaderStyled from "./HeaderStyled";
 
 const Header = () => {
+  const user = useAppSelector((state: RootState) => state.user);
+  const dispatch = useAppDispatch();
+
   return (
     <HeaderStyled>
       <div className="header__text-container">
@@ -23,9 +29,19 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="navigation__link" to={"/login"}>
-              Login
-            </NavLink>
+            {!user.isLogged ? (
+              <NavLink className="navigation__link" to={"/login"}>
+                Login
+              </NavLink>
+            ) : (
+              <NavLink
+                className="navigation__link"
+                onClick={() => dispatch(logoutUserActionCreator())}
+                to={"/home"}
+              >
+                Logout
+              </NavLink>
+            )}
           </li>
         </ul>
       </div>

@@ -1,7 +1,6 @@
-import { render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { screen } from "@testing-library/react";
 import { Recipte } from "../../types/interfaces";
-import Wrapper from "../../utils/Wrapper";
+import renderWithProviders from "../../utils/testStore";
 import DetailPage from "./DetailPage";
 
 const mockItems: Recipte[] = [
@@ -18,22 +17,14 @@ const mockItems: Recipte[] = [
   },
 ];
 
-jest.mock("../../app/hooks", () => ({
-  ...jest.requireActual("../../app/hooks"),
-  useAppSelector: () => mockItems,
-}));
-
 describe("Given a component DetailPage", () => {
   describe("When rendered", () => {
     test("Then it should show a Header and a DetailCard components", () => {
       const title = "Mahlzeit";
 
-      render(
-        <BrowserRouter>
-          <DetailPage />
-        </BrowserRouter>,
-        { wrapper: Wrapper }
-      );
+      renderWithProviders(<DetailPage />, {
+        preloadedState: { reciptes: mockItems },
+      });
 
       const headerTitle = screen.getByRole("heading", { name: title });
       const itemTitle = screen.getByRole("heading", {

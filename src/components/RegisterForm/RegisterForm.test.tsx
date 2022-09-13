@@ -1,25 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import { store } from "../../app/store";
+import renderWithProviders from "../../utils/testStore";
+
 import RegisterForm from "./RegisterForm";
-
-interface WrapperProps {
-  children: JSX.Element | JSX.Element[];
-}
-
-let Wrapper: ({ children }: WrapperProps) => JSX.Element;
-
-beforeEach(() => {
-  Wrapper = ({ children }: WrapperProps): JSX.Element => {
-    return (
-      <Provider store={store}>
-        <BrowserRouter>{children}</BrowserRouter>
-      </Provider>
-    );
-  };
-});
 
 describe("Given a RegisterForm component", () => {
   const userName = "Cristina";
@@ -34,7 +17,7 @@ describe("Given a RegisterForm component", () => {
       const expectedPasswordConfirmText = "confirmar contraseña";
       const expectedButtonText = "Crear perfil";
 
-      render(<RegisterForm />, { wrapper: Wrapper });
+      renderWithProviders(<RegisterForm />);
 
       const formTestPlaceHolders: HTMLInputElement[] = [
         screen.getByPlaceholderText(expectedUserText),
@@ -52,7 +35,7 @@ describe("Given a RegisterForm component", () => {
     });
 
     test("Then it should update the input value with the typed data from user.", async () => {
-      render(<RegisterForm />, { wrapper: Wrapper });
+      renderWithProviders(<RegisterForm />);
 
       const nameInput: HTMLInputElement = screen.getByLabelText("Nombre:");
       const emailInput: HTMLInputElement = screen.getByLabelText("Email:");
@@ -76,7 +59,7 @@ describe("Given a RegisterForm component", () => {
 
   describe("And user click on register button", () => {
     test("Then it should be submit", async () => {
-      render(<RegisterForm />, { wrapper: Wrapper });
+      renderWithProviders(<RegisterForm />);
 
       const form = screen.getByTestId("form-register") as HTMLElement;
       form.onsubmit = jest.fn();

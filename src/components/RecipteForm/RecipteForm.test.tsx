@@ -1,8 +1,7 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { BrowserRouter } from "react-router-dom";
 import { ProtoRecipte } from "../../types/interfaces";
-import Wrapper from "../../utils/Wrapper";
+import renderWithProviders from "../../utils/testStore";
 import RecipteForm from "./RecipteForm";
 
 const recipte: ProtoRecipte = {
@@ -18,12 +17,7 @@ const recipte: ProtoRecipte = {
 describe("Given a component RecipteForm", () => {
   describe("When rendered and the user browses it", () => {
     test("Then it should update the input value with the typed data from user.", async () => {
-      render(
-        <BrowserRouter>
-          <RecipteForm />
-        </BrowserRouter>,
-        { wrapper: Wrapper }
-      );
+      renderWithProviders(<RecipteForm />);
 
       const nameInput: HTMLInputElement = screen.getByRole("textbox", {
         name: "Nombre:",
@@ -35,12 +29,7 @@ describe("Given a component RecipteForm", () => {
     });
 
     test("Then it should show the heading of each page", async () => {
-      render(
-        <BrowserRouter>
-          <RecipteForm />
-        </BrowserRouter>,
-        { wrapper: Wrapper }
-      );
+      renderWithProviders(<RecipteForm />);
 
       const button = screen.getByRole("button", { name: "Siguiente" });
 
@@ -70,12 +59,7 @@ describe("Given a component RecipteForm", () => {
 
   describe("When the user is in the last page and click on 'Crear Receta'", () => {
     test("It should send the formular", async () => {
-      render(
-        <BrowserRouter>
-          <RecipteForm />
-        </BrowserRouter>,
-        { wrapper: Wrapper }
-      );
+      renderWithProviders(<RecipteForm />);
 
       const button = screen.getByRole("button", { name: "Siguiente" });
 
@@ -102,12 +86,7 @@ describe("Given a component RecipteForm", () => {
 
   describe("When the user is in the last page and added a file", () => {
     test("Then it should calle the function createImage", async () => {
-      render(
-        <BrowserRouter>
-          <RecipteForm />
-        </BrowserRouter>,
-        { wrapper: Wrapper }
-      );
+      renderWithProviders(<RecipteForm />);
 
       const button = screen.getByRole("button", { name: "Siguiente" });
 
