@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
+import Wrapper from "../../utils/Wrapper";
 import Header from "./Header";
 
 describe("Given a component Header", () => {
@@ -10,7 +11,8 @@ describe("Given a component Header", () => {
       render(
         <BrowserRouter>
           <Header />
-        </BrowserRouter>
+        </BrowserRouter>,
+        { wrapper: Wrapper }
       );
 
       const heading = screen.getByRole("heading", { name: title });
