@@ -4,11 +4,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { store } from "./app/store";
+import { setupStore } from "./app/store";
 import { ThemeProvider } from "styled-components";
 import styledMainTheme from "./styles/styledMainTheme";
 import { BrowserRouter } from "react-router-dom";
 
+const store = setupStore();
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
