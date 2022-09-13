@@ -4,6 +4,7 @@ import {
   loadReciptesActionCreator,
 } from "../store/recipte/recipteSlice";
 import { Recipte } from "../types/interfaces";
+import renderWithProviders from "../utils/testStore";
 import Wrapper from "../utils/Wrapper";
 import useReciptes from "./useReciptes";
 
@@ -42,9 +43,7 @@ describe("Given a hook useReciptes", () => {
         result: {
           current: { getReciptes },
         },
-      } = renderHook(useReciptes, {
-        wrapper: Wrapper,
-      });
+      } = renderHook(useReciptes, { wrapper: Wrapper });
 
       await getReciptes(apiUrl);
 

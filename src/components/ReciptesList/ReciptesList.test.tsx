@@ -1,7 +1,7 @@
-import { render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { screen } from "@testing-library/react";
 import { Recipte } from "../../types/interfaces";
-import Wrapper from "../../utils/Wrapper";
+import renderWithProviders from "../../utils/testStore";
+
 import ReciptesList from "./ReciptesList";
 
 const mockItems: Recipte[] = [
@@ -28,24 +28,13 @@ const mockItems: Recipte[] = [
     persons: 0,
   },
 ];
-jest.mock("../../app/hooks", () => ({
-  ...jest.requireActual("../../app/hooks"),
-  useAppSelector: () => mockItems,
-}));
-
-afterEach(() => {
-  jest.resetAllMocks();
-});
 
 describe("Given a component ItemList", () => {
   describe("When rendered", () => {
     test("Then it should show too many ItemCards as elements has the array of items", () => {
-      render(
-        <BrowserRouter>
-          <ReciptesList />
-        </BrowserRouter>,
-        { wrapper: Wrapper }
-      );
+      renderWithProviders(<ReciptesList />, {
+        preloadedState: { reciptes: mockItems },
+      });
 
       const expectedElements = screen.getAllByTestId("test-list");
 

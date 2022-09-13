@@ -1,7 +1,6 @@
-import { render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { screen } from "@testing-library/react";
+import renderWithProviders from "../../utils/testStore";
 
-import Wrapper from "../../utils/Wrapper";
 import HomePage from "./HomePage";
 
 describe("Given a component HomePage", () => {
@@ -9,15 +8,11 @@ describe("Given a component HomePage", () => {
     test("Then it should show a Header component", () => {
       const title = "Mahlzeit";
 
-      render(
-        <BrowserRouter>
-          {" "}
-          <HomePage />
-        </BrowserRouter>,
-        { wrapper: Wrapper }
-      );
+      renderWithProviders(<HomePage />);
 
-      screen.getByRole("heading", { name: title });
+      const heading = screen.getByRole("heading", { name: title });
+
+      expect(heading).toBeInTheDocument();
     });
   });
 });
