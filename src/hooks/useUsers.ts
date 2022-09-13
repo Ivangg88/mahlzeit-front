@@ -4,6 +4,7 @@ import { loginUserActionCreator } from "../store/user/userSlice";
 import { TokenResponse, User, UserLoged, UserLogin } from "../types/interfaces";
 import decodeToken from "../utils/authorization";
 import { useNavigate } from "react-router-dom";
+import { failModal, sucessModal } from "../modals/modals";
 
 const useUsers = () => {
   const dispatch = useAppDispatch();
@@ -13,11 +14,12 @@ const useUsers = () => {
     let response: Response;
     try {
       response = await axios.post(`${apiUrl}/users/register`, user);
-
+      sucessModal("Usuario registrado correctamente");
       if (response.status !== 201) {
         throw new Error();
       }
     } catch (error) {
+      failModal("Problema al registrar usuario.");
       return 400;
     }
 
