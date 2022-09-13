@@ -19,7 +19,9 @@ const App = (): JSX.Element => {
         <Route path="/login" element={<LoginPage />} />
         <Route
           path="/create"
-          element={user.isLogged ? <CreateReciptePage /> : <LoginPage />}
+          element={
+            user.isLogged ? <CreateReciptePage /> : <Navigate to="/login" />
+          }
         />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
