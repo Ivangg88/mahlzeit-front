@@ -13,6 +13,7 @@ export interface UserRegister extends User {
 export interface UserLoged {
   userName: string;
   token: string;
+  isLogged?: boolean;
 }
 
 export interface PasswordCheck {
