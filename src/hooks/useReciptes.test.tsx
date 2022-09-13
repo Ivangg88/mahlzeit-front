@@ -50,22 +50,6 @@ describe("Given a hook useReciptes", () => {
         loadReciptesActionCreator(items)
       );
     });
-
-    describe("And receives a bad response", () => {
-      test("Then it should trhow a error", async () => {
-        global.fetch = jest.fn().mockResolvedValue([]);
-
-        const {
-          result: {
-            current: { getReciptes },
-          },
-        } = renderHook(useReciptes, { wrapper: Wrapper });
-
-        const error = await getReciptes(apiUrl);
-
-        expect(error).toBeInstanceOf(Error);
-      });
-    });
   });
 
   describe("When the function delete is called with an id", () => {

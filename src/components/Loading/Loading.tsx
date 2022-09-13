@@ -9,7 +9,7 @@ const Loading = () => {
           className="loading__image"
           src="/images/flork-loading.webp"
           alt="6"
-          height={400}
+          height={300}
         />
         <div className="container">
           <div className="dash one"></div>

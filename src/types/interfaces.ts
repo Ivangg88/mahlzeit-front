@@ -39,3 +39,7 @@ export interface Recipte extends ProtoRecipte {
 export interface TokenResponse {
   token: string;
 }
+
+export interface UiData {
+  isLoading: boolean;
+}
