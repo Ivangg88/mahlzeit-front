@@ -21,11 +21,15 @@ const DetailCard = ({ item }: ItemCardProps): JSX.Element => {
     <RecipteCardStyled>
       <h1 className="detail-card__title">
         {item.name}
-        <FontAwesomeIcon
-          className="detail-card__icon"
-          icon={faMinimize}
-          onClick={() => navigator("/home")}
-        />
+
+        <button
+          className="button-icon"
+          onClick={() => {
+            navigator(`/${item.id}`);
+          }}
+        >
+          <FontAwesomeIcon className="detail-card__icon" icon={faMinimize} />
+        </button>
       </h1>
       <img
         src={item.backupImage}
