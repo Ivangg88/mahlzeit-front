@@ -6,9 +6,9 @@ import DetailCard from "../../components/DetailCard/DetailCard";
 import Header from "../../components/Header/Header";
 import useReciptes from "../../hooks/useReciptes";
 import DetailPageStyled from "./DetailPageStyled";
+const urlId = `${process.env.REACT_APP_API_URL}/reciptes/getById`;
 
 const DetailPage = () => {
-  const urlId = `${process.env.REACT_APP_API_URL}/reciptes/getById`;
   const { id } = useParams();
 
   const { getRecipteById } = useReciptes();
@@ -17,7 +17,7 @@ const DetailPage = () => {
     (async () => {
       await getRecipteById(id!, urlId);
     })();
-  }, [getRecipteById, id, urlId]);
+  }, [getRecipteById, id]);
 
   const items = useAppSelector((state: RootState) => state.reciptes);
 
