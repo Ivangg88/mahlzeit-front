@@ -9,7 +9,7 @@ const ReciptesList = () => {
   return (
     <RecipteListStyled>
       {items.map((item) => (
-        <li data-testid="test-list" key={item.name}>
+        <li data-testid="test-list" key={item.id}>
           <RecipteCard item={item} />
         </li>
       ))}

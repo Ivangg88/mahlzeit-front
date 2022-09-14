@@ -1,4 +1,5 @@
 import { screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { setupStore } from "../../app/store";
 import renderWithProviders from "../../utils/testStore";
 import Header from "./Header";
@@ -10,12 +11,10 @@ const mockUser = {
 };
 const mockDispatch = jest.fn();
 
-beforeAll(() => () => {
-  jest.mock("../../app/hooks", () => ({
-    ...jest.requireActual("../../app/hooks"),
-    useAppDispatch: mockDispatch,
-  }));
-});
+jest.mock("../../app/hooks", () => ({
+  ...jest.requireActual("../../app/hooks"),
+  useAppDispatch: () => mockDispatch,
+}));
 
 setupStore({ user: mockUser });
 describe("Given a component Header", () => {
@@ -33,7 +32,7 @@ describe("Given a component Header", () => {
     });
   });
 
-  describe("When the user is logged", () => {
+  describe("When the user is not logged", () => {
     test("Then it should show a link with the text 'Login'", () => {
       renderWithProviders(<Header />, {
         preloadedState: { user: { ...mockUser, isLogged: false } },
@@ -41,6 +40,30 @@ describe("Given a component Header", () => {
       const link = screen.getByRole("link", { name: "Login" });
 
       expect(link).toBeInTheDocument();
+    });
+  });
+
+  describe("When the user is logged", () => {
+    test("Then it should show a link with the text 'Logout'", () => {
+      renderWithProviders(<Header />, {
+        preloadedState: { user: { ...mockUser, isLogged: true } },
+      });
+      const link = screen.getByRole("link", { name: "Logout" });
+
+      expect(link).toBeInTheDocument();
+    });
+  });
+
+  describe("When the user is logged and click on Logout", () => {
+    test("Then it should call the function navigate", () => {
+      renderWithProviders(<Header />, {
+        preloadedState: { user: { ...mockUser, isLogged: true } },
+      });
+      const link = screen.getByRole("link", { name: "Logout" });
+
+      userEvent.click(link);
+
+      expect(mockDispatch).toHaveBeenCalled();
     });
   });
 });

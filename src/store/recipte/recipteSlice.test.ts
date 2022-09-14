@@ -3,6 +3,7 @@ import {
   reciptesReducer,
   loadReciptesActionCreator,
   loadRecipteActionCreator,
+  deleteRecipteActionCreator,
 } from "./recipteSlice";
 
 describe("Given a loadReciptesActionCreator", () => {
@@ -62,7 +63,7 @@ describe("Given a loadRecipteActionCreator", () => {
 });
 
 describe("Given a reciptesReducer function", () => {
-  describe("When is called with an action type 'item/loadItems' and a payload with an item", () => {
+  describe("When is called with an action type 'recipte/loadReciptes' and a payload with an item", () => {
     test("Then it should return a copy of the loaded items", () => {
       const items: Recipte[] = [
         {
@@ -83,6 +84,30 @@ describe("Given a reciptesReducer function", () => {
       const receivedItems = reciptesReducer(items, action);
 
       expect(receivedItems).toStrictEqual(items);
+    });
+  });
+
+  describe("When is called with an action type 'recipte/deleteREcipte' and a payload with an id", () => {
+    test("Then it should delete the given recipte", () => {
+      const items: Recipte[] = [
+        {
+          id: "Mock id",
+          name: "",
+          dificulty: "Medio",
+          autor: "",
+          image: "",
+          persons: 0,
+          ingredients: "",
+          process: "",
+          backupImage: "",
+        },
+      ];
+
+      const action = deleteRecipteActionCreator(items[0].id);
+
+      const receivedItems = reciptesReducer(items, action);
+
+      expect(receivedItems.length).toBe(0);
     });
   });
 });

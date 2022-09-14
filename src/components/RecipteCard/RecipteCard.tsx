@@ -28,9 +28,10 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
       <h1 className="item-card__title">
         {item.name}
         <button
+          aria-label="maximize"
           className="button-icon"
           onClick={() => {
-            navigator(`/${item.id}`);
+            navigator(`/detail/${item.id}`);
           }}
         >
           <FontAwesomeIcon
@@ -42,7 +43,7 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
       </h1>
       <div className="container">
         <img
-          src={`${process.env.REACT_APP_API_URL}/${item.image}`}
+          src={`${item.backupImage}`}
           onError={({ currentTarget }) => {
             currentTarget.onerror = null;
             currentTarget.src = item.backupImage;
@@ -79,6 +80,7 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
                   icon={faFileCircleMinus}
                 ></FontAwesomeIcon>
                 <button
+                  aria-label="delete"
                   className="button"
                   onClick={() => deleteRecipte(item.id, apiUrl)}
                 >

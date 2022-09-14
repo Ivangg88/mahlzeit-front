@@ -23,6 +23,7 @@ const DetailCard = ({ item }: ItemCardProps): JSX.Element => {
         {item.name}
 
         <button
+          aria-label="minimize"
           className="button-icon"
           onClick={() => {
             navigator("/home");
@@ -48,6 +49,7 @@ const DetailCard = ({ item }: ItemCardProps): JSX.Element => {
       <div className="button-container">
         {user.userName === item.autor && (
           <button
+            aria-label="delete"
             className="delete-button"
             onClick={() => deleteRecipte(item.id, apiUrl)}
           >

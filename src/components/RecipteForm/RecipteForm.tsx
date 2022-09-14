@@ -51,7 +51,7 @@ const RecipteForm = (): JSX.Element => {
   };
 
   formData.append("name", recipte.name);
-  formData.append("autor", user.userName ? user.userName : "no autor");
+  formData.append("autor", user.userName);
   formData.append("dificulty", recipte.dificulty);
   formData.append("ingredients", recipte.ingredients);
   formData.append(
