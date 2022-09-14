@@ -19,7 +19,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="navigation__link" to={""}>
+            <NavLink className="navigation__link" to={"/private"}>
               Mis Recetas
             </NavLink>
           </li>
