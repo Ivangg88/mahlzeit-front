@@ -8,6 +8,7 @@ import { setupStore } from "./app/store";
 import { ThemeProvider } from "styled-components";
 import styledMainTheme from "./styles/styledMainTheme";
 import { BrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 const store = setupStore();
 const root = ReactDOM.createRoot(
@@ -16,6 +17,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
+      <ToastContainer />
       <BrowserRouter>
         <ThemeProvider theme={styledMainTheme}>
           <App />
