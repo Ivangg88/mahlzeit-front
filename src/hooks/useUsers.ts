@@ -41,9 +41,9 @@ const useUsers = () => {
       dispatch(loginUserActionCreator(userLogged));
 
       localStorage.setItem("token", userLogged.token);
-      sucessModal("Usuario logueado correctamente.");
       navigator("/");
     } catch (error) {
+      failModal("No se pudo logear");
       return 400;
     }
   };
