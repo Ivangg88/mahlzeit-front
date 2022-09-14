@@ -10,9 +10,22 @@ const NotFoundPageStyled = styled.div`
   align-items: center;
   color: ${(props) => props.theme.fontMainColor};
 
+  .container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .notfound {
     font-size: 50px;
     font-family: ${(props) => props.theme.fontMainType};
+    text-align: center;
+  }
+
+  .message {
+    font-size: 30px;
+    text-align: center;
   }
 
   .navigate {
