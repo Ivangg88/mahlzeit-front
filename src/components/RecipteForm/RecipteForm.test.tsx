@@ -1,7 +1,9 @@
-import { screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import React from "react";
 import { ProtoRecipte } from "../../types/interfaces";
 import renderWithProviders from "../../utils/testStore";
+import Wrapper from "../../utils/Wrapper";
 import RecipteForm from "./RecipteForm";
 
 const recipte: ProtoRecipte = {
@@ -13,6 +15,11 @@ const recipte: ProtoRecipte = {
   persons: 10,
   process: "Mock process",
 };
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => jest.fn(),
+}));
 
 describe("Given a component RecipteForm", () => {
   describe("When rendered and the user browses it", () => {
@@ -103,6 +110,22 @@ describe("Given a component RecipteForm", () => {
       const input = screen.getByLabelText("Añadir imagen:");
 
       await userEvent.upload(input, new File([""], ""));
+    });
+  });
+
+  describe("When the currentPage doesn´t exist", () => {
+    test("Then it should show a heading with the text 'Error Formulario no encontrado'", async () => {
+      const title = "Error formulario no encontrado";
+      const currentPage = 0;
+      const mockState = jest.fn().mockReturnValue([currentPage, jest.fn()]);
+
+      jest.spyOn(React, "useState").mockImplementation(mockState);
+
+      render(<RecipteForm />, { wrapper: Wrapper });
+
+      const heading = screen.getByRole("heading", { name: title });
+
+      expect(heading).toBeInTheDocument();
     });
   });
 });
