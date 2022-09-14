@@ -9,7 +9,6 @@ const IngredientsFormStyled = styled.form`
   color: ${(props) => props.theme.fontMainColor};
   border-radius: 15px;
   padding: 20px;
-  padding-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
