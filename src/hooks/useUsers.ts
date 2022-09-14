@@ -15,9 +15,6 @@ const useUsers = () => {
     try {
       response = await axios.post(`${apiUrl}/users/register`, user);
       sucessModal("Usuario registrado correctamente");
-      if (response.status !== 201) {
-        throw new Error();
-      }
     } catch (error) {
       failModal("Problema al registrar usuario.");
       return 400;
@@ -35,10 +32,6 @@ const useUsers = () => {
         user
       );
 
-      if (response.status !== 200) {
-        throw new Error();
-      }
-
       const {
         data: { token },
       } = response;
@@ -48,7 +41,7 @@ const useUsers = () => {
       dispatch(loginUserActionCreator(userLogged));
 
       localStorage.setItem("token", userLogged.token);
-
+      sucessModal("Usuario logueado correctamente.");
       navigator("/");
     } catch (error) {
       return 400;
