@@ -7,7 +7,7 @@ describe("Given a component FormulaBanner", () => {
     test("Then it should show a banner with 3 spans", () => {
       renderWithProviders(<FormularBanner currentPage={1} />);
 
-      const span = screen.getByText("Página 1");
+      const span = screen.getByText("1");
 
       expect(span).toBeInTheDocument();
     });

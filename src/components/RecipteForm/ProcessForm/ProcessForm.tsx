@@ -37,7 +37,7 @@ const ProcessForm = ({
             name="process"
             value={recipte.process}
             className="recipte-form__process"
-            placeholder="Introduce los ingredientes separados por comas"
+            placeholder="Introduce los pasos separados por salto de página"
             onChange={(event) => handleChange(event)}
           />
         </div>

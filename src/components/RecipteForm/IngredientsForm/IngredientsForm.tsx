@@ -83,7 +83,7 @@ const IngredientsForm = ({
             rows={20}
             value={recipte.ingredients}
             className="recipte-form__ingredients"
-            placeholder="Introduce los ingredientes separados por comas"
+            placeholder="Introduce los ingredientes separados por salto de página"
             onChange={(event) => handleChange(event)}
           />
         </div>

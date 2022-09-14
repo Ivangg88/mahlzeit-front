@@ -2,7 +2,6 @@ import axios, { AxiosResponse } from "axios";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../app/hooks";
-import { failModal } from "../modals/modals";
 import {
   deleteRecipteActionCreator,
   loadRecipteActionCreator,
@@ -45,7 +44,6 @@ const useReciptes = () => {
       navigator("/home");
     } catch (error) {
       dispatch(closeLoadingModalActionCreator());
-      failModal("Error cargado los datos");
     }
   };
 
@@ -62,7 +60,6 @@ const useReciptes = () => {
       navigator("/home");
     } catch (error) {
       dispatch(closeLoadingModalActionCreator());
-      failModal("Error cargado los datos");
       return error;
     }
   };
@@ -76,7 +73,6 @@ const useReciptes = () => {
         dispatch(loadReciptesActionCreator([response.data.recipte]));
       } catch (error) {
         dispatch(closeLoadingModalActionCreator());
-        failModal("Error cargado los datos");
         return error;
       }
     },
