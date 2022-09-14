@@ -1,31 +1,9 @@
 import { rest } from "msw";
 import { Recipte, User } from "../types/interfaces";
+import { preloadStore } from "../utils/storePreloadTest";
 
-const items: Recipte[] = [
-  {
-    id: "Mock id",
-    name: "Mock item",
-    dificulty: "Fácil",
-    autor: "",
-    persons: 0,
-    image: "",
-    ingredients: "",
-    process: "",
-    backupImage: "",
-  },
-];
-
-const recipte: Recipte = {
-  backupImage: "",
-  id: "",
-  autor: "Mock autor",
-  dificulty: "Mock dificulty",
-  image: " Mock image",
-  ingredients: "Mock ingredients",
-  name: " Mock name",
-  persons: 4,
-  process: "Mock process",
-};
+const recipte = preloadStore.mockRecipte;
+const items: Recipte[] = [recipte];
 
 export const handlers = [
   rest.post(
