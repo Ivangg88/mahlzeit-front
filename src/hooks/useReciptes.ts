@@ -23,16 +23,16 @@ const useReciptes = () => {
       try {
         dispatch(openLoadingModalActionCreator());
         const response = await fetch(apiUrl);
+
         const { reciptes } = await response.json();
 
         dispatch(loadReciptesActionCreator(reciptes));
-
-        setTimeout(() => dispatch(closeLoadingModalActionCreator()), 1000);
       } catch (error) {
-        failModal("Error cargando los datos.");
+        dispatch(closeLoadingModalActionCreator());
+        navigator("/error");
       }
     },
-    [dispatch]
+    [dispatch, navigator]
   );
 
   const createRecipte = async (data: FormData, apiUrl: string) => {
@@ -40,15 +40,12 @@ const useReciptes = () => {
       dispatch(openLoadingModalActionCreator());
       const response: AxiosResponse<Recipte> = await axios.post(apiUrl, data);
 
-      if (response.status !== 200) {
-        throw new Error();
-      }
-
       dispatch(loadRecipteActionCreator(response.data));
-      setTimeout(() => dispatch(closeLoadingModalActionCreator()), 1000);
+
       navigator("/home");
     } catch (error) {
-      return 400;
+      dispatch(closeLoadingModalActionCreator());
+      failModal("Error cargado los datos");
     }
   };
 
@@ -58,16 +55,14 @@ const useReciptes = () => {
     };
     try {
       dispatch(openLoadingModalActionCreator());
-      const response = await axios.delete(apiUrl, config);
 
-      if (response.status !== 201) {
-        throw new Error();
-      }
+      await axios.delete(apiUrl, config);
 
       dispatch(deleteRecipteActionCreator(id));
-      setTimeout(() => dispatch(closeLoadingModalActionCreator()), 1000);
       navigator("/home");
     } catch (error) {
+      dispatch(closeLoadingModalActionCreator());
+      failModal("Error cargado los datos");
       return error;
     }
   };
@@ -78,13 +73,10 @@ const useReciptes = () => {
         dispatch(openLoadingModalActionCreator());
         const response = await axios.get(`${apiUrl}/${id}`);
 
-        if (response.status !== 200) {
-          throw new Error();
-        }
-
         dispatch(loadReciptesActionCreator([response.data.recipte]));
-        setTimeout(() => dispatch(closeLoadingModalActionCreator()), 1000);
       } catch (error) {
+        dispatch(closeLoadingModalActionCreator());
+        failModal("Error cargado los datos");
         return error;
       }
     },

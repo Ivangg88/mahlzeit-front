@@ -23,7 +23,7 @@ export interface PasswordCheck {
 
 export interface ProtoRecipte {
   name: string;
-  persons: number;
+  persons: string | number;
   dificulty: string;
   autor: string;
   ingredients: string;

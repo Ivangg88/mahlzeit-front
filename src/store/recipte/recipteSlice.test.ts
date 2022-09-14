@@ -1,4 +1,5 @@
 import { Recipte } from "../../types/interfaces";
+import { preloadStore } from "../../utils/storePreloadTest";
 import {
   reciptesReducer,
   loadReciptesActionCreator,
@@ -6,22 +7,13 @@ import {
   deleteRecipteActionCreator,
 } from "./recipteSlice";
 
+const newItem = preloadStore.mockRecipte;
+const items: Recipte[] = [newItem];
+
 describe("Given a loadReciptesActionCreator", () => {
   describe("When is called", () => {
     test("Then it should return an action with the type recipte/loadReciptes", () => {
       const actionType = "recipte/loadReciptes";
-      const newItem: Recipte = {
-        id: "",
-        name: "",
-        dificulty: "Medio",
-        autor: "",
-        image: "",
-        persons: 0,
-        ingredients: "",
-        process: "",
-        backupImage: "",
-      };
-
       const expectedAction = {
         type: actionType,
         payload: [newItem],
@@ -38,24 +30,13 @@ describe("Given a loadRecipteActionCreator", () => {
   describe("When is called", () => {
     test("Then it should return an action with the type recipte/loadRecipte", () => {
       const actionType = "recipte/loadRecipte";
-      const recipte: Recipte = {
-        id: "",
-        name: "",
-        dificulty: "Medio",
-        autor: "",
-        image: "",
-        persons: 0,
-        ingredients: "",
-        process: "",
-        backupImage: "",
-      };
 
       const expectedAction = {
         type: actionType,
-        payload: recipte,
+        payload: newItem,
       };
 
-      const action = loadRecipteActionCreator(recipte);
+      const action = loadRecipteActionCreator(newItem);
 
       expect(action).toStrictEqual(expectedAction);
     });
@@ -65,20 +46,6 @@ describe("Given a loadRecipteActionCreator", () => {
 describe("Given a reciptesReducer function", () => {
   describe("When is called with an action type 'recipte/loadReciptes' and a payload with an item", () => {
     test("Then it should return a copy of the loaded items", () => {
-      const items: Recipte[] = [
-        {
-          id: "",
-          name: "",
-          dificulty: "Medio",
-          autor: "",
-          image: "",
-          persons: 0,
-          ingredients: "",
-          process: "",
-          backupImage: "",
-        },
-      ];
-
       const action = loadReciptesActionCreator(items);
 
       const receivedItems = reciptesReducer(items, action);
@@ -89,21 +56,7 @@ describe("Given a reciptesReducer function", () => {
 
   describe("When is called with an action type 'recipte/deleteREcipte' and a payload with an id", () => {
     test("Then it should delete the given recipte", () => {
-      const items: Recipte[] = [
-        {
-          id: "Mock id",
-          name: "",
-          dificulty: "Medio",
-          autor: "",
-          image: "",
-          persons: 0,
-          ingredients: "",
-          process: "",
-          backupImage: "",
-        },
-      ];
-
-      const action = deleteRecipteActionCreator(items[0].id);
+      const action = deleteRecipteActionCreator(newItem.id);
 
       const receivedItems = reciptesReducer(items, action);
 

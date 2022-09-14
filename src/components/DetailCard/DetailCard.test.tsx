@@ -1,6 +1,7 @@
 import { fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Recipte } from "../../types/interfaces";
+import { preloadStore } from "../../utils/storePreloadTest";
 import renderWithProviders from "../../utils/testStore";
 import DetailCard from "./DetailCard";
 
@@ -18,17 +19,8 @@ jest.mock("react-router-dom", () => ({
 }));
 
 const name = "Patatas bravas";
-const item: Recipte = {
-  name: name,
-  dificulty: "Fácil",
-  autor: "",
-  id: "",
-  image: "",
-  ingredients: "",
-  persons: 0,
-  process: "",
-  backupImage: "",
-};
+const item = preloadStore.mockRecipte;
+item.name = name;
 
 describe("Given a component DetailCard", () => {
   describe("When rendered and receives by props an item with the name 'Patatas bravas'", () => {
