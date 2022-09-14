@@ -1,7 +1,26 @@
+import { useCallback, useEffect } from "react";
+import { useAppDispatch } from "../../app/hooks";
+import { closeLoadingModalActionCreator } from "../../store/ui/uiSlice";
+import { timer } from "../../utils/timers";
 import LoadingStyled from "./LoadingStyled";
 import "./LoadingStyled.ts";
 
 const Loading = () => {
+  const dispatch = useAppDispatch();
+
+  const handleClose = useCallback(() => {
+    dispatch(closeLoadingModalActionCreator());
+  }, [dispatch]);
+
+  useEffect(() => {
+    const time = setTimeout(() => {
+      handleClose();
+    }, timer.close);
+    return () => {
+      clearTimeout(time);
+    };
+  }, [handleClose]);
+
   return (
     <>
       <LoadingStyled>
