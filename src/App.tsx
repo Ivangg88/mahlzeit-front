@@ -18,16 +18,17 @@ const App = (): JSX.Element => {
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<HomePage />} />
-        <Route path="/:id" element={<DetailPage />} />
+        <Route path="/detail/:id" element={<DetailPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/error" element={<NotFoundPage error={true} />} />
+        <Route path="*" element={<NotFoundPage error={false} />} />
         <Route
           path="/create"
           element={
             user.isLogged ? <CreateReciptePage /> : <Navigate to="/login" />
           }
         />
-        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );
