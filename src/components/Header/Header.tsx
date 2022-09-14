@@ -8,6 +8,10 @@ const Header = () => {
   const user = useAppSelector((state: RootState) => state.user);
   const dispatch = useAppDispatch();
 
+  const logOut = () => {
+    dispatch(logoutUserActionCreator());
+  };
+
   return (
     <HeaderStyled>
       <div className="header__text-container">
@@ -36,7 +40,7 @@ const Header = () => {
             ) : (
               <NavLink
                 className="navigation__link"
-                onClick={() => dispatch(logoutUserActionCreator())}
+                onClick={logOut}
                 to={"/home"}
               >
                 Logout
