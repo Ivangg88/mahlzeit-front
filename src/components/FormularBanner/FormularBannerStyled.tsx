@@ -4,16 +4,16 @@ const FormularBannerStyled = styled.section`
   width: 80%;
   display: flex;
   justify-content: space-between;
+  font-family: ${(props) => props.theme.fontMainType};
 
   .banner__counter {
-    border: 1px solid black;
-    border-radius: 100%;
-    padding: 10px;
     text-align: center;
+    font-size: 25px;
+    color: #dddddd;
   }
 
   .banner__counter--active {
-    background-color: grey;
+    color: #330000;
   }
 `;
 

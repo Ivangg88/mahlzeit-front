@@ -9,6 +9,7 @@ const IngredientsFormStyled = styled.form`
   color: ${(props) => props.theme.fontMainColor};
   border-radius: 15px;
   padding: 20px;
+  padding-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,13 +64,14 @@ const IngredientsFormStyled = styled.form`
       justify-content: space-evenly;
     }
   }
+
   .button-container {
+    width: 100%;
     display: flex;
     justify-content: flex-end;
-  }
-  Button {
     position: relative;
     bottom: -30px;
+    margin-bottom: 10px;
   }
 `;
 
