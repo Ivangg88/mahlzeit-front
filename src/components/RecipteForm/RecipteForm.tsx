@@ -54,10 +54,7 @@ const RecipteForm = (): JSX.Element => {
   formData.append("autor", user.userName);
   formData.append("dificulty", recipte.dificulty);
   formData.append("ingredients", recipte.ingredients);
-  formData.append(
-    "persons",
-    recipte.persons ? recipte.persons.toString() : "0"
-  );
+  formData.append("persons", recipte.persons as string);
   formData.append("process", recipte.process);
 
   const submit = (event: React.FormEvent<HTMLFormElement>, url: string) => {

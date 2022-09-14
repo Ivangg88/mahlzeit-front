@@ -1,18 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { ProtoRecipte } from "../../../types/interfaces";
+import { preloadStore } from "../../../utils/storePreloadTest";
 import IngredientsForm from "./IngredientsForm";
 
 describe("Given a component IngredientsForm", () => {
-  const recipte: ProtoRecipte = {
-    autor: "Mock autor",
-    dificulty: "Mock dificulty",
-    image: " Mock image",
-    ingredients: "Mock ingredients",
-    name: " Mock name",
-    persons: 4,
-    process: "Mock process",
-  };
+  const recipte = preloadStore.mockProtoRecipte;
 
   const props = {
     recipte: recipte,
