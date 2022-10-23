@@ -63,10 +63,36 @@ const RecipteForm = (): JSX.Element => {
     navigate("/home");
   };
 
+  const initialIngredientFields: string[] = [" "];
+
+  const [ingredientFields, setIngredientFields] = useState(
+    initialIngredientFields
+  );
+
+  const addIngredientField = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ): void => {
+    event.preventDefault();
+    const newInputs = [...ingredientFields, " "];
+    setIngredientFields(newInputs);
+  };
+
+  const deleteIngredientField = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ): void => {
+    event.preventDefault();
+    ingredientFields.pop();
+    const newInputs = ingredientFields;
+    setIngredientFields(newInputs);
+  };
+
   switch (currentPage) {
     case 1:
       return (
         <IngredientsForm
+          deleteIngredientField={deleteIngredientField}
+          addIngredientField={addIngredientField}
+          recipteFields={ingredientFields}
           handleChange={addDataFromInputs}
           recipte={recipte}
           nextPage={nextPage}

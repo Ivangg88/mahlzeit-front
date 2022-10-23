@@ -16,6 +16,9 @@ describe("Given a component IngredientsForm", () => {
     test("Then it should show a form with 3 inputs, a spinbutton and a button", () => {
       render(
         <IngredientsForm
+          deleteIngredientField={() => {}}
+          addIngredientField={() => {}}
+          recipteFields={[]}
           handleChange={props.handleChange}
           nextPage={props.nextPage}
           previousPage={props.previousPage}
@@ -35,6 +38,9 @@ describe("Given a component IngredientsForm", () => {
     test("Then it should update the input value with the typed data from user.", async () => {
       render(
         <IngredientsForm
+          deleteIngredientField={() => {}}
+          addIngredientField={() => {}}
+          recipteFields={[]}
           handleChange={props.handleChange}
           nextPage={props.nextPage}
           previousPage={props.previousPage}
@@ -71,6 +77,9 @@ describe("Given a component IngredientsForm", () => {
     test("Then it should call the function nextPage", async () => {
       render(
         <IngredientsForm
+          deleteIngredientField={() => {}}
+          addIngredientField={() => {}}
+          recipteFields={[]}
           handleChange={props.handleChange}
           nextPage={props.nextPage}
           previousPage={props.previousPage}

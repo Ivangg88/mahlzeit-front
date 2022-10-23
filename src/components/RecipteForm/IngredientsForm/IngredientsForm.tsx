@@ -5,6 +5,13 @@ import IngredientsFormStyled from "./IngredientsFormStyled";
 
 interface IngredientsFromProps {
   recipte: ProtoRecipte;
+  recipteFields: string[];
+  addIngredientField: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => void;
+  deleteIngredientField: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => void;
   nextPage: (currentPage: number) => void;
   previousPage: (currentPage: number) => void;
   handleChange: (
@@ -18,6 +25,9 @@ const IngredientsForm = ({
   handleChange,
   recipte,
   nextPage,
+  addIngredientField,
+  deleteIngredientField,
+  recipteFields,
 }: IngredientsFromProps): JSX.Element => {
   return (
     <IngredientsFormStyled
@@ -76,6 +86,24 @@ const IngredientsForm = ({
           <label htmlFor="ingredients" className="label">
             Ingredientes:
           </label>
+          <ul>
+            {recipteFields.map((field) => (
+              <li>
+                <input></input>
+              </li>
+            ))}
+          </ul>
+          <button onClick={(event) => addIngredientField(event)}>{"+"}</button>
+          {/* <button onClick={(event) => deleteIngredientField(event)}>
+            {"-"}
+          </button> */}
+        </div>
+      </div>
+
+      {/* <div className="recipte-form__input-field">
+          <label htmlFor="ingredients" className="label">
+            Ingredientes:
+          </label>
           <textarea
             id="ingredients"
             name="ingredients"
@@ -87,7 +115,7 @@ const IngredientsForm = ({
             onChange={(event) => handleChange(event)}
           />
         </div>
-      </div>
+      </div> */}
 
       <div className="button-container">
         <Button
