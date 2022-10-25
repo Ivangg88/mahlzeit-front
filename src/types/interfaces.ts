@@ -31,6 +31,12 @@ export interface ProtoRecipte {
   image: File | string;
 }
 
+export interface Ingredient {
+  name: string;
+  quantity: string;
+  unit: string;
+}
+
 export interface Recipte extends ProtoRecipte {
   id: string;
   backupImage: string;
