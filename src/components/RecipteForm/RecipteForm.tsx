@@ -21,6 +21,7 @@ const RecipteForm = (): JSX.Element => {
   const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/create`;
   const [recipte, setRecipte] = useState<ProtoRecipte>(initialRecipte);
   const [currentPage, setPage] = useState<number>(1);
+  const [ingredientFields, setIngredientFields] = useState([1, 1]);
   const { createRecipte } = useReciptes();
   const user = useAppSelector((state) => state.user);
   const navigate = useNavigate();
@@ -63,27 +64,21 @@ const RecipteForm = (): JSX.Element => {
     navigate("/home");
   };
 
-  const initialIngredientFields: string[] = [" "];
-
-  const [ingredientFields, setIngredientFields] = useState(
-    initialIngredientFields
-  );
-
   const addIngredientField = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ): void => {
     event.preventDefault();
-    const newInputs = [...ingredientFields, " "];
-    setIngredientFields(newInputs);
+    setIngredientFields(ingredientFields.concat(1));
   };
 
   const deleteIngredientField = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ): void => {
     event.preventDefault();
-    ingredientFields.pop();
-    const newInputs = ingredientFields;
-    setIngredientFields(newInputs);
+    if (ingredientFields.length === 1) {
+      return;
+    }
+    setIngredientFields(ingredientFields.slice(0, ingredientFields.length - 1));
   };
 
   switch (currentPage) {
