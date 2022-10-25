@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
-const IngredientsFormStyled = styled.form`
-  position: relative;
+const IngredientsFormStyled = styled.div`
   width: 400px;
-  height: 620px;
   background-color: ${(props) => props.theme.thirdColor};
   font-family: ${(props) => props.theme.fontSecondType};
   color: ${(props) => props.theme.fontMainColor};
@@ -13,6 +11,11 @@ const IngredientsFormStyled = styled.form`
   flex-direction: column;
   align-items: center;
   gap: 20px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
 
   .recipte-form {
     &__title {
@@ -40,24 +43,20 @@ const IngredientsFormStyled = styled.form`
 
     &__input {
       min-height: 37px;
+      width: 100%;
       padding-left: 5px;
       border: none;
       border-radius: 5px;
+      background-color: aliceblue;
     }
 
     &__ingredients {
-      min-height: 100px;
-      width: 360px;
-      resize: none;
-      padding-left: 5px;
-      border: none;
-      border-radius: 5px;
-      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     &__banner {
-      position: relative;
-      bottom: -30px;
       width: 100%;
       display: flex;
       justify-content: space-evenly;
@@ -68,9 +67,56 @@ const IngredientsFormStyled = styled.form`
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    position: relative;
-    bottom: -30px;
     margin-bottom: 10px;
+  }
+
+  .ingredient {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+
+    &__input {
+      min-height: 37px;
+      width: 100%;
+      padding-left: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: aliceblue;
+    }
+
+    &__label {
+      width: 5%;
+    }
+
+    &__name {
+      width: 70%;
+    }
+
+    &__quantity {
+      width: 20%;
+    }
+
+    &__unit {
+      width: 15%;
+    }
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+
+    &--small {
+      background-color: transparent;
+      height: 30px;
+      width: 60px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    &--small:hover {
+      color: white;
+    }
   }
 `;
 
