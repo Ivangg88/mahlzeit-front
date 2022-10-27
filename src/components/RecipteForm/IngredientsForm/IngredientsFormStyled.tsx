@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const IngredientsFormStyled = styled.div`
+const IngredientsFormStyled = styled.form`
   width: 400px;
   background-color: ${(props) => props.theme.thirdColor};
   font-family: ${(props) => props.theme.fontSecondType};
