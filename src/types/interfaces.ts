@@ -26,7 +26,7 @@ export interface ProtoRecipte {
   persons: string | number;
   dificulty: string;
   autor: string;
-  ingredients: string;
+  ingredients: Ingredient[] | string;
   process: string;
   image: File | string;
 }
