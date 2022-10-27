@@ -4,8 +4,8 @@ import CreateReciptePage from "./CreateReciptePage";
 
 describe("Given a componente CreateReciptePage", () => {
   describe("When rendered", () => {
-    test("Then it should show a RecipteForm component", () => {
-      const title = "Ingredientes";
+    test("Then it should show a RecipteForm component with the title 'Crea tu receta'", () => {
+      const title = "Crea tu receta";
 
       renderWithProviders(<CreateReciptePage />);
 
