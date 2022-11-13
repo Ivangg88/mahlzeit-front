@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
 import useReciptes from "../../hooks/useReciptes";
 import { Ingredient, ProtoRecipte } from "../../types/interfaces";
+import FormularBanner from "./FormularBanner/FormularBanner";
 import ImageForm from "./ImageForm/ImageForm";
-import IngredientsForm from "./IngredientsForm/IngredientsForm";
+import DetailsForm from "./DetailsForm/DetailsForm";
 import ProcessForm from "./ProcessForm/ProcessForm";
 
 const RecipteForm = (): JSX.Element => {
@@ -32,14 +33,12 @@ const RecipteForm = (): JSX.Element => {
   const user = useAppSelector((state) => state.user);
   const navigate = useNavigate();
 
-  const nextPage = (page: number) => {
-    page += 1;
-    setPage(page);
+  const nextPage = () => {
+    setPage(currentPage + 1);
   };
 
-  const previousPage = (page: number) => {
-    page -= 1;
-    setPage(page);
+  const previousPage = () => {
+    setPage(currentPage - 1);
   };
 
   const addDataFromInputs = (
@@ -61,7 +60,7 @@ const RecipteForm = (): JSX.Element => {
   formData.append("autor", user.userName);
   formData.append("dificulty", recipte.dificulty);
   formData.append("ingredients", JSON.stringify(recipte.ingredients));
-  formData.append("persons", recipte.persons as string);
+  formData.append("persons", recipte.persons.toString());
   formData.append("process", recipte.process);
 
   const submit = (event: React.FormEvent<HTMLFormElement>, url: string) => {
@@ -70,44 +69,53 @@ const RecipteForm = (): JSX.Element => {
     navigate("/home");
   };
 
-  switch (currentPage) {
-    case 1:
-      return (
-        <IngredientsForm
-          ingredients={recipte.ingredients as Ingredient[]}
-          setRecipte={setRecipte}
-          handleChange={addDataFromInputs}
-          recipte={recipte}
-          nextPage={nextPage}
-          previousPage={previousPage}
-        />
-      );
+  const selectedPage = (currentPage: number): JSX.Element => {
+    switch (currentPage) {
+      case 1:
+        return (
+          <DetailsForm
+            ingredients={recipte.ingredients as Ingredient[]}
+            setRecipte={setRecipte}
+            handleChange={addDataFromInputs}
+            recipte={recipte}
+            nextPage={nextPage}
+            previousPage={previousPage}
+          />
+        );
 
-    case 2:
-      return (
-        <ProcessForm
-          handleChange={addDataFromInputs}
-          recipte={recipte}
-          nextPage={nextPage}
-          previousPage={previousPage}
-        />
-      );
+      case 2:
+        return (
+          <ProcessForm
+            handleChange={addDataFromInputs}
+            recipte={recipte}
+            nextPage={nextPage}
+            previousPage={previousPage}
+          />
+        );
 
-    case 3:
-      return (
-        <ImageForm
-          createImage={createImage}
-          recipte={recipte}
-          nextPage={nextPage}
-          previousPage={previousPage}
-          submit={(event) => submit(event, apiUrl)}
-        />
-      );
+      case 3:
+        return (
+          <ImageForm
+            createImage={createImage}
+            recipte={recipte}
+            nextPage={nextPage}
+            previousPage={previousPage}
+            submit={(event) => submit(event, apiUrl)}
+          />
+        );
 
-    default:
-      break;
-  }
-  return <h1>Error formulario no encontrado</h1>;
+      default:
+        break;
+    }
+    return <h1>Error formulario no encontrado</h1>;
+  };
+
+  return (
+    <>
+      {selectedPage(currentPage)}{" "}
+      <FormularBanner currentPage={currentPage} pages={3} />
+    </>
+  );
 };
 
 export default RecipteForm;
