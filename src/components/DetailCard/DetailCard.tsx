@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinimize } from "@fortawesome/free-solid-svg-icons";
 import RecipteCardStyled from "./DetailCardStyled";
-import { Recipte } from "../../types/interfaces";
+import { Ingredient, Recipte } from "../../types/interfaces";
 import useReciptes from "../../hooks/useReciptes";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
@@ -16,6 +16,20 @@ const DetailCard = ({ item }: ItemCardProps): JSX.Element => {
   const { deleteRecipte } = useReciptes();
   const user = useAppSelector((state: RootState) => state.user);
   const navigator = useNavigate();
+
+  const ingredients = (item.ingredients as Ingredient[]).map((ingredient) => {
+    return (
+      <>
+        <li>
+          <ul>
+            <li>{ingredient.name}</li>
+            <li>{ingredient.name}</li>
+            <li>{ingredient.name}</li>
+          </ul>
+        </li>
+      </>
+    );
+  });
 
   return (
     <RecipteCardStyled>
@@ -39,7 +53,7 @@ const DetailCard = ({ item }: ItemCardProps): JSX.Element => {
       />
       <div className="detail-card__ingredients">
         <h2 className="detail-card__subtitle">Ingredientes</h2>
-        <p>{item.ingredients}</p>
+        <ul>{ingredients}</ul>
       </div>
       <div className="detail-card__process">
         <h2 className="detail-card__subtitle">Procedimiento</h2>

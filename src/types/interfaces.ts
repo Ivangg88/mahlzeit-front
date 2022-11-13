@@ -23,10 +23,10 @@ export interface PasswordCheck {
 
 export interface ProtoRecipte {
   name: string;
-  persons: string | number;
+  persons: number;
   dificulty: string;
   autor: string;
-  ingredients: Ingredient[] | string;
+  ingredients: Ingredient[];
   process: string;
   image: File | string;
 }
