@@ -1,33 +1,11 @@
 import { screen } from "@testing-library/react";
 import { Recipte } from "../../types/interfaces";
+import { preloadStore } from "../../utils/storePreloadTest";
 import renderWithProviders from "../../utils/testStore";
 
 import ReciptesList from "./ReciptesList";
 
-const mockItems: Recipte[] = [
-  {
-    id: "Mock id",
-    name: "Mock item",
-    autor: "Mock autor",
-    dificulty: "Difícil",
-    image: "url",
-    ingredients: "",
-    persons: 0,
-    process: "",
-    backupImage: "",
-  },
-  {
-    id: "Mock id 2",
-    name: "Mock item 2",
-    autor: "Mock autor 2",
-    dificulty: "Difícil",
-    image: "url 2",
-    ingredients: "",
-    process: "",
-    backupImage: "",
-    persons: 0,
-  },
-];
+const mockItems: Recipte[] = [preloadStore.mockRecipte];
 
 describe("Given a component ItemList", () => {
   describe("When rendered", () => {
