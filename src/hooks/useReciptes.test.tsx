@@ -7,7 +7,6 @@ import {
   closeLoadingModalActionCreator,
   openLoadingModalActionCreator,
 } from "../store/ui/uiSlice";
-import { Recipte } from "../types/interfaces";
 import { preloadStore } from "../utils/storePreloadTest";
 import Wrapper from "../utils/Wrapper";
 import useReciptes from "./useReciptes";
@@ -26,7 +25,7 @@ jest.mock("react-router-dom", () => ({
 }));
 
 const recipte = preloadStore.mockRecipte;
-const items = [preloadStore.mockProtoRecipte];
+const items = [preloadStore.mockRecipte];
 
 describe("Given a hook useReciptes", () => {
   describe("When the function getReciptes is called with an url", () => {

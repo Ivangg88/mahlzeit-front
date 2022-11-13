@@ -86,8 +86,8 @@ const RecipteForm = (): JSX.Element => {
       case 2:
         return (
           <ProcessForm
-            handleChange={addDataFromInputs}
             recipte={recipte}
+            setRecipte={setRecipte}
             nextPage={nextPage}
             previousPage={previousPage}
           />
