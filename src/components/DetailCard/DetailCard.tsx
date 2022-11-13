@@ -23,11 +23,24 @@ const DetailCard = ({ item }: ItemCardProps): JSX.Element => {
         <li>
           <ul>
             <li>{ingredient.name}</li>
-            <li>{ingredient.name}</li>
-            <li>{ingredient.name}</li>
+            <li>{ingredient.quantity}</li>
+            <li>{ingredient.quantity}</li>
           </ul>
         </li>
       </>
+    );
+  });
+
+  const processes = item.process.map((process, index) => {
+    return (
+      <li>
+        <ul>
+          <li>{process.process}</li>
+          <li>
+            <img alt={`process ${index}`} src={`${process.picture}`}></img>{" "}
+          </li>
+        </ul>
+      </li>
     );
   });
 
@@ -57,7 +70,7 @@ const DetailCard = ({ item }: ItemCardProps): JSX.Element => {
       </div>
       <div className="detail-card__process">
         <h2 className="detail-card__subtitle">Procedimiento</h2>
-        <p>{item.process}</p>
+        <ul>{processes}</ul>
       </div>
 
       <div className="button-container">

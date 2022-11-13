@@ -22,7 +22,7 @@ const RecipteForm = (): JSX.Element => {
       },
     ],
     persons: 0,
-    process: "",
+    process: [{ process: "", picture: "", backupPicture: "" }],
   };
 
   const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/create`;
@@ -61,7 +61,7 @@ const RecipteForm = (): JSX.Element => {
   formData.append("dificulty", recipte.dificulty);
   formData.append("ingredients", JSON.stringify(recipte.ingredients));
   formData.append("persons", recipte.persons.toString());
-  formData.append("process", recipte.process);
+  formData.append("process", JSON.stringify(recipte.process));
 
   const submit = (event: React.FormEvent<HTMLFormElement>, url: string) => {
     event.preventDefault();
@@ -86,8 +86,8 @@ const RecipteForm = (): JSX.Element => {
       case 2:
         return (
           <ProcessForm
-            handleChange={addDataFromInputs}
             recipte={recipte}
+            setRecipte={setRecipte}
             nextPage={nextPage}
             previousPage={previousPage}
           />

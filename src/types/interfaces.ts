@@ -27,7 +27,7 @@ export interface ProtoRecipte {
   dificulty: string;
   autor: string;
   ingredients: Ingredient[];
-  process: string;
+  process: Process[];
   image: File | string;
 }
 
@@ -35,6 +35,12 @@ export interface Ingredient {
   name: string;
   quantity: string;
   unit: string;
+}
+
+export interface Process {
+  process: string;
+  picture: string;
+  backupPicture: string;
 }
 
 export interface Recipte extends ProtoRecipte {

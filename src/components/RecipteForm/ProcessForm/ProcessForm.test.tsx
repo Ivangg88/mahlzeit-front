@@ -17,10 +17,10 @@ describe("Given a component ProcessForm", () => {
     test("Then it should show a form with a text input and 2 buttons", () => {
       render(
         <ProcessForm
-          handleChange={props.handleChange}
           nextPage={props.nextPage}
           previousPage={props.previousPage}
           recipte={recipte}
+          setRecipte={jest.fn()}
         />
       );
 
@@ -36,28 +36,28 @@ describe("Given a component ProcessForm", () => {
     test("Then it should update the input value with the typed data from user.", async () => {
       render(
         <ProcessForm
-          handleChange={props.handleChange}
           nextPage={props.nextPage}
           previousPage={props.previousPage}
           recipte={recipte}
+          setRecipte={jest.fn()}
         />
       );
 
       const processInput: HTMLInputElement = screen.getByRole("textbox");
 
-      await userEvent.type(processInput, recipte.process);
+      await userEvent.type(processInput, recipte.process[0].process);
 
-      expect(processInput.value).toBe(recipte.process);
+      expect(processInput.value).toBe(recipte.process[0].process);
     });
 
     describe("And the user click on 'Siguiente'", () => {
       test("Then it should call the function nextPage", async () => {
         render(
           <ProcessForm
-            handleChange={props.handleChange}
             nextPage={props.nextPage}
             previousPage={props.previousPage}
             recipte={recipte}
+            setRecipte={jest.fn()}
           />
         );
 
@@ -73,10 +73,10 @@ describe("Given a component ProcessForm", () => {
       test("Then it should call the function previousPage", async () => {
         render(
           <ProcessForm
-            handleChange={props.handleChange}
             nextPage={props.nextPage}
             previousPage={props.previousPage}
             recipte={recipte}
+            setRecipte={jest.fn()}
           />
         );
 

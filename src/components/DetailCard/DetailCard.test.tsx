@@ -1,6 +1,5 @@
 import { fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { Recipte } from "../../types/interfaces";
 import { preloadStore } from "../../utils/storePreloadTest";
 import renderWithProviders from "../../utils/testStore";
 import DetailCard from "./DetailCard";
@@ -33,7 +32,7 @@ describe("Given a component DetailCard", () => {
     test("And if the image src returns an error it should use the backupImage as src", () => {
       renderWithProviders(<DetailCard item={item} />);
 
-      const image = screen.getByRole("img");
+      const image = screen.getByAltText(name);
       fireEvent.error(image);
 
       expect(image.getAttribute("src")).toBe(item.backupImage);

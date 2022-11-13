@@ -1,87 +1,104 @@
-import { useState } from "react";
 import { ProtoRecipte } from "../../../types/interfaces";
 import Button from "../../Button/Button";
 import ProcessFormStyled from "./ProcessFormStyled";
 
 interface ProcessFromProps {
   recipte: ProtoRecipte;
-
   nextPage: () => void;
   previousPage: () => void;
-  handleChange: (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => void;
+  setRecipte: React.Dispatch<React.SetStateAction<ProtoRecipte>>;
 }
 
 const ProcessForm = ({
-  handleChange,
   recipte,
+  setRecipte,
   previousPage,
   nextPage,
 }: ProcessFromProps): JSX.Element => {
-  const [largo, setlargo] = useState(1);
-  const processes: JSX.Element[] = [];
+  const handleFormChange = (
+    index: number,
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    let data = [...recipte.process];
 
-  const addProcessField = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ): void => {
-    event.preventDefault();
-    setlargo(largo + 1);
+    data[index].process = event.target.value;
+
+    setRecipte({ ...recipte, process: data });
   };
 
-  const deleteProcessField = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ): void => {
-    event.preventDefault();
-    setlargo(largo - 1);
-  };
-
-  for (let counter = 0; counter < largo; counter += 1) {
-    processes.push(
-      <>
-        <li>
-          <label htmlFor="process" className="label">
-            <span>{counter + 1}</span>
-          </label>
-          <textarea
-            id="process"
-            name="process"
-            value={recipte.process}
-            onChange={(event) => handleChange(event)}
-          />
-        </li>
-      </>
+  const processFields = recipte.process.map((process, index) => {
+    return (
+      <li className="recipte-form__process">
+        <label htmlFor="process" className="label">
+          <span>{`Paso ${index + 1}`}</span>
+        </label>
+        <textarea
+          className="recipte-form__process-text"
+          autoComplete="off"
+          id="process"
+          name="process"
+          value={process.process}
+          wrap="hard"
+          autoCapitalize="sentences"
+          onChange={(event) => handleFormChange(index, event)}
+          placeholder="Descripción del paso"
+        />
+      </li>
     );
-  }
+  });
+
+  const addInputField = () => {
+    setRecipte({
+      ...recipte,
+      process: recipte.process.concat({
+        process: "",
+        picture: "",
+        backupPicture: "",
+      }),
+    });
+  };
+
+  const deleteInputField = () => {
+    if (recipte.process.length === 1) {
+      return;
+    }
+    const inputFields = recipte.process.slice(0, recipte.process.length - 1);
+    setRecipte({ ...recipte, process: inputFields });
+  };
 
   return (
-    <ProcessFormStyled
-      data-testid="form-recipt"
-      className="recipte-form"
-      autoComplete="off"
-    >
+    <ProcessFormStyled data-testid="form-recipt" className="recipte-form">
       <h1 className="recipte-form__title">Procedimiento</h1>
-      <div>
-        <ul>
-          {processes}
-          <button onClick={(event) => addProcessField(event)}>+</button>
-          <button onClick={(event) => deleteProcessField(event)}>-</button>
-        </ul>
 
-        <div className="recipte-form__buttons-container">
-          <Button
-            type="button"
-            text="Anterior"
-            actionOnClick={() => previousPage()}
-          />
-          <Button
-            type="button"
-            text="Siguiente"
-            actionOnClick={() => nextPage()}
-          />
-        </div>
+      <ul className="recipte-form__process-list">{processFields}</ul>
+
+      <div className="buttons">
+        <Button
+          customStyle="buttons--small"
+          text="+"
+          type="button"
+          actionOnClick={addInputField}
+        />
+
+        <Button
+          customStyle="buttons--small"
+          text="-"
+          type="button"
+          actionOnClick={deleteInputField}
+        />
+      </div>
+
+      <div className="recipte-form__buttons-container">
+        <Button
+          type="button"
+          text="Anterior"
+          actionOnClick={() => previousPage()}
+        />
+        <Button
+          type="button"
+          text="Siguiente"
+          actionOnClick={() => nextPage()}
+        />
       </div>
     </ProcessFormStyled>
   );
