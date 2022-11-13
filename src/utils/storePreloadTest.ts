@@ -1,6 +1,7 @@
-import { Ingredient } from "../types/interfaces";
+import { Ingredient, Process } from "../types/interfaces";
 
 const ingredients: Ingredient[] = [{ name: "", quantity: "", unit: "" }];
+const process: Process[] = [{ process: "", picture: "", backupPicture: "" }];
 
 export const preloadStore = {
   mockRecipte: {
@@ -8,21 +9,20 @@ export const preloadStore = {
     dificulty: "Fácil",
     autor: "",
     id: "",
-    image: "",
-    ingredients: ingredients,
     persons: 0,
-    process: "",
+    ingredients: ingredients,
+    process: process,
+    image: "",
     backupImage: "",
   },
   mockProtoRecipte: {
     name: "Mock recipte",
     dificulty: "Fácil",
     autor: "",
-    id: "",
-    image: "",
-    ingredients: ingredients,
     persons: 0,
-    process: "",
+    ingredients: ingredients,
+    process: process,
+    image: "",
     backupImage: "",
   },
 };
