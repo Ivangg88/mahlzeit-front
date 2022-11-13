@@ -1,14 +1,14 @@
 import { Ingredient, ProtoRecipte } from "../../../types/interfaces";
 import Button from "../../Button/Button";
-import FormularBanner from "../../FormularBanner/FormularBanner";
-import IngredientsFormStyled from "./IngredientsFormStyled";
+import { IngredientInputs } from "../IngredientInputs/IngredientInputs";
+import DetailsFormStyled from "./DetailsFormStyled";
 
 interface IngredientsFromProps {
   recipte: ProtoRecipte;
   ingredients: Ingredient[];
   setRecipte: React.Dispatch<React.SetStateAction<ProtoRecipte>>;
-  nextPage: (currentPage: number) => void;
-  previousPage: (currentPage: number) => void;
+  nextPage: () => void;
+  previousPage: () => void;
   handleChange: (
     event:
       | React.ChangeEvent<HTMLInputElement>
@@ -16,12 +16,13 @@ interface IngredientsFromProps {
   ) => void;
 }
 
-const IngredientsForm = ({
+const DetailsForm = ({
   ingredients,
   setRecipte,
   handleChange,
   recipte,
   nextPage,
+  previousPage,
 }: IngredientsFromProps): JSX.Element => {
   const handleFormChange = (
     index: number,
@@ -65,52 +66,15 @@ const IngredientsForm = ({
   };
 
   const deleteInputField = () => {
+    if (recipte.ingredients.length === 1) {
+      return;
+    }
     const inputFields = ingredients.slice(0, ingredients.length - 1);
     setRecipte({ ...recipte, ingredients: inputFields });
   };
 
-  const recipteInputs = ingredients.map((ingredient, index) => {
-    return (
-      <>
-        <div className="ingredient" key={index}>
-          <input
-            autoComplete="off"
-            className="ingredient__name ingredient__input"
-            name="name"
-            placeholder="Ingrediente"
-            value={ingredient.name}
-            onChange={(event) => handleFormChange(index, event)}
-          />
-
-          <input
-            autoComplete="off"
-            className="ingredient__quantity ingredient__input"
-            name="quantity"
-            placeholder="Cantidad"
-            value={ingredient.quantity}
-            onChange={(event) => handleFormChange(index, event)}
-          />
-
-          <select
-            className="ingredient__unit ingredient__input"
-            onChange={(event) => handleSelect(index, event)}
-            value={ingredient.unit}
-          >
-            <option value="select"></option>
-            <option value="ml">ml</option>
-            <option value="l">l</option>
-            <option value="g">g</option>
-            <option value="Kg">Kg</option>
-            <option value="ud">ud</option>
-            <option value="uds">uds</option>
-          </select>
-        </div>
-      </>
-    );
-  });
-
   return (
-    <IngredientsFormStyled
+    <DetailsFormStyled
       data-testid="form-recipt"
       className="recipte-form"
       autoComplete="off"
@@ -156,6 +120,7 @@ const IngredientsForm = ({
             id="persons"
             name="persons"
             type="number"
+            inputMode="numeric"
             value={recipte.persons}
             className="recipte-form__input"
             placeholder="4"
@@ -164,46 +129,21 @@ const IngredientsForm = ({
         </li>
 
         <li>
-          <form className="recipte-form__ingredients" autoComplete="off">
-            <label className="label">Ingredientes:</label>
-            {recipteInputs}
-          </form>
-
-          <div className="buttons">
-            <Button
-              customStyle="buttons--small"
-              text="+"
-              type="button"
-              actionOnClick={addInputField}
-            />
-
-            <Button
-              customStyle="buttons--small"
-              text="-"
-              type="button"
-              actionOnClick={deleteInputField}
-            />
-          </div>
+          <IngredientInputs
+            ingredients={recipte.ingredients}
+            handleFormChange={handleFormChange}
+            handleSelect={handleSelect}
+            addInputField={addInputField}
+            deleteInputField={deleteInputField}
+          />
         </li>
 
-        <li>
-          <div className="button-container">
-            <Button
-              type="button"
-              text="Siguiente"
-              actionOnClick={() => {
-                nextPage(1);
-              }}
-            />
-          </div>
-
-          <div className="recipte-form__banner">
-            <FormularBanner currentPage={1} />
-          </div>
-        </li>
+        <div className="button-container">
+          <Button type="button" text="Siguiente" actionOnClick={nextPage} />
+        </div>
       </ul>
-    </IngredientsFormStyled>
+    </DetailsFormStyled>
   );
 };
 
-export default IngredientsForm;
+export default DetailsForm;

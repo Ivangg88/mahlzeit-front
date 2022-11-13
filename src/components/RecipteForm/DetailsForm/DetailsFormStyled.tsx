@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-const IngredientsFormStyled = styled.form`
+const DetailsFormStyled = styled.form`
   width: 400px;
+  min-height: 620px;
   background-color: ${(props) => props.theme.thirdColor};
   font-family: ${(props) => props.theme.fontSecondType};
   color: ${(props) => props.theme.fontMainColor};
@@ -50,12 +51,6 @@ const IngredientsFormStyled = styled.form`
       background-color: aliceblue;
     }
 
-    &__ingredients {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
     &__banner {
       width: 100%;
       display: flex;
@@ -70,37 +65,6 @@ const IngredientsFormStyled = styled.form`
     margin-bottom: 10px;
   }
 
-  .ingredient {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    gap: 10px;
-
-    &__input {
-      min-height: 37px;
-      width: 100%;
-      padding-left: 5px;
-      border: none;
-      border-radius: 5px;
-      background-color: aliceblue;
-    }
-
-    &__label {
-      width: 5%;
-    }
-
-    &__name {
-      width: 70%;
-    }
-
-    &__quantity {
-      width: 20%;
-    }
-
-    &__unit {
-      width: 15%;
-    }
-  }
   .buttons {
     display: flex;
     justify-content: space-around;
@@ -120,4 +84,4 @@ const IngredientsFormStyled = styled.form`
   }
 `;
 
-export default IngredientsFormStyled;
+export default DetailsFormStyled;
