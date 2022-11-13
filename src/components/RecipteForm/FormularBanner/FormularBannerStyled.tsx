@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FormularBannerStyled = styled.section`
-  width: 80%;
+  width: 360px;
   display: flex;
   justify-content: space-between;
   font-family: ${(props) => props.theme.fontMainType};

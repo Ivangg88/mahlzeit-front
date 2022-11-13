@@ -1,21 +1,10 @@
 import { screen } from "@testing-library/react";
 import { Recipte } from "../../types/interfaces";
+import { preloadStore } from "../../utils/storePreloadTest";
 import renderWithProviders from "../../utils/testStore";
 import DetailPage from "./DetailPage";
 
-const mockItems: Recipte[] = [
-  {
-    id: "Mock id",
-    name: "Mock item",
-    autor: "Mock autor",
-    dificulty: "Difícil",
-    image: "url",
-    ingredients: "",
-    persons: 0,
-    process: "",
-    backupImage: "",
-  },
-];
+const mockItems: Recipte[] = [preloadStore.mockRecipte];
 
 describe("Given a component DetailPage", () => {
   describe("When rendered", () => {

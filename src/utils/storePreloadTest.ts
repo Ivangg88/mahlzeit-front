@@ -1,3 +1,7 @@
+import { Ingredient } from "../types/interfaces";
+
+const ingredients: Ingredient[] = [{ name: "", quantity: "", unit: "" }];
+
 export const preloadStore = {
   mockRecipte: {
     name: "Mock recipte",
@@ -5,8 +9,8 @@ export const preloadStore = {
     autor: "",
     id: "",
     image: "",
-    ingredients: "",
-    persons: "0",
+    ingredients: ingredients,
+    persons: 0,
     process: "",
     backupImage: "",
   },
@@ -16,8 +20,8 @@ export const preloadStore = {
     autor: "",
     id: "",
     image: "",
-    ingredients: "",
-    persons: "0",
+    ingredients: ingredients,
+    persons: 0,
     process: "",
     backupImage: "",
   },

@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
-const IngredientsFormStyled = styled.form`
-  position: relative;
+const DetailsFormStyled = styled.form`
   width: 400px;
-  height: 620px;
+  min-height: 620px;
   background-color: ${(props) => props.theme.thirdColor};
   font-family: ${(props) => props.theme.fontSecondType};
   color: ${(props) => props.theme.fontMainColor};
@@ -13,6 +12,11 @@ const IngredientsFormStyled = styled.form`
   flex-direction: column;
   align-items: center;
   gap: 20px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
 
   .recipte-form {
     &__title {
@@ -40,24 +44,14 @@ const IngredientsFormStyled = styled.form`
 
     &__input {
       min-height: 37px;
+      width: 100%;
       padding-left: 5px;
       border: none;
       border-radius: 5px;
-    }
-
-    &__ingredients {
-      min-height: 100px;
-      width: 360px;
-      resize: none;
-      padding-left: 5px;
-      border: none;
-      border-radius: 5px;
-      margin-bottom: 20px;
+      background-color: aliceblue;
     }
 
     &__banner {
-      position: relative;
-      bottom: -30px;
       width: 100%;
       display: flex;
       justify-content: space-evenly;
@@ -68,10 +62,26 @@ const IngredientsFormStyled = styled.form`
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    position: relative;
-    bottom: -30px;
     margin-bottom: 10px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+
+    &--small {
+      background-color: transparent;
+      height: 30px;
+      width: 60px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    &--small:hover {
+      color: white;
+    }
   }
 `;
 
-export default IngredientsFormStyled;
+export default DetailsFormStyled;

@@ -1,12 +1,11 @@
 import { ProtoRecipte } from "../../../types/interfaces";
 import Button from "../../Button/Button";
-import FormularBanner from "../../FormularBanner/FormularBanner";
 import ImageFormStyled from "./ImageFormStyled";
 
 interface ImageFromProps {
   recipte: ProtoRecipte;
-  nextPage: (currentPage: number) => void;
-  previousPage: (currentPage: number) => void;
+  nextPage: () => void;
+  previousPage: () => void;
   submit: (event: React.FormEvent<HTMLFormElement>) => void;
   createImage: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -39,15 +38,9 @@ const ImageForm = ({
         </div>
       </div>
       <div className="recipte-form__buttons-container">
-        <Button
-          type="button"
-          text="Anterior"
-          actionOnClick={() => previousPage(3)}
-        />
+        <Button type="button" text="Anterior" actionOnClick={previousPage} />
         <Button type="submit" text="Crear Receta" />
       </div>
-
-      <FormularBanner currentPage={3} />
     </ImageFormStyled>
   );
 };

@@ -21,9 +21,10 @@ const useReciptes = () => {
     async (apiUrl: string) => {
       try {
         dispatch(openLoadingModalActionCreator());
-        const response = await fetch(apiUrl);
 
-        const { reciptes } = await response.json();
+        const {
+          data: { reciptes },
+        } = await axios.get(apiUrl);
 
         dispatch(loadReciptesActionCreator(reciptes));
       } catch (error) {

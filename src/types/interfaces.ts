@@ -23,12 +23,18 @@ export interface PasswordCheck {
 
 export interface ProtoRecipte {
   name: string;
-  persons: string | number;
+  persons: number;
   dificulty: string;
   autor: string;
-  ingredients: string;
+  ingredients: Ingredient[];
   process: string;
   image: File | string;
+}
+
+export interface Ingredient {
+  name: string;
+  quantity: string;
+  unit: string;
 }
 
 export interface Recipte extends ProtoRecipte {
