@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const ProcessFormStyled = styled.form`
   width: 400px;
-  height: 620px;
+  min-height: 620px;
+
   background-color: ${(props) => props.theme.thirdColor};
   font-family: ${(props) => props.theme.fontSecondType};
   color: ${(props) => props.theme.fontMainColor};
