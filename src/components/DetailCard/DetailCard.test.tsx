@@ -8,6 +8,7 @@ const mockNavigator = jest.fn();
 
 const mockDelete = {
   deleteRecipte: jest.fn(),
+  getRecipteById: jest.fn(),
 };
 
 jest.mock("../../hooks/useReciptes", () => () => mockDelete);
@@ -24,13 +25,13 @@ item.name = name;
 describe("Given a component DetailCard", () => {
   describe("When rendered and receives by props an item with the name 'Patatas bravas'", () => {
     test("Then it should show a card with a heading with the received name", () => {
-      renderWithProviders(<DetailCard item={item} />);
+      renderWithProviders(<DetailCard />);
 
       screen.getByRole("heading", { name: item.name });
     });
 
     test("And if the image src returns an error it should use the backupImage as src", () => {
-      renderWithProviders(<DetailCard item={item} />);
+      renderWithProviders(<DetailCard />);
 
       const image = screen.getByAltText(name);
       fireEvent.error(image);
@@ -41,7 +42,7 @@ describe("Given a component DetailCard", () => {
 
   describe("Whent the user click on the icon maximize", () => {
     test("Then it should call the navigator function", () => {
-      renderWithProviders(<DetailCard item={item} />);
+      renderWithProviders(<DetailCard />);
 
       const button = screen.getAllByRole("button");
 
@@ -53,7 +54,7 @@ describe("Given a component DetailCard", () => {
 
   describe("Whent the user click on the button 'Eliminar'", () => {
     test("Then it should call the deleteRecipte function", async () => {
-      renderWithProviders(<DetailCard item={item} />);
+      renderWithProviders(<DetailCard />);
 
       const button = screen.getAllByRole("button");
 
