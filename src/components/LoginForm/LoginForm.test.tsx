@@ -6,6 +6,7 @@ import LoginForm from "./LoginForm";
 describe("Given a LoginForm component", () => {
   const userName = "Cristina";
   const userPassword = "12345678";
+  const navigateTarget = "/";
 
   describe("When rendered", () => {
     test("Then it should show a form with 2 inputs and 1 button", async () => {
@@ -13,7 +14,7 @@ describe("Given a LoginForm component", () => {
       const expectedPasswordText = "min 8 caracteres";
       const expectedButtonText = "Entrar";
 
-      renderWithProviders(<LoginForm />);
+      renderWithProviders(<LoginForm navigateTarget={navigateTarget} />);
 
       const formTestPlaceHolders: HTMLInputElement[] = [
         screen.getByPlaceholderText(expectedUserText),
@@ -29,7 +30,7 @@ describe("Given a LoginForm component", () => {
     });
 
     test("Then it should update the input value with the typed data from user.", async () => {
-      renderWithProviders(<LoginForm />);
+      renderWithProviders(<LoginForm navigateTarget={navigateTarget} />);
 
       const nameInput: HTMLInputElement = screen.getByLabelText("Nombre:");
       const passwordInput: HTMLInputElement =
@@ -45,7 +46,7 @@ describe("Given a LoginForm component", () => {
 
   describe("And user click on register button", () => {
     test("Then it should be submit", async () => {
-      renderWithProviders(<LoginForm />);
+      renderWithProviders(<LoginForm navigateTarget={navigateTarget} />);
 
       const form = screen.getByTestId("form-login") as HTMLElement;
       form.onsubmit = jest.fn();
