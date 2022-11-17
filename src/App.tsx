@@ -6,6 +6,7 @@ import CreateReciptePage from "./pages/CreateReciptePage/CreateReciptePage";
 import DetailPage from "./pages/DetailPage/DetailPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import MyReciptesPage from "./pages/MyReciptesPage/MyReciptesPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import RegisterPage from "./pages/ResgisterPage/RegisterPage";
 const App = (): JSX.Element => {
@@ -27,6 +28,12 @@ const App = (): JSX.Element => {
           path="/create"
           element={
             user.isLogged ? <CreateReciptePage /> : <Navigate to="/login" />
+          }
+        />
+        <Route
+          path="/myreciptes"
+          element={
+            user.isLogged ? <MyReciptesPage /> : <Navigate to="/login" />
           }
         />
       </Routes>

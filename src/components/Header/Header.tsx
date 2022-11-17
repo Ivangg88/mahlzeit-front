@@ -23,7 +23,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="navigation__link" to={"/private"}>
+            <NavLink className="navigation__link" to={"/myreciptes"}>
               Mis Recetas
             </NavLink>
           </li>

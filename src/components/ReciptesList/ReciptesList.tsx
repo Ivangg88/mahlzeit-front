@@ -1,16 +1,16 @@
-import { useAppSelector } from "../../app/hooks";
-import { RootState } from "../../app/store";
+import { Recipte } from "../../types/interfaces";
 import RecipteCard from "../RecipteCard/RecipteCard";
 import RecipteListStyled from "./ReciptesListStyled";
 
-const ReciptesList = () => {
-  const items = useAppSelector((state: RootState) => state.reciptes);
-
+interface ReciptesListProps {
+  reciptes: Recipte[];
+}
+const ReciptesList = ({ reciptes }: ReciptesListProps) => {
   return (
     <RecipteListStyled>
-      {items.map((item) => (
-        <li data-testid="test-list" key={item.id}>
-          <RecipteCard item={item} />
+      {reciptes.map((recipte) => (
+        <li data-testid="test-list" key={recipte.id}>
+          <RecipteCard item={recipte} />
         </li>
       ))}
     </RecipteListStyled>
