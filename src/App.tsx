@@ -21,19 +21,27 @@ const App = (): JSX.Element => {
         <Route path="/home" element={<HomePage />} />
         <Route path="/detail/:id" element={<DetailPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage navigateTarget="/" />} />
         <Route path="/error" element={<NotFoundPage error={true} />} />
         <Route path="*" element={<NotFoundPage error={false} />} />
         <Route
           path="/create"
           element={
-            user.isLogged ? <CreateReciptePage /> : <Navigate to="/login" />
+            user.isLogged ? (
+              <CreateReciptePage />
+            ) : (
+              <LoginPage navigateTarget="/create" />
+            )
           }
         />
         <Route
           path="/myreciptes"
           element={
-            user.isLogged ? <MyReciptesPage /> : <Navigate to="/login" />
+            user.isLogged ? (
+              <MyReciptesPage />
+            ) : (
+              <LoginPage navigateTarget="/myreciptes" />
+            )
           }
         />
       </Routes>

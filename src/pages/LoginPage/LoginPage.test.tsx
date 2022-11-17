@@ -7,8 +7,9 @@ describe("Given a component LoginPage", () => {
   describe("When rendered", () => {
     test("Then it should show a LoginForm component", () => {
       const title = "Login";
+      const navigateTarget = "/";
 
-      renderWithProviders(<LoginPage />);
+      renderWithProviders(<LoginPage navigateTarget={navigateTarget} />);
 
       screen.getByRole("heading", { name: title });
     });

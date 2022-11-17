@@ -19,7 +19,11 @@ const MyReciptesPage = () => {
   return (
     <HomePageStyled>
       <Header />
-      <ReciptesList reciptes={myReciptes} />
+      {myReciptes.length > 0 ? (
+        <ReciptesList reciptes={myReciptes} />
+      ) : (
+        <span>No tienes recetas</span>
+      )}
     </HomePageStyled>
   );
 };

@@ -5,7 +5,10 @@ import { UserLogin } from "../../types/interfaces";
 import Button from "../Button/Button";
 import LoginFormStyled from "./LoginFormStyled";
 
-const LoginForm = () => {
+interface LoginFormProps {
+  navigateTarget: string;
+}
+const LoginForm = ({ navigateTarget }: LoginFormProps) => {
   let userInitial: UserLogin = {
     userName: "",
     password: "",
@@ -28,7 +31,7 @@ const LoginForm = () => {
 
   const submit = (event: React.FormEvent<HTMLFormElement>, url: string) => {
     event.preventDefault();
-    loginUser(user, url);
+    loginUser(user, url, navigateTarget);
     setUserData(userInitial);
   };
 

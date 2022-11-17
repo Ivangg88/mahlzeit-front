@@ -25,7 +25,11 @@ const useUsers = () => {
     return response.status;
   };
 
-  const loginUser = async (user: UserLogin, apiUrl: string) => {
+  const loginUser = async (
+    user: UserLogin,
+    apiUrl: string,
+    navigateTarget: string
+  ) => {
     try {
       const response: AxiosResponse<TokenResponse> = await axios.post(
         `${apiUrl}/users/login`,
@@ -41,7 +45,7 @@ const useUsers = () => {
       dispatch(loginUserActionCreator(userLogged));
 
       localStorage.setItem("token", userLogged.token);
-      navigator("/");
+      navigator(navigateTarget);
     } catch (error) {
       failModal("No se pudo logear");
       return 400;
