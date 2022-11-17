@@ -68,20 +68,20 @@ describe("Given a useUsers hook", () => {
   });
 
   describe("When the function loginUser is called", () => {
+    const navigateTarget = "/";
     describe("With a valid  user and password", () => {
       test("Then it should call the dispatch with a user with token", async () => {
         const user: UserLogin = {
           userName: mockUserToken.userName,
           password: "ladaily",
         };
-
         const {
           result: {
             current: { loginUser },
           },
         } = renderHook(() => useUsers(), { wrapper: Wrapper });
 
-        await loginUser(user, apiUrl);
+        await loginUser(user, apiUrl, navigateTarget);
 
         expect(mockDispatch).toHaveBeenCalledWith(
           loginUserActionCreator(mockUserToken)
@@ -102,7 +102,11 @@ describe("Given a useUsers hook", () => {
           },
         } = renderHook(() => useUsers(), { wrapper: Wrapper });
 
-        const expectedResult = await loginUser(invalidUser, apiUrl);
+        const expectedResult = await loginUser(
+          invalidUser,
+          apiUrl,
+          navigateTarget
+        );
 
         expect(expectedResult).toBe(statusCode);
       });
