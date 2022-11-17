@@ -9,22 +9,10 @@ import DetailPageStyled from "./DetailPageStyled";
 const urlId = `${process.env.REACT_APP_API_URL}/reciptes/getById`;
 
 const DetailPage = () => {
-  const { id } = useParams();
-
-  const { getRecipteById } = useReciptes();
-
-  useEffect(() => {
-    (async () => {
-      await getRecipteById(id!, urlId);
-    })();
-  }, [getRecipteById, id]);
-
-  const items = useAppSelector((state: RootState) => state.reciptes);
-
   return (
     <DetailPageStyled>
       <Header />
-      <DetailCard item={items[0]} />
+      <DetailCard />
     </DetailPageStyled>
   );
 };
