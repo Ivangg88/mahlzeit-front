@@ -5,7 +5,7 @@ import useReciptes from "../../hooks/useReciptes";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
 import { RootState } from "../../app/store";
-import { useEffect, useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 
 const DetailCard = (): JSX.Element => {
   const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/delete`;
@@ -27,7 +27,6 @@ const DetailCard = (): JSX.Element => {
   let ingredients;
   let processes;
 
-  
   if (item) {
     ingredients = item.ingredients.map((ingredient, index) => {
       return (
@@ -41,12 +40,9 @@ const DetailCard = (): JSX.Element => {
       );
     });
 
-    
     processes = item.process.map((process, index) => {
       return <li>{index + 1 + " " + process.process}</li>;
     });
-
-    
   }
   return (
     <RecipteCardStyled>
