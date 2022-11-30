@@ -1,12 +1,12 @@
 import Header from "../../components/Header/Header";
-import RegisterForm from "../../components/RegisterForm/RegisterForm";
+import Register from "../../components/Register/Register";
 import RegisterPageStyled from "./RegisterPageStyled";
 
 const RegisterPage = () => {
   return (
     <RegisterPageStyled>
       <Header />
-      <RegisterForm />
+      <Register />
     </RegisterPageStyled>
   );
 };
