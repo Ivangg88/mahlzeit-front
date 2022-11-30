@@ -1,6 +1,7 @@
 import ButtonStyled from "./ButtonStyled";
 
 interface ButtonProps {
+  disable?: boolean;
   text: string;
   type: "button" | "submit" | "reset";
   customStyle?: string;
@@ -10,13 +11,19 @@ interface ButtonProps {
 }
 
 const Button = ({
+  disable,
   type,
   text,
   customStyle,
   actionOnClick,
 }: ButtonProps): JSX.Element => {
   return (
-    <ButtonStyled className={customStyle} type={type} onClick={actionOnClick}>
+    <ButtonStyled
+      className={customStyle}
+      type={type}
+      onClick={actionOnClick}
+      disabled={disable!}
+    >
       {text}
     </ButtonStyled>
   );

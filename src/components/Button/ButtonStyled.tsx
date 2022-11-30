@@ -10,6 +10,11 @@ const ButtonStyled = styled.button`
   align-content: center;
   border: none;
   cursor: pointer;
+  :disabled {
+    background-color: #cfadad;
+    color: #191919;
+    pointer-events: none;
+  }
 `;
 
 export default ButtonStyled;
