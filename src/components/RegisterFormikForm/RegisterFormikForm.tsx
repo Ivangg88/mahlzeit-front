@@ -1,7 +1,5 @@
-import { Form, Formik, useFormikContext } from "formik";
+import { Form, useFormikContext } from "formik";
 import { NavLink } from "react-router-dom";
-import { validateRegisterSchema } from "../../schemas/validateSchema";
-import { UserRegister } from "../../types/interfaces";
 import Button from "../Button/Button";
 import CustomInputField from "../CustomInputField/CustomInputField";
 import RegisterFormikFormStyled from "./RegisterFormikFormStyled";
