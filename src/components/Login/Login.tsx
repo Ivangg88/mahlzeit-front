@@ -1,6 +1,6 @@
 import { Formik } from "formik";
 import useUsers from "../../hooks/useUsers";
-import { validateLoginSchema } from "../../schemas/validateLoginSchema";
+import { validateLoginSchema } from "../../schemas/validateSchema";
 import { UserLogin } from "../../types/interfaces";
 import LoginFormikForm from "../LoginFormikForm/LoginFormikForm";
 

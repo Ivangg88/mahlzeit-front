@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { Formik } from "formik";
 import { BrowserRouter } from "react-router-dom";
-import { validateLoginSchema } from "../schemas/validateLoginSchema";
+import { validateLoginSchema } from "../schemas/validateSchema";
 
 const renderWithFormik = (
   children: React.ReactElement,
