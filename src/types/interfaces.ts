@@ -8,6 +8,7 @@ export type UserLogin = Omit<User, "email">;
 
 export interface UserRegister extends User {
   passwordConfirm: string;
+  emailConfirm: string;
 }
 
 export interface UserLoged {
