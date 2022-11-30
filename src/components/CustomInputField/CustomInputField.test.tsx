@@ -1,9 +1,12 @@
 import { fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import renderWithFormik from "../../utils/formikTest";
+import messagesText from "../../utils/messagesText";
 import CustomInputField from "./CustomInputField";
 
 describe("Given a CustomInputField", () => {
+  const { name } = messagesText;
+
   describe("When it's instantiated with all props", () => {
     test("Then if the user write test it should have test as value", async () => {
       const labelText = "Username";
@@ -45,7 +48,7 @@ describe("Given a CustomInputField", () => {
       fireEvent.blur(input);
 
       const error = await screen.findByTestId("errorMessage");
-      expect(error).toHaveTextContent("The name can't be empty");
+      expect(error).toHaveTextContent(name.mustName);
     });
 
     test("Then it should show the name min length error if it passes with no content", async () => {
@@ -65,9 +68,7 @@ describe("Given a CustomInputField", () => {
       fireEvent.blur(input);
       const error = await screen.findByTestId("errorMessage");
 
-      expect(error).toHaveTextContent(
-        "Username must have at least 1 character"
-      );
+      expect(error).toHaveTextContent(name.minName);
     });
 
     test("Then it should show the name max length error if it passes with no content", async () => {
@@ -90,7 +91,7 @@ describe("Given a CustomInputField", () => {
       fireEvent.blur(input);
       const error = await screen.findByTestId("errorMessage");
 
-      expect(error).toHaveTextContent("Max length is 50 characters");
+      expect(error).toHaveTextContent(name.maxName);
     });
   });
 });
