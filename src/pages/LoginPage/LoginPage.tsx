@@ -1,5 +1,5 @@
 import Header from "../../components/Header/Header";
-import LoginForm from "../../components/LoginForm/LoginForm";
+import Login from "../../components/Login/Login";
 import LoginPageStyled from "./LoginPageStyled";
 
 interface LoginPageProps {
@@ -9,7 +9,7 @@ const LoginPage = ({ navigateTarget }: LoginPageProps) => {
   return (
     <LoginPageStyled>
       <Header />
-      <LoginForm navigateTarget={navigateTarget} />
+      <Login navigateTarget={navigateTarget} />
     </LoginPageStyled>
   );
 };
