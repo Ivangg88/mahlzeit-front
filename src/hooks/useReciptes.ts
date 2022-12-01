@@ -1,7 +1,8 @@
 import axios, { AxiosResponse } from "axios";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../app/hooks";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { RootState } from "../app/store";
 import {
   deleteRecipteActionCreator,
   loadRecipteActionCreator,
@@ -16,6 +17,10 @@ import { Recipte } from "../types/interfaces";
 const useReciptes = () => {
   const dispatch = useAppDispatch();
   const navigator = useNavigate();
+  const user = useAppSelector((state: RootState) => state.user);
+  const authConfig = {
+    headers: { Authorization: `Bearer ${user.token}` },
+  };
 
   const getReciptes = useCallback(
     async (apiUrl: string) => {
@@ -38,7 +43,11 @@ const useReciptes = () => {
   const createRecipte = async (data: FormData, apiUrl: string) => {
     try {
       dispatch(openLoadingModalActionCreator());
-      const response: AxiosResponse<Recipte> = await axios.post(apiUrl, data);
+      const response: AxiosResponse<Recipte> = await axios.post(
+        apiUrl,
+        data,
+        authConfig
+      );
 
       dispatch(loadRecipteActionCreator(response.data));
 
@@ -50,6 +59,7 @@ const useReciptes = () => {
 
   const deleteRecipte = async (id: string, apiUrl: string) => {
     const config = {
+      ...authConfig,
       params: { id: id },
     };
     try {
