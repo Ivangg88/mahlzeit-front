@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const DetailCardStyled = styled.section`
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   gap: 10px;
@@ -10,8 +11,14 @@ const DetailCardStyled = styled.section`
   font-family: inherit;
   border-radius: 15px;
   padding: 20px;
-  width: 400px;
+  max-width: 400px;
   margin: 0;
+
+  ul,
+  ol {
+    padding-left: 15px;
+    margin: 0;
+  }
 
   .detail-card__title {
     font-family: ${(props) => props.theme.fontMainType};
@@ -31,14 +38,6 @@ const DetailCardStyled = styled.section`
     justify-content: space-between;
   }
 
-  .button-icon {
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    width: 20px;
-    height: 20px;
-  }
-
   .detail-card__icon {
     cursor: pointer;
     height: 100%;
@@ -52,14 +51,12 @@ const DetailCardStyled = styled.section`
     object-fit: cover;
   }
 
-  .list-container {
-    flex: 2;
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 30px;
-    padding-top: 15px;
+  .button-icon {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
   }
 
   .button-container {
@@ -79,6 +76,71 @@ const DetailCardStyled = styled.section`
     align-content: center;
     border: none;
     cursor: pointer;
+  }
+
+  @media (min-width: 450px) {
+    padding: 0;
+    width: 80%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: inherit;
+
+    .detail-card {
+      &__title {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 5px 20px;
+        align-items: center;
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      &__image {
+        border-radius: 0;
+        flex: none;
+        object-fit: cover;
+        overflow: hidden;
+        max-width: fit-content;
+        width: 100%;
+      }
+
+      &__details {
+        display: flex;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &__ingredients,
+      &__process {
+        width: 100%;
+        flex: 1;
+        line-height: 1.5;
+        padding: 20px;
+      }
+
+      &__process {
+        flex: 2;
+      }
+
+      &__subtitle {
+        font-family: ${(props) => props.theme.fontMainType};
+        display: block;
+        justify-content: space-between;
+
+        text-align: start;
+      }
+    }
+
+    .button-icon {
+      width: 35px;
+      height: 35px;
+    }
   }
 `;
 
