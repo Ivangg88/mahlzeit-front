@@ -60,6 +60,7 @@ const HeaderStyled = styled.header`
   @media (min-width: 450px) {
     width: 100%;
     border: none;
+    border-bottom: 2px solid #330000;
     border-radius: 0;
     padding-left: 20px;
     font-size: 1.2rem;
@@ -76,12 +77,6 @@ const HeaderStyled = styled.header`
       justify-content: flex-start;
       gap: 20px;
       padding: 0px 40px;
-    }
-
-    .header__logo {
-      background-image: url(/images/logo.png);
-      border-radius: 15px;
-      float: left;
     }
   }
 `;
