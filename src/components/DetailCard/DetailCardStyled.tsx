@@ -3,6 +3,7 @@ import styled from "styled-components";
 const DetailCardStyled = styled.section`
   display: flex;
   width: 100%;
+  max-width: 400px;
   flex-direction: column;
   justify-content: center;
   gap: 10px;
@@ -11,13 +12,20 @@ const DetailCardStyled = styled.section`
   font-family: inherit;
   border-radius: 15px;
   padding: 20px;
-  max-width: 400px;
   margin: 0;
 
+  li > span {
+    margin-right: 5px;
+  }
   ul,
   ol {
     padding-left: 15px;
     margin: 0;
+  }
+  ol {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 
   .detail-card__title {
@@ -27,6 +35,10 @@ const DetailCardStyled = styled.section`
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
+
+    &--desktop {
+      display: none;
+    }
   }
 
   .detail-card__subtitle {
@@ -39,6 +51,7 @@ const DetailCardStyled = styled.section`
   }
 
   .detail-card__icon {
+    color: inherit;
     cursor: pointer;
     height: 100%;
   }
@@ -76,11 +89,14 @@ const DetailCardStyled = styled.section`
     align-content: center;
     border: none;
     cursor: pointer;
+    margin-bottom: 20px;
   }
 
   @media (min-width: 450px) {
+    position: relative;
     padding: 0;
-    width: 80%;
+    width: 30%;
+    min-width: 375px;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -90,14 +106,27 @@ const DetailCardStyled = styled.section`
     font-family: inherit;
 
     .detail-card {
+      &__icon {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        top: 10px;
+        right: 10px;
+        color: ${(props) => props.theme.firstColor};
+      }
+
       &__title {
-        display: flex;
-        justify-content: space-between;
         width: 100%;
+        display: flex;
+        justify-content: flex-start;
         padding: 5px 20px;
-        align-items: center;
+
         margin: 0;
         font-size: 2rem;
+
+        &--mobile {
+          display: none;
+        }
       }
 
       &__image {
@@ -112,7 +141,7 @@ const DetailCardStyled = styled.section`
       &__details {
         display: flex;
         width: 100%;
-        display: flex;
+        flex-direction: column;
         justify-content: space-between;
       }
 
@@ -132,14 +161,8 @@ const DetailCardStyled = styled.section`
         font-family: ${(props) => props.theme.fontMainType};
         display: block;
         justify-content: space-between;
-
         text-align: start;
       }
-    }
-
-    .button-icon {
-      width: 35px;
-      height: 35px;
     }
   }
 `;

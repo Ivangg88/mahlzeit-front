@@ -52,21 +52,16 @@ const DetailCard = (): JSX.Element => {
     <RecipteCardStyled>
       {item && (
         <>
-          <h1 className="detail-card__title">
-            {item.name}
+          <FontAwesomeIcon
+            className="detail-card__icon"
+            icon={faMinimize}
+            onClick={() => {
+              navigator(-1);
+            }}
+          />
 
-            <button
-              aria-label="minimize"
-              className="button-icon"
-              onClick={() => {
-                navigator("/home");
-              }}
-            >
-              <FontAwesomeIcon
-                className="detail-card__icon"
-                icon={faMinimize}
-              />
-            </button>
+          <h1 className="detail-card__title detail-card__title--mobile">
+            {item.name}
           </h1>
 
           <img
@@ -74,6 +69,10 @@ const DetailCard = (): JSX.Element => {
             alt={item.name}
             className="detail-card__image"
           />
+
+          <h1 className="detail-card__title detail-card__title--desktop">
+            {item.name}
+          </h1>
 
           <div className="detail-card__details">
             <div className="detail-card__ingredients">
