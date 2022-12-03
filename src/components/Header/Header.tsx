@@ -14,6 +14,12 @@ const Header = () => {
 
   return (
     <HeaderStyled>
+      <img
+        src="/images/logo.png"
+        alt="Logo mahlzeit"
+        height={96}
+        className="header__logo header__logo--desktop"
+      />
       <div className="header__text-container">
         <h1 className="header__title">Mahlzeit</h1>
         <ul className="header__navigation">
@@ -53,7 +59,7 @@ const Header = () => {
         src="/images/logo.png"
         alt="Logo mahlzeit"
         height={96}
-        className="header__logo"
+        className="header__logo header__logo--mobile"
       />
     </HeaderStyled>
   );

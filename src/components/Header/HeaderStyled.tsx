@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const HeaderStyled = styled.header`
-  width: 400px;
-  height: 100px;
+  width: 100%;
+
   border-radius: 15px;
   border: 1px solid ${(props) => props.theme.fontMainColor};
   color: ${(props) => props.theme.fontMainColor};
@@ -16,6 +16,10 @@ const HeaderStyled = styled.header`
   .header__logo {
     background-image: url(/images/logo.png);
     border-radius: 15px;
+
+    &--desktop {
+      display: none;
+    }
   }
 
   .header__text-container {
@@ -59,24 +63,35 @@ const HeaderStyled = styled.header`
 
   @media (min-width: 450px) {
     width: 100%;
+    min-width: 480px;
+    height: auto;
     border: none;
     border-bottom: 2px solid #330000;
     border-radius: 0;
-    padding-left: 20px;
+    padding-left: 10px;
     font-size: 1.2rem;
 
     .header__text-container {
+      width: 100%;
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
-      flex: 1;
+      height: auto;
+      padding: 0;
     }
 
     .header__navigation {
+      width: 100%;
       display: flex;
-      justify-content: flex-start;
-      gap: 20px;
+      justify-content: space-around;
+      margin: 0;
       padding: 0px 40px;
+    }
+
+    .header__logo {
+      &--mobile {
+        display: none;
+      }
     }
   }
 `;
