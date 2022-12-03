@@ -8,7 +8,8 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MyReciptesPage from "./pages/MyReciptesPage/MyReciptesPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import RegisterPage from "./pages/ResgisterPage/RegisterPage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
+
 const App = (): JSX.Element => {
   const user = useAppSelector((state: RootState) => state.user);
   const ui = useAppSelector((state: RootState) => state.ui);
