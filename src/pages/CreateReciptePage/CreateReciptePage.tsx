@@ -1,13 +1,11 @@
-import Header from "../../components/Header/Header";
+import Layout from "../../components/Layout/Layout";
 import RecipteForm from "../../components/RecipteForm/RecipteForm";
-import CreateReciptePageStyled from "./CreateReciptePageStyled";
 
 const CreateReciptePage = () => {
   return (
-    <CreateReciptePageStyled>
-      <Header />
+    <Layout>
       <RecipteForm />
-    </CreateReciptePageStyled>
+    </Layout>
   );
 };
 

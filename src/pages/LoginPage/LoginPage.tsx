@@ -1,16 +1,14 @@
-import Header from "../../components/Header/Header";
+import Layout from "../../components/Layout/Layout";
 import Login from "../../components/Login/Login";
-import LoginPageStyled from "./LoginPageStyled";
 
 interface LoginPageProps {
   navigateTarget: string;
 }
 const LoginPage = ({ navigateTarget }: LoginPageProps) => {
   return (
-    <LoginPageStyled>
-      <Header />
+    <Layout>
       <Login navigateTarget={navigateTarget} />
-    </LoginPageStyled>
+    </Layout>
   );
 };
 

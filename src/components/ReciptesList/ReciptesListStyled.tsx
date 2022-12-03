@@ -9,6 +9,15 @@ const ReciptesListStyled = styled.ul`
   li {
     list-style: none;
   }
+
+  @media (min-width: 450px) {
+    max-width: 800px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
 `;
 
 export default ReciptesListStyled;

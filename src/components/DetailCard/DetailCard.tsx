@@ -28,7 +28,7 @@ const DetailCard = (): JSX.Element => {
   let processes;
 
   if (item) {
-    ingredients = item.ingredients.map((ingredient, index) => {
+    ingredients = item.ingredients.map((ingredient) => {
       return (
         <>
           <li>
@@ -40,42 +40,50 @@ const DetailCard = (): JSX.Element => {
       );
     });
 
-    processes = item.process.map((process, index) => {
-      return <li>{index + 1 + " " + process.process}</li>;
+    processes = item.process.map((process) => {
+      return (
+        <li>
+          <span>{process.process}</span>
+        </li>
+      );
     });
   }
   return (
     <RecipteCardStyled>
       {item && (
         <>
-          <h1 className="detail-card__title">
-            {item.name}
+          <FontAwesomeIcon
+            className="detail-card__icon"
+            icon={faMinimize}
+            onClick={() => {
+              navigator(-1);
+            }}
+          />
 
-            <button
-              aria-label="minimize"
-              className="button-icon"
-              onClick={() => {
-                navigator("/home");
-              }}
-            >
-              <FontAwesomeIcon
-                className="detail-card__icon"
-                icon={faMinimize}
-              />
-            </button>
+          <h1 className="detail-card__title detail-card__title--mobile">
+            {item.name}
           </h1>
+
           <img
             src={item.backupImage}
             alt={item.name}
             className="detail-card__image"
           />
-          <div className="detail-card__ingredients">
-            <h2 className="detail-card__subtitle">Ingredientes</h2>
-            <ul>{ingredients}</ul>
-          </div>
-          <div className="detail-card__process">
-            <h2 className="detail-card__subtitle">Procedimiento</h2>
-            <ul>{processes}</ul>
+
+          <h1 className="detail-card__title detail-card__title--desktop">
+            {item.name}
+          </h1>
+
+          <div className="detail-card__details">
+            <div className="detail-card__ingredients">
+              <h2 className="detail-card__subtitle">Ingredientes </h2>
+              <ul>{ingredients}</ul>
+            </div>
+
+            <div className="detail-card__process">
+              <h2 className="detail-card__subtitle">Procedimiento</h2>
+              <ol>{processes}</ol>
+            </div>
           </div>
 
           <div className="button-container">

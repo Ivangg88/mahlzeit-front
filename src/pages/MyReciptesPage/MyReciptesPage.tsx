@@ -1,9 +1,8 @@
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { RootState } from "../../app/store";
-import Header from "../../components/Header/Header";
+import Layout from "../../components/Layout/Layout";
 import ReciptesList from "../../components/ReciptesList/ReciptesList";
 import { openLoadingModalActionCreator } from "../../store/ui/uiSlice";
-import HomePageStyled from "./MyReciptesPageStyled";
 
 const MyReciptesPage = () => {
   const reciptes = useAppSelector((state: RootState) => state.reciptes);
@@ -17,14 +16,13 @@ const MyReciptesPage = () => {
   );
 
   return (
-    <HomePageStyled>
-      <Header />
+    <Layout>
       {myReciptes.length > 0 ? (
         <ReciptesList reciptes={myReciptes} />
       ) : (
         <span>No tienes recetas</span>
       )}
-    </HomePageStyled>
+    </Layout>
   );
 };
 

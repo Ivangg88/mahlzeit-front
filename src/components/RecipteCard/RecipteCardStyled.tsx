@@ -1,17 +1,18 @@
 import styled from "styled-components";
 
 const RecipteCardStyled = styled.section`
+  width: 100%;
+  border-radius: 15px;
+  position: relative;
   display: flex;
+  padding: 20px;
+  font-family: inherit;
   flex-direction: column;
   justify-content: center;
   background-color: ${(props) => props.theme.secondColor};
   color: ${(props) => props.theme.fontMainColor};
-  font-family: inherit;
-  border-radius: 15px;
-  padding: 20px;
-  width: 400px;
-  height: 230px;
   margin: 0;
+  cursor: pointer;
 
   .item-card__title {
     font-family: ${(props) => props.theme.fontMainType};
@@ -21,18 +22,8 @@ const RecipteCardStyled = styled.section`
     display: flex;
     justify-content: space-between;
   }
-
-  .button-icon {
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    width: 20px;
-    height: 20px;
-  }
-
-  .item-card__icon {
-    cursor: pointer;
-    height: 100%;
+  .item-card__title--desktop {
+    display: none;
   }
 
   .container {
@@ -45,19 +36,8 @@ const RecipteCardStyled = styled.section`
   .item-card__image {
     min-width: 165px;
     min-height: 165px;
-    flex: 1;
     border-radius: 50%;
     object-fit: cover;
-  }
-
-  .list-container {
-    flex: 2;
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 30px;
-    padding-top: 15px;
   }
 
   .info-list__user {
@@ -99,6 +79,62 @@ const RecipteCardStyled = styled.section`
 
   .button:hover {
     background-color: ${(props) => props.theme.firstColor};
+  }
+
+  .list-container {
+    width: 100%;
+    height: auto;
+    flex: none;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    padding-bottom: 20px;
+  }
+
+  @media (min-width: 450px) {
+    justify-content: flex-start;
+    border-radius: 5%;
+    padding: 0;
+    height: auto;
+    min-height: 460px;
+    width: 250px;
+    margin: 0;
+    gap: 5px;
+
+    .container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .item-card__title {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+      align-self: center;
+      align-items: center;
+    }
+
+    .item-card__title--mobile {
+      display: none;
+    }
+
+    .item-card__image {
+      width: 100%;
+      border-radius: 0;
+      object-fit: cover;
+      min-height: 230px;
+      max-height: 230px;
+      cursor: pointer;
+    }
   }
 `;
 

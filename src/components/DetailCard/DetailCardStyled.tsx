@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 const DetailCardStyled = styled.section`
   display: flex;
+  width: 100%;
+  max-width: 400px;
   flex-direction: column;
   justify-content: center;
   gap: 10px;
@@ -10,8 +12,21 @@ const DetailCardStyled = styled.section`
   font-family: inherit;
   border-radius: 15px;
   padding: 20px;
-  width: 400px;
   margin: 0;
+
+  li > span {
+    margin-right: 5px;
+  }
+  ul,
+  ol {
+    padding-left: 15px;
+    margin: 0;
+  }
+  ol {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 
   .detail-card__title {
     font-family: ${(props) => props.theme.fontMainType};
@@ -20,6 +35,10 @@ const DetailCardStyled = styled.section`
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
+
+    &--desktop {
+      display: none;
+    }
   }
 
   .detail-card__subtitle {
@@ -31,15 +50,8 @@ const DetailCardStyled = styled.section`
     justify-content: space-between;
   }
 
-  .button-icon {
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    width: 20px;
-    height: 20px;
-  }
-
   .detail-card__icon {
+    color: inherit;
     cursor: pointer;
     height: 100%;
   }
@@ -52,14 +64,12 @@ const DetailCardStyled = styled.section`
     object-fit: cover;
   }
 
-  .list-container {
-    flex: 2;
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 30px;
-    padding-top: 15px;
+  .button-icon {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
   }
 
   .button-container {
@@ -79,6 +89,81 @@ const DetailCardStyled = styled.section`
     align-content: center;
     border: none;
     cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 450px) {
+    position: relative;
+    padding: 0;
+    width: 30%;
+    min-width: 375px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: inherit;
+
+    .detail-card {
+      &__icon {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        top: 10px;
+        right: 10px;
+        color: ${(props) => props.theme.firstColor};
+      }
+
+      &__title {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding: 5px 20px;
+
+        margin: 0;
+        font-size: 2rem;
+
+        &--mobile {
+          display: none;
+        }
+      }
+
+      &__image {
+        border-radius: 0;
+        flex: none;
+        object-fit: cover;
+        overflow: hidden;
+        max-width: fit-content;
+        width: 100%;
+      }
+
+      &__details {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      &__ingredients,
+      &__process {
+        width: 100%;
+        flex: 1;
+        line-height: 1.5;
+        padding: 20px;
+      }
+
+      &__process {
+        flex: 2;
+      }
+
+      &__subtitle {
+        font-family: ${(props) => props.theme.fontMainType};
+        display: block;
+        justify-content: space-between;
+        text-align: start;
+      }
+    }
   }
 `;
 

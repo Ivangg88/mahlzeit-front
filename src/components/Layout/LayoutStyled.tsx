@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const HomePageStyled = styled.div`
+const LayoutStyled = styled.div`
   width: 100%;
   padding: 20px;
   min-height: 100vh;
@@ -8,6 +8,7 @@ const HomePageStyled = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  background-color: #f4ebeb;
 
   @media (min-width: 550px) {
     padding: 0;
@@ -15,4 +16,4 @@ const HomePageStyled = styled.div`
   }
 `;
 
-export default HomePageStyled;
+export default LayoutStyled;
