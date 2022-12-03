@@ -1,6 +1,5 @@
 import { fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { Recipte } from "../../types/interfaces";
 import { preloadStore } from "../../utils/storePreloadTest";
 import renderWithProviders from "../../utils/testStore";
 import RecipteCard from "./RecipteCard";
@@ -58,7 +57,7 @@ describe("Given a component ItemCard", () => {
 
       const button = screen.getAllByRole("button");
 
-      userEvent.click(button[1]);
+      userEvent.click(button[0]);
 
       expect(mockDelete.deleteRecipte).toHaveBeenCalled();
     });

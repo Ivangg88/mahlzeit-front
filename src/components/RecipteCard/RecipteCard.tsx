@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
   faCircle,
-  faMaximize,
   faFileCircleMinus,
 } from "@fortawesome/free-solid-svg-icons";
 import RecipteCardStyled from "./RecipteCardStyled";
@@ -24,23 +23,13 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
   const navigator = useNavigate();
 
   return (
-    <RecipteCardStyled>
-      <h1 className="item-card__title">
-        {item.name}
-        <button
-          aria-label="maximize"
-          className="button-icon"
-          onClick={() => {
-            navigator(`/detail/${item.id}`);
-          }}
-        >
-          <FontAwesomeIcon
-            className="item-card__icon"
-            width={25}
-            icon={faMaximize}
-          ></FontAwesomeIcon>
-        </button>
-      </h1>
+    <RecipteCardStyled
+      onClick={() => {
+        navigator(`/detail/${item.id}`);
+      }}
+    >
+      <h1 className="item-card__title item-card__title--mobile">{item.name}</h1>
+
       <div className="container">
         <img
           src={`${item.backupImage}`}
@@ -53,6 +42,11 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
           width={165}
           height={165}
         />
+
+        <h1 className="item-card__title item-card__title--desktop">
+          {item.name}
+        </h1>
+
         <div className="list-container">
           <ul className="details-list">
             <li className="details-list__detail">
