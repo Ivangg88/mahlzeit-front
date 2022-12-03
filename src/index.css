@@ -10,13 +10,6 @@ body {
   margin: 0;
 }
 
-#root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f4ebeb;
-}
-
 input {
   font-family: inherit;
 }

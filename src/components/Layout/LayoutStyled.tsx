@@ -8,6 +8,7 @@ const LayoutStyled = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  background-color: #f4ebeb;
 
   @media (min-width: 550px) {
     padding: 0;
