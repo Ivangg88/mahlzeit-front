@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const DetailCardStyled = styled.section`
+  position: relative;
   display: flex;
   width: 100%;
   max-width: 400px;
@@ -51,9 +52,13 @@ const DetailCardStyled = styled.section`
   }
 
   .detail-card__icon {
-    color: inherit;
+    position: absolute;
+    height: 25px;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    color: ${(props) => props.theme.firstColor};
     cursor: pointer;
-    height: 100%;
   }
 
   .detail-card__image {
@@ -107,12 +112,8 @@ const DetailCardStyled = styled.section`
 
     .detail-card {
       &__icon {
-        position: absolute;
         width: 35px;
         height: 35px;
-        top: 10px;
-        right: 10px;
-        color: ${(props) => props.theme.firstColor};
       }
 
       &__title {
