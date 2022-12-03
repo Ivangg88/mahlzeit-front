@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import { useAppSelector } from "../../app/hooks";
 import { RootState } from "../../app/store";
-import Header from "../../components/Header/Header";
+import Layout from "../../components/Layout/Layout";
 import ReciptesList from "../../components/ReciptesList/ReciptesList";
 import useReciptes from "../../hooks/useReciptes";
-import HomePageStyled from "./HomePageStyled";
 
 const HomePage = () => {
   const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/getAll`;
@@ -18,10 +17,9 @@ const HomePage = () => {
   }, [getReciptes, apiUrl]);
 
   return (
-    <HomePageStyled>
-      <Header />
+    <Layout>
       <ReciptesList reciptes={reciptes} />
-    </HomePageStyled>
+    </Layout>
   );
 };
 

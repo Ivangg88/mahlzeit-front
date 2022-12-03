@@ -1,13 +1,11 @@
 import DetailCard from "../../components/DetailCard/DetailCard";
-import Header from "../../components/Header/Header";
-import DetailPageStyled from "./DetailPageStyled";
+import Layout from "../../components/Layout/Layout";
 
 const DetailPage = () => {
   return (
-    <DetailPageStyled>
-      <Header />
+    <Layout>
       <DetailCard />
-    </DetailPageStyled>
+    </Layout>
   );
 };
 
