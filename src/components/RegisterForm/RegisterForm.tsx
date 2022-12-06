@@ -25,15 +25,9 @@ const RegisterForm = () => {
     setUserData({ ...userData, [event.target.name]: event.target.value });
   };
 
-  const user: User = {
-    userName: userData.userName,
-    email: userData.email,
-    password: userData.password,
-  };
-
   const submit = (event: React.FormEvent<HTMLFormElement>, url: string) => {
     event.preventDefault();
-    sendUSerToAPI(user, url);
+    sendUSerToAPI(userData, url);
     setUserData(userInitial);
   };
 
