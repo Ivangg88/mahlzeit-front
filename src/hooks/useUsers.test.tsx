@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react";
 import { loginUserActionCreator } from "../store/user/userSlice";
-import { User, UserLoged, UserLogin } from "../types/interfaces";
+import { User, UserLoged, UserLogin, UserRegister } from "../types/interfaces";
 import Wrapper from "../utils/Wrapper";
 import useUsers from "./useUsers";
 
@@ -28,10 +28,12 @@ describe("Given a useUsers hook", () => {
   describe("When the function sendUserToAPI is called", () => {
     describe("With a correct user.", () => {
       test("Then it should return 201.", async () => {
-        const user: User = {
+        const user: UserRegister = {
           userName: "Fake user",
           email: "mock@fake.net",
           password: "12345678",
+          emailConfirm: "mock@fake.net",
+          passwordConfirm: "12345678",
         };
         const expectedResponse = 201;
         const {
@@ -48,10 +50,12 @@ describe("Given a useUsers hook", () => {
 
     describe("With an incorrect user", () => {
       test("Then it should return 400", async () => {
-        const incorrectUser: User = {
+        const incorrectUser: UserRegister = {
           userName: "",
           email: "",
           password: "",
+          emailConfirm: "",
+          passwordConfirm: "",
         };
         const expectedResponse = 400;
         const {
