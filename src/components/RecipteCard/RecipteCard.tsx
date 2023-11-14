@@ -33,10 +33,6 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
       <div className="container">
         <img
           src={`${item.backupImage}`}
-          onError={({ currentTarget }) => {
-            currentTarget.onerror = null;
-            currentTarget.src = item.backupImage;
-          }}
           alt={item.name}
           className="item-card__image"
           width={165}
