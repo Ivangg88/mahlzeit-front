@@ -65,7 +65,7 @@ const DetailCard = (): JSX.Element => {
           </h1>
 
           <img
-            src={item.backupImage}
+            src={`${process.env.REACT_APP_API_URL}/${item.image}`}
             alt={item.name}
             className="detail-card__image"
           />

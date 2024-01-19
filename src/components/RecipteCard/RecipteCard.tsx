@@ -32,7 +32,7 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
 
       <div className="container">
         <img
-          src={`${item.backupImage}`}
+          src={`${process.env.REACT_APP_API_URL}/${item.image}`}
           alt={item.name}
           className="item-card__image"
           width={165}

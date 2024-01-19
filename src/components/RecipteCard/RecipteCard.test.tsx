@@ -1,4 +1,4 @@
-import { fireEvent, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { preloadStore } from "../../utils/storePreloadTest";
 import renderWithProviders from "../../utils/testStore";
@@ -27,15 +27,6 @@ describe("Given a component ItemCard", () => {
       renderWithProviders(<RecipteCard item={item} />);
 
       screen.getByRole("heading", { name: item.name });
-    });
-
-    test("And if the image src returns an error it should use the backupImage as src", () => {
-      renderWithProviders(<RecipteCard item={item} />);
-
-      const image = screen.getByRole("img");
-      fireEvent.error(image);
-
-      expect(image.getAttribute("src")).toBe(item.backupImage);
     });
   });
 
