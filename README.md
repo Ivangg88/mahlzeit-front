@@ -1,46 +1,117 @@
-# Getting Started with Create React App
+# MahlzeitAPP Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Mahlzeit APP, a comprehensive project that showcases a robust CRUD (Create, Read, Update, Delete) functionality for efficiently managing and organizing a diverse collection of recipes. This application empowers registered users to seamlessly interact with their recipes library, granting them the ability to explore, personalize, and maintain their recipes effortlessly.
 
-## Available Scripts
+Visit https://igarcia-mahlzeit.netlify.app/home to run this project online.
+<br>
+<br>
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+- [Features](#features)
+- [Used packages](#used-packages)
+- [Management Scripts](#management-scripts)
+- [Folder Structure](#folder-structure)
+- [Metrics](#metrics)
+- [How can you run this project locally](#how-can-you-run-this-project-locally)
+  <br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Display a list of recipes.
+- User registration to access CRUD functionalities.
+- Add new recipe to the list.
+- Delete own recipes from the list.
+- Utilize Redux for efficient state management.
+- Use React Router for navigation between different views.
+- Style components using Styled Components.
+- Manage notifications with React Toastify.
+- Integration of unit tests with Jest and Testing Library.
 
-### `npm test`
+  <br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Used Packages
 
-### `npm run build`
+- **@fontsource/overpass**: Font used for the interface.
+- **@reduxjs/toolkit**: Used for efficient state management.
+- **axios**: Library for making HTTP requests.
+- **jwt-decode**: Decodes JWT tokens to obtain user information.
+- **react**: Core React library.
+- **react-dom**: React renderer for the browser.
+- **react-icons**: Popular icons for visual components.
+- **react-redux**: Integration of Redux with React.
+- **react-router-dom**: React routing for view navigation.
+- **react-scripts**: Set of preconfigured scripts for React projects.
+- **react-toastify**: Displays attractive notifications in the interface.
+- **styled-components**: Library for styling components using CSS in JS.
+- **typescript**: Typed programming language.
+- **web-vitals**: Library for measuring web performance metrics.
+- **@testing-library/jest-dom**, **@testing-library/react**, **@testing-library/user-event**: Used for writing unit tests.
+- **@types/jest**, **@types/node**, **@types/react**, **@types/react-dom**, **@types/react-router-dom**: Type definitions for development environments.
+- **husky**: Integrates Git hooks to automate tasks before commits.
+- **@types/styled-components**: Type definitions for Styled Components.
+- **msw**: Library for mocking API calls in tests.
+  <br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Management Scripts
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `start`: Launches the application in development mode.
+- `build`: Generates a production version of the project.
+- `test`: Runs unit tests.
+- `test-coverage`: Runs unit tests and generates a coverage report.
+  <br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Folder Structure
 
-### `npm run eject`
+The folder structure follows a component-based organization, separating pages, Redux logic, API services, styles, and utilities.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+├── .github
+├── .husky
+├── coverage
+├── README.md
+├── .gitignore
+├── node_modules
+├── package-lock.json
+├── package.json
+├── public
+└── src
+    ├── components
+    ├── hooks
+    ├── mocks
+    ├── modals
+    ├── mocks
+    ├── pages
+    ├── shemas
+    ├── store
+    ├── styles
+    ├── types
+    ├── utils
+    └── App.tsx
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Metrics
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+📈 [Front SonarCloud metrics](https://sonarcloud.io/summary/overall?id=ivangg88_mahlzeit-front) - >80% coverage
 
-## Learn More
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## How can you run this project locally
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+First of all, in order to start this project it is necessary to:
+
+- Download the .env.example (delete the .example) to get the API path for the backend.
+- Once you've cloned this Frontend project, install it with:
+
+  ```bash
+  npm install
+  ```
+
+- After that, execute this command:
+  ```bash
+  npm start
+  ```
+
+<br>
