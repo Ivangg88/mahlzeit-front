@@ -1,0 +1,9 @@
+{
+  "header": {
+    "home": "Hjem",
+    "myRecipes": "Mine Opskrifter",
+    "newRecipe": "Opret Opskrift",
+    "login": "Log ind",
+    "logout":"Log ud"
+  }
+}

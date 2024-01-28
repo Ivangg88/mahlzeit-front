@@ -2,12 +2,15 @@ import defaultLanguage from "./initialTranslation.json";
 
 export type I8nLanguage = "es" | "en" | "dk";
 
+export const availableLanguages: Array<I8nLanguage> = ["es", "en", "dk"];
+
 export interface Translations {
   header: {
     home: string;
     myRecipes: string;
     newRecipe: string;
     login: string;
+    logout: string;
   };
 }
 

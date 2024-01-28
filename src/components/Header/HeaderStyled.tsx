@@ -61,6 +61,24 @@ const HeaderStyled = styled.header`
     font-size: 120%;
   }
 
+  .header__languages {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding-right: 15px;
+  }
+
+  .languages-button {
+    all: unset;
+  }
+
+  .languages-button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    color: gray;
+  }
+
   @media (min-width: 450px) {
     width: 100%;
     min-width: 480px;

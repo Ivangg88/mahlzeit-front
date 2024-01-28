@@ -3,6 +3,7 @@
     "home": "Home",
     "myRecipes": "My Recipes",
     "newRecipe": "Create Recipe",
-    "login": "Login"
+    "login": "Login",
+    "logout" :"Logout"
   }
 }

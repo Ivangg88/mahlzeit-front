@@ -1,0 +1,9 @@
+{
+  "header": {
+    "home": "Inicio",
+    "myRecipes": "Mis Recetas",
+    "newRecipe": "Crear Receta",
+    "login": "Iniciar Sesión",
+    "logout":"Cerrar Sesión"
+  }
+}
