@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const HeaderStyled = styled.header`
+  position: relative;
   width: 100%;
-
   border-radius: 15px;
   border: 1px solid ${(props) => props.theme.fontMainColor};
   color: ${(props) => props.theme.fontMainColor};
@@ -62,20 +62,29 @@ const HeaderStyled = styled.header`
   }
 
   .header__languages {
-    all: unset;
+    position: absolute;
+    list-style: none;
     display: flex;
     justify-content: center;
-    gap: 5px;
-    padding-right: 15px;
+    align-items: center;
+    gap: 10px;
+    top: 5px;
+    right: 60px;
+    padding: 0;
+    margin: 0;
   }
 
   .languages-button {
     all: unset;
   }
 
+  .languages-button--current {
+    transform: scale(1.2);
+  }
+
   .languages-button:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.3);
     color: gray;
   }
 
@@ -110,6 +119,10 @@ const HeaderStyled = styled.header`
       &--mobile {
         display: none;
       }
+    }
+
+    .header__languages {
+      position: relative;
     }
   }
 `;

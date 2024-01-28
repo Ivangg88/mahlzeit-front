@@ -2,7 +2,11 @@ import defaultLanguage from "./initialTranslation.json";
 
 export type I8nLanguage = "es" | "en" | "dk";
 
-export const availableLanguages: Array<I8nLanguage> = ["es", "en", "dk"];
+export const availableLanguages = [
+  { en: "images/en-flag.png" },
+  { es: "images/es-flag.png" },
+  { dk: "images/dk-flag.png" },
+];
 
 export interface Translations {
   header: {
