@@ -9,7 +9,6 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import MyReciptesPage from "./pages/MyReciptesPage/MyReciptesPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import { initialLanguage } from "./utils/i8n/i8n";
 import { useEffect } from "react";
 import useTranslations from "./hooks/useTranslations";
 
@@ -33,8 +32,6 @@ const App = (): JSX.Element => {
       window.removeEventListener("languagechange", handleLanguageChange);
     };
   }, [currentLanguage, loadTranslation, changeLanguage]);
-
-  console.log(initialLanguage);
 
   return (
     <>

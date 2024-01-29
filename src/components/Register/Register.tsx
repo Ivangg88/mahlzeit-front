@@ -1,8 +1,8 @@
 import { Formik } from "formik";
 import useUsers from "../../hooks/useUsers";
-import { validateRegisterSchema } from "../../schemas/validateSchema";
 import { UserRegister } from "../../types/interfaces";
 import RegisterFormikForm from "../RegisterFormikForm/RegisterFormikForm";
+import useValidateSchemas from "../../hooks/useValidateSchemas/useValidateSchemas";
 
 const userInitial: UserRegister = {
   userName: "",
@@ -15,6 +15,7 @@ const apiUrl = process.env.REACT_APP_API_URL!;
 
 const Register = (): JSX.Element => {
   const { sendUserToAPI } = useUsers();
+  const { validateRegisterSchema } = useValidateSchemas();
 
   return (
     <Formik

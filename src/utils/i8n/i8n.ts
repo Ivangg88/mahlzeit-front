@@ -40,6 +40,24 @@ export interface Translations {
     registerbutton: string;
     loginButton: string;
   };
+  validateErrors: {
+    name: {
+      mustName: string;
+      minName: string;
+      maxName: string;
+    };
+    password: {
+      mustPassword: string;
+      minPassword: string;
+      confirmPassword: string;
+    };
+    email: {
+      mustEmail: string;
+      maxEmail: string;
+      checkEmail: string;
+      confirmEmail: string;
+    };
+  };
 }
 
 export const initialTranslations: Translations = { ...defaultLanguage };

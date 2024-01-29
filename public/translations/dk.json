@@ -28,5 +28,23 @@
   "registerbutton": "Opret konto",
   "loginButton": "Log ind",
   "registerTitle": "Opret en konto"
+},
+ "validateErrors":{
+  "name": {
+    "mustName": "Navnefeltet er påkrævet",
+    "minName": "Skal være mindst 2 tegn",
+    "maxName": "Må højst være 25 tegn"
+  },
+  "password": {
+    "mustPassword": "Indtast adgangskoden",
+    "minPassword": "Adgangskoden skal være mindst 8 tegn",
+    "confirmPassword": "Adgangskoderne matcher ikke"
+  },
+  "email": {
+    "mustEmail": "E-mail kan ikke være tom",
+    "maxEmail": "Højst 60 tegn",
+    "checkEmail": "E-mail er ikke gyldig",
+    "confirmEmail": "E-mails matcher ikke"
+  }
 }
 }
