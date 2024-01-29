@@ -22,6 +22,24 @@ export interface Translations {
     process: string;
     delete: string;
   };
+  userForms: {
+    loginTitle: string;
+    nameInput: string;
+    namePlaceholder: string;
+    passwordInput: string;
+    passwordConfirmInput: string;
+    passwordPlaceholder: string;
+    notRegister: string;
+    loginLink: string;
+    emailInput: string;
+    emailPlaceholder: string;
+    emailConfirmInput: string;
+    registerTitle: string;
+    yetRegister: string;
+    registerLink: string;
+    registerbutton: string;
+    loginButton: string;
+  };
 }
 
 export const initialTranslations: Translations = { ...defaultLanguage };

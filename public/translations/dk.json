@@ -10,5 +10,23 @@
     "ingredients": "Ingredienser",
     "process": "Proces",
     "delete": "Slet"
+},
+"userForms": {
+  "loginTitle": "Login",
+  "nameInput": "Navn",
+  "namePlaceholder": "Navn",
+  "passwordInput": "Adgangskode",
+  "passwordConfirmInput": "Bekræft adgangskode",
+  "passwordPlaceholder": "********",
+  "notRegister": "Ikke registreret?",
+  "loginLink": "Klik for at logge ind",
+  "emailInput": "E-mail",
+  "emailPlaceholder": "E-mail",
+  "emailConfirmInput": "Bekræft e-mail",
+  "yetRegister": "Alligevel ikke registreret?",
+  "registerLink": "Klik for at registrere",
+  "registerbutton": "Opret konto",
+  "loginButton": "Log ind",
+  "registerTitle": "Opret en konto"
 }
 }

@@ -10,5 +10,24 @@
     "ingredients": "Ingredients",
     "process": "Process",
     "delete": "Delete"
+  },
+    "userForms": {
+      "loginTitle": "Login",
+      "nameInput": "Name",
+      "namePlaceholder": "Name",
+      "passwordInput": "Password",
+      "passwordConfirmInput": "Confirm password",
+      "passwordPlaceholder": "********",
+      "notRegister": "Not Register?",
+      "loginLink": "Click to login",
+      "registerTitle":"Create an account",
+      "emailInput": "Email",
+      "emailPlaceholder": "Email",
+      "emailConfirmInput": "Confirm Email",
+      "yetRegister": "Yet Register?",
+      "registerLink": "Click to login",
+      "registerbutton": "Create account",
+      "loginButton": "Login"
+    }
   }
-}
+  
