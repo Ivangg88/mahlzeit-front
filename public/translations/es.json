@@ -5,5 +5,10 @@
     "newRecipe": "Crear Receta",
     "login": "Iniciar Sesión",
     "logout":"Cerrar Sesión"
+  },
+  "card": {
+    "ingredients": "Ingredientes",
+    "process": "Procedimiento",
+    "delete": "Eliminar"
   }
 }

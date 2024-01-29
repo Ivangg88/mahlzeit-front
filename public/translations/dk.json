@@ -5,5 +5,10 @@
     "newRecipe": "Opret Opskrift",
     "login": "Log ind",
     "logout":"Log ud"
-  }
+  },
+  "card": {
+    "ingredients": "Ingredienser",
+    "process": "Proces",
+    "delete": "Slet"
+}
 }

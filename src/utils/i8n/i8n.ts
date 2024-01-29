@@ -17,6 +17,11 @@ export interface Translations {
     login: string;
     logout: string;
   };
+  card: {
+    ingredients: string;
+    process: string;
+    delete: string;
+  };
 }
 
 export const initialTranslations: Translations = { ...defaultLanguage };
