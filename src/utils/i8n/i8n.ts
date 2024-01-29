@@ -1,11 +1,12 @@
+import { dkFlag, enFlag, esFlag } from "../../assets/images/images";
 import defaultLanguage from "./initialTranslation.json";
 
 export type I8nLanguage = "es" | "en" | "dk";
 
 export const availableLanguages = [
-  { en: "images/en-flag.png" },
-  { es: "images/es-flag.png" },
-  { dk: "images/dk-flag.png" },
+  { en: enFlag },
+  { es: esFlag },
+  { dk: dkFlag },
 ];
 
 export interface Translations {
