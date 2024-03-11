@@ -18,6 +18,9 @@ interface ItemCardProps {
 const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
   const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/delete`;
   const user = useAppSelector((state: RootState) => state.user);
+  const { delete: deleteText } = useAppSelector(
+    (state: RootState) => state.i8n.translations.card
+  );
 
   const { deleteRecipte } = useReciptes();
   const navigator = useNavigate();
@@ -74,7 +77,7 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
                   className="button"
                   onClick={() => deleteRecipte(item.id, apiUrl)}
                 >
-                  Eliminar
+                  {deleteText}
                 </button>
               </li>
             )}

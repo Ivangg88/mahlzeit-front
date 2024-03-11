@@ -11,6 +11,12 @@ const DetailCard = (): JSX.Element => {
   const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/delete`;
   const { deleteRecipte } = useReciptes();
   const user = useAppSelector((state: RootState) => state.user);
+  const {
+    delete: deleteText,
+    ingredients: ingredientsText,
+    process: processText,
+  } = useAppSelector((state: RootState) => state.i8n.translations.card);
+
   const navigator = useNavigate();
 
   const { getRecipteById } = useReciptes();
@@ -40,10 +46,10 @@ const DetailCard = (): JSX.Element => {
       );
     });
 
-    processes = item.process.map((process) => {
+    processes = item.process.map(({ process }) => {
       return (
-        <li>
-          <span>{process.process}</span>
+        <li key={process}>
+          <span>{process}</span>
         </li>
       );
     });
@@ -76,12 +82,12 @@ const DetailCard = (): JSX.Element => {
 
           <div className="detail-card__details">
             <div className="detail-card__ingredients">
-              <h2 className="detail-card__subtitle">Ingredientes </h2>
+              <h2 className="detail-card__subtitle">{ingredientsText} </h2>
               <ul>{ingredients}</ul>
             </div>
 
             <div className="detail-card__process">
-              <h2 className="detail-card__subtitle">Procedimiento</h2>
+              <h2 className="detail-card__subtitle">{processText}</h2>
               <ol>{processes}</ol>
             </div>
           </div>
@@ -93,7 +99,7 @@ const DetailCard = (): JSX.Element => {
                 className="delete-button"
                 onClick={() => deleteRecipte(item.id, apiUrl)}
               >
-                Eliminar
+                {deleteText}
               </button>
             )}
           </div>

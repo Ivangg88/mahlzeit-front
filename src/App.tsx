@@ -9,10 +9,29 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import MyReciptesPage from "./pages/MyReciptesPage/MyReciptesPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import { useEffect } from "react";
+import useTranslations from "./hooks/useTranslations";
 
 const App = (): JSX.Element => {
   const user = useAppSelector((state: RootState) => state.user);
   const ui = useAppSelector((state: RootState) => state.ui);
+  const currentLanguage = useAppSelector(
+    (state: RootState) => state.i8n.language
+  );
+  const { loadTranslation, changeLanguage } = useTranslations();
+
+  useEffect(() => {
+    const handleLanguageChange = () => {
+      changeLanguage(navigator.language);
+    };
+
+    window.addEventListener("languagechange", handleLanguageChange);
+    loadTranslation(currentLanguage);
+
+    return () => {
+      window.removeEventListener("languagechange", handleLanguageChange);
+    };
+  }, [currentLanguage, loadTranslation, changeLanguage]);
 
   return (
     <>

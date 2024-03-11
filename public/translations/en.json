@@ -1,0 +1,50 @@
+{
+  "header": {
+    "home": "Home",
+    "myRecipes": "My Recipes",
+    "newRecipe": "Create Recipe",
+    "login": "Login",
+    "logout":"Logout"
+  },
+  "card": {
+    "ingredients": "Ingredients",
+    "process": "Process",
+    "delete": "Delete"
+  },
+  "userForms": {
+    "loginTitle": "Login",
+    "nameInput": "Name",
+    "namePlaceholder": "Name",
+    "passwordInput": "Password",
+    "passwordConfirmInput": "Confirm password",
+    "passwordPlaceholder": "********",
+    "notRegister": "Not Register?",
+    "loginLink": "Click to login",
+    "emailInput": "Email",
+    "emailPlaceholder": "Email",
+    "emailConfirmInput": "Confirm Email",
+    "yetRegister": "Yet Register?",
+    "registerLink": "Click to login",
+    "registerbutton": "Create account",
+    "loginButton": "Login",
+    "registerTitle":"Create an account"
+  }, 
+  "validateErrors":{    
+    "name": {
+      "mustName": "The name field is required",
+      "minName": "Must be at least 2 characters",
+      "maxName": "Must be at most 25 characters"
+    },
+    "password": {
+      "mustPassword": "Enter the password",
+      "minPassword": "Password must be at least 8 characters",
+      "confirmPassword": "Passwords do not match"
+    },
+    "email": {
+      "mustEmail": "Email cannot be empty",
+      "maxEmail": "Maximum 60 characters",
+      "checkEmail": "Email is not valid",
+      "confirmEmail": "Emails do not match"
+    }
+  }
+}
