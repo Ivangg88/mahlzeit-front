@@ -1,3 +1,5 @@
+import { useAppSelector } from "../../../app/hooks";
+import { RootState } from "../../../app/store";
 import { Ingredient, ProtoRecipte } from "../../../types/interfaces";
 import Button from "../../Button/Button";
 import { IngredientInputs } from "../IngredientInputs/IngredientInputs";
@@ -24,6 +26,21 @@ const DetailsForm = ({
   nextPage,
   previousPage,
 }: IngredientsFromProps): JSX.Element => {
+  const {
+    translations: {
+      recipeForm: {
+        createRecipe,
+        name,
+        namePlaceholder,
+        difficulty,
+        difficultyPlaceholder,
+        persons,
+        personsPlaceholder,
+        nextButton,
+      },
+    },
+  } = useAppSelector((state: RootState) => state.i8n);
+
   const handleFormChange = (
     index: number,
     event: React.ChangeEvent<HTMLInputElement>
@@ -79,12 +96,12 @@ const DetailsForm = ({
       className="recipte-form"
       autoComplete="off"
     >
-      <h1 className="recipte-form__title">Crea tu receta</h1>
+      <h1 className="recipte-form__title">{createRecipe}</h1>
 
       <ul className="recipte-form__inputs-container">
         <li className="recipte-form__input-field">
           <label htmlFor="name" className="label">
-            Nombre:
+            {name}
           </label>
           <input
             id="name"
@@ -92,14 +109,14 @@ const DetailsForm = ({
             type="text"
             value={recipte.name}
             className="recipte-form__input"
-            placeholder="Alcachofas con jamón"
+            placeholder={namePlaceholder}
             onChange={(event) => handleChange(event)}
           />
         </li>
 
         <li className="recipte-form__input-field">
           <label htmlFor="dificulty" className="label">
-            Dificultad:
+            {difficulty}
           </label>
           <input
             id="dificulty"
@@ -107,14 +124,14 @@ const DetailsForm = ({
             type="text"
             value={recipte.dificulty}
             className="recipte-form__input"
-            placeholder="Dificultad"
+            placeholder={difficultyPlaceholder}
             onChange={(event) => handleChange(event)}
           />
         </li>
 
         <li className="recipte-form__input-field">
           <label htmlFor="persons" className="label">
-            Personas:
+            {persons}
           </label>
           <input
             id="persons"
@@ -123,7 +140,7 @@ const DetailsForm = ({
             inputMode="numeric"
             value={recipte.persons}
             className="recipte-form__input"
-            placeholder="4"
+            placeholder={personsPlaceholder}
             onChange={(event) => handleChange(event)}
           />
         </li>
@@ -139,7 +156,7 @@ const DetailsForm = ({
         </li>
 
         <div className="button-container">
-          <Button type="button" text="Siguiente" actionOnClick={nextPage} />
+          <Button type="button" text={nextButton} actionOnClick={nextPage} />
         </div>
       </ul>
     </DetailsFormStyled>

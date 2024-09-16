@@ -1,13 +1,17 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinimize } from "@fortawesome/free-solid-svg-icons";
-import RecipteCardStyled from "./DetailCardStyled";
-import useReciptes from "../../hooks/useReciptes";
-import { useNavigate, useParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
 import { RootState } from "../../app/store";
-import { useLayoutEffect } from "react";
+import useReciptes from "../../hooks/useReciptes";
+import { Recipte } from "../../types/interfaces";
+import RecipteCardStyled from "./DetailCardStyled";
 
-const DetailCard = (): JSX.Element => {
+interface DetailCardProps {
+  recipteDetail: Recipte;
+}
+
+const DetailCard = ({ recipteDetail }: DetailCardProps): JSX.Element => {
   const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/delete`;
   const { deleteRecipte } = useReciptes();
   const user = useAppSelector((state: RootState) => state.user);
@@ -16,28 +20,16 @@ const DetailCard = (): JSX.Element => {
     ingredients: ingredientsText,
     process: processText,
   } = useAppSelector((state: RootState) => state.i8n.translations.card);
-
   const navigator = useNavigate();
 
-  const { getRecipteById } = useReciptes();
-  const { id } = useParams();
-  const urlId = `${process.env.REACT_APP_API_URL}/reciptes/getById`;
-
-  useLayoutEffect(() => {
-    getRecipteById(id!, urlId);
-  }, [id, getRecipteById, urlId]);
-
-  const items = useAppSelector((state: RootState) => state.reciptes);
-
-  const item = items[0];
   let ingredients;
   let processes;
 
-  if (item) {
-    ingredients = item.ingredients.map((ingredient) => {
+  if (recipteDetail) {
+    ingredients = recipteDetail.ingredients.map((ingredient) => {
       return (
         <>
-          <li>
+          <li key={ingredient.name + ingredient.quantity + ingredient.unit}>
             <span>{ingredient.name}</span>
             <span>{ingredient.quantity}</span>
             <span>{ingredient.unit}</span>
@@ -46,7 +38,7 @@ const DetailCard = (): JSX.Element => {
       );
     });
 
-    processes = item.process.map(({ process }) => {
+    processes = recipteDetail.process.map(({ process }) => {
       return (
         <li key={process}>
           <span>{process}</span>
@@ -56,28 +48,32 @@ const DetailCard = (): JSX.Element => {
   }
   return (
     <RecipteCardStyled>
-      {item && (
+      {recipteDetail && (
         <>
-          <FontAwesomeIcon
-            className="detail-card__icon"
-            icon={faMinimize}
-            onClick={() => {
-              navigator(-1);
-            }}
-          />
-
           <h1 className="detail-card__title detail-card__title--mobile">
-            {item.name}
+            {recipteDetail.name}{" "}
+            <FontAwesomeIcon
+              icon={faMinimize}
+              onClick={() => {
+                navigator(-1);
+              }}
+            />
           </h1>
 
           <img
-            src={item.backupImage}
-            alt={item.name}
+            src={recipteDetail.backupImage}
+            alt={recipteDetail.name}
             className="detail-card__image"
           />
 
           <h1 className="detail-card__title detail-card__title--desktop">
-            {item.name}
+            {recipteDetail.name}
+            <FontAwesomeIcon
+              icon={faMinimize}
+              onClick={() => {
+                navigator(-1);
+              }}
+            />
           </h1>
 
           <div className="detail-card__details">
@@ -93,11 +89,11 @@ const DetailCard = (): JSX.Element => {
           </div>
 
           <div className="button-container">
-            {user.userName === item.autor && (
+            {user.userName === recipteDetail.autor && (
               <button
                 aria-label="delete"
                 className="delete-button"
-                onClick={() => deleteRecipte(item.id, apiUrl)}
+                onClick={() => deleteRecipte(recipteDetail.id, apiUrl)}
               >
                 {deleteText}
               </button>

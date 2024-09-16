@@ -1,12 +1,8 @@
 import styled from "styled-components";
 
 const LoadingStyled = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +16,9 @@ const LoadingStyled = styled.div`
 
   .loading__image {
     position: relative;
-    left: 25px;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
   .container {
@@ -59,6 +57,10 @@ const LoadingStyled = styled.div`
     transform-origin: center right;
     animation: spin4 3s linear infinite;
     animation-delay: 0.4s;
+  }
+
+  @media (min-width: 550px) {
+    top: 52px;
   }
 
   @keyframes spin {

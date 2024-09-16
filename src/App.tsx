@@ -1,7 +1,8 @@
+import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useAppSelector } from "./app/hooks";
 import { RootState } from "./app/store";
-import Loading from "./components/Loading/Loading";
+import useTranslations from "./hooks/useTranslations";
 import CreateReciptePage from "./pages/CreateReciptePage/CreateReciptePage";
 import DetailPage from "./pages/DetailPage/DetailPage";
 import HomePage from "./pages/HomePage/HomePage";
@@ -9,12 +10,10 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import MyReciptesPage from "./pages/MyReciptesPage/MyReciptesPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import { useEffect } from "react";
-import useTranslations from "./hooks/useTranslations";
+import NotLoggedPage from "./pages/NotLoggedPage/NotLoggedPage";
 
 const App = (): JSX.Element => {
   const user = useAppSelector((state: RootState) => state.user);
-  const ui = useAppSelector((state: RootState) => state.ui);
   const currentLanguage = useAppSelector(
     (state: RootState) => state.i8n.language
   );
@@ -35,7 +34,6 @@ const App = (): JSX.Element => {
 
   return (
     <>
-      {ui.isLoading && <Loading />}
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<HomePage />} />
@@ -46,23 +44,11 @@ const App = (): JSX.Element => {
         <Route path="*" element={<NotFoundPage error={false} />} />
         <Route
           path="/create"
-          element={
-            user.isLogged ? (
-              <CreateReciptePage />
-            ) : (
-              <LoginPage navigateTarget="/create" />
-            )
-          }
+          element={user.isLogged ? <CreateReciptePage /> : <NotLoggedPage />}
         />
         <Route
           path="/myreciptes"
-          element={
-            user.isLogged ? (
-              <MyReciptesPage />
-            ) : (
-              <LoginPage navigateTarget="/myreciptes" />
-            )
-          }
+          element={user.isLogged ? <MyReciptesPage /> : <NotLoggedPage />}
         />
       </Routes>
     </>

@@ -46,5 +46,30 @@
     "checkEmail": "E-mail er ikke gyldig",
     "confirmEmail": "E-mails matcher ikke"
   }
+},
+"pagination": {
+    "from": "fra",
+    "results": "resultater"
+},
+"recipeForm": {
+  "createRecipe": "Opret din opskrift",
+  "name": "Navn:",
+  "namePlaceholder": "Frikadeller",
+  "difficulty": "Sværhedsgrad:",
+  "difficultyPlaceholder": "Let",
+  "persons": "Personer:",
+  "personsPlaceholder": "0",
+  "ingredients": "Ingredienser:",
+  "ingredientsPlaceholder": "Ingrediens",
+  "quantity": "Mængde:",
+  "quantityPlaceholder": "Mængde",
+  "nextButton": "Næste",
+  "backButton": "Tilbage",
+  "process": "Fremgangsmåde",
+  "step": "Trin",
+  "stepPlaceholder": "Beskrivelse",
+  "addImage": "Tilføj dit billede",
+  "addImageLabel": "Tilføj billede:",
+  "createRecipeButton": "Opret"
 }
 }

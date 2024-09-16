@@ -1,0 +1,1013 @@
+{"recipes":[
+  {
+  "id": "65aa5803abba7dadd2505916",
+  "name": "Alcachofas con jamón",
+  "persons": 4,
+  "dificulty": "Fácil",
+  "autor": "Ivan",
+  "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.b-npAFw8CQKKB5sB6CQ0igHaE8%26pid%3DApi&f=1&ipt=8fcfa8baa7778cde3484d44815d533a997a7a31c071f422904783986aa07696c&ipo=images",
+  "backupImage": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.b-npAFw8CQKKB5sB6CQ0igHaE8%26pid%3DApi&f=1&ipt=8fcfa8baa7778cde3484d44815d533a997a7a31c071f422904783986aa07696c&ipo=images",
+  "ingredients": [
+    {
+      "name": "Alcachofas",
+      "quantity": "1",
+      "unit": "Kg"
+    },
+    {
+      "name": "Jamón en virutas",
+      "quantity": "500",
+      "unit": "g"
+    },
+    {
+      "name": "AOVE",
+      "quantity": "50",
+      "unit": "ml"
+    },
+    {
+      "name": "Dientes de ajo",
+      "quantity": "2",
+      "unit": "uds"
+    }
+  ],
+  "process": [
+    {
+      "process": "Calentar el aceite en una sartén.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Saltear las alcachofas previamente peladas.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Añadir el ajo y dorar.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Con el fuego apagado, añadir el jamón y saltear.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Servir.",
+      "picture": "",
+      "backupPicture": ""
+    }
+  ],
+  "__v": 0
+},
+{
+  "id": "6320f31c62723f5be8bc4616",
+  "name": "Arroz a la cubana",
+  "persons": 2,
+  "dificulty": "Fácil",
+  "autor": "María",
+  "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.OcTebLJaNl6xIx_9I6bW8gHaE7%26pid%3DApi&f=1&ipt=2befa9ddb0b2acaa03164b9f0c16daefc5bf498b10651ebfa1babc946092b960&ipo=images",
+  "backupImage": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.OcTebLJaNl6xIx_9I6bW8gHaE7%26pid%3DApi&f=1&ipt=2befa9ddb0b2acaa03164b9f0c16daefc5bf498b10651ebfa1babc946092b960&ipo=images",
+  "ingredients": [
+    {
+      "name": "Arroz",
+      "quantity": "200",
+      "unit": "g"
+    },
+    {
+      "name": "Salchichas",
+      "quantity": "4",
+      "unit": "uds"
+    },
+    {
+      "name": "Cebolla mediana",
+      "quantity": "1",
+      "unit": "ud"
+    },
+    {
+      "name": "Huevos",
+      "quantity": "4",
+      "unit": "uds"
+    }
+  ],
+  "process": [
+    {
+      "process": "Cuece arroz",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Escurre y lávalo",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Fríe la cebolla y echa el arroz a la sartén",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Fríe las salchichas y los huevos",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "En un plato servir el arroz, las salchichas y los huevos. Añadir salsa de tomate. Y listo.",
+      "picture": "",
+      "backupPicture": ""
+    }
+  ],
+  "__v": 0
+},
+{
+  "id": "63c47b6a0e5f05befd8a5a61",
+  "name": "Huevos rellenos",
+  "persons": 4,
+  "dificulty": "Fácil",
+  "autor": "Antonia",
+  "image": "https://i.ytimg.com/vi/LomIt7hNssg/maxresdefault.jpg",
+  "backupImage": "https://i.ytimg.com/vi/LomIt7hNssg/maxresdefault.jpg",
+  "ingredients": [
+    {
+      "name": "Huevos",
+      "quantity": "8",
+      "unit": "uds"
+    },
+    {
+      "name": "Tomate frito",
+      "quantity": "250",
+      "unit": "ml"
+    },
+    {
+      "name": "Atún ",
+      "quantity": "250",
+      "unit": "g"
+    },
+    {
+      "name": "Mayonesa",
+      "quantity": "100",
+      "unit": "ml"
+    },
+    {
+      "name": "Pimientos del piquillo",
+      "quantity": "4 ",
+      "unit": "uds"
+    }
+  ],
+  "process": [
+    {
+      "process": "Ponemos los huevos a cocer, 10 minutos para conseguir huevo duro.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Troceamos el pimiento del piquillo y lo añadimos a un bol junto al atún.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Pelamos y partimos por la mitad los huevos cocidos. Reservamos 1 yema para decorar.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Añadimos al bol las yemas restantes y el tomate frito, mezclamos todo hasta que quede uniforme.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Disponemos los huevos cortados en una bandeja y empezamos a rellenarlos con la mezcla anterior.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Una vez rellenos se pintan con mayonesa y se ralla la yema por encima para decorar.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "A disfrutar!!!",
+      "picture": "",
+      "backupPicture": ""
+    }
+  ],
+  "__v": 0
+},{
+  "id": "croquetas-jamon-1234",
+  "name": "Croquetas de Jamón",
+  "persons": 4,
+  "dificulty": "Media",
+  "autor": "Antonia",
+  "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.8nNC5JXt3UG4kkgBhhkVngHaEr%26pid%3DApi&f=1&ipt=4abf484c568ee8f445db1cf180807e9ae19f75383e6a086c8b8d51954e443e6d&ipo=images",
+  "backupImage": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.8nNC5JXt3UG4kkgBhhkVngHaEr%26pid%3DApi&f=1&ipt=4abf484c568ee8f445db1cf180807e9ae19f75383e6a086c8b8d51954e443e6d&ipo=images",
+  "ingredients": [
+    {
+      "name": "Jamón serrano",
+      "quantity": "200",
+      "unit": "g"
+    },
+    {
+      "name": "Harina",
+      "quantity": "100",
+      "unit": "g"
+    },
+    {
+      "name": "Mantequilla",
+      "quantity": "50",
+      "unit": "g"
+    },
+    {
+      "name": "Leche",
+      "quantity": "500",
+      "unit": "ml"
+    },
+    {
+      "name": "Cebolla",
+      "quantity": "1/2",
+      "unit": "ud"
+    },
+    {
+      "name": "Nuez moscada",
+      "quantity": "1",
+      "unit": "pizca"
+    },
+    {
+      "name": "Sal",
+      "quantity": "1",
+      "unit": "pizca"
+    },
+    {
+      "name": "Huevo",
+      "quantity": "2",
+      "unit": "uds"
+    },
+    {
+      "name": "Pan rallado",
+      "quantity": "100",
+      "unit": "g"
+    },
+    {
+      "name": "Aceite de oliva",
+      "quantity": "500",
+      "unit": "ml"
+    }
+  ],
+  "process": [
+    {
+      "process": "Picar finamente la cebolla y el jamón serrano.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Derretir la mantequilla en una sartén y pochar la cebolla hasta que esté transparente.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Añadir la harina y cocinar durante 2-3 minutos para formar un roux.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Incorporar la leche poco a poco, removiendo constantemente para evitar grumos, y cocinar hasta obtener una bechamel espesa.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Añadir el jamón picado, una pizca de nuez moscada y sal al gusto. Remover bien y dejar enfriar la mezcla en la nevera durante al menos 2 horas.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Formar las croquetas con la masa fría, pasarlas por huevo batido y luego por pan rallado.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Freír las croquetas en abundante aceite caliente hasta que estén doradas. Escurrir en papel absorbente.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Servir las croquetas calientes.",
+      "picture": "",
+      "backupPicture": ""
+    }
+  ],
+  "__v": 0
+},{
+  "id": "tortilla-espanola-1235",
+  "name": "Tortilla Española",
+  "persons": 4,
+  "dificulty": "Fácil",
+  "autor": "María",
+  "image": "https://cdn.tasteatlas.com/Images/Dishes/9f97f71d4af84228bf7290556613ecec.jpg",
+  "backupImage": "https://cdn.tasteatlas.com/Images/Dishes/9f97f71d4af84228bf7290556613ecec.jpg",
+  "ingredients": [
+    {
+      "name": "Patatas",
+      "quantity": "500",
+      "unit": "g"
+    },
+    {
+      "name": "Huevos",
+      "quantity": "6",
+      "unit": "uds"
+    },
+    {
+      "name": "Cebolla",
+      "quantity": "1",
+      "unit": "ud"
+    },
+    {
+      "name": "Aceite de oliva",
+      "quantity": "200",
+      "unit": "ml"
+    },
+    {
+      "name": "Sal",
+      "quantity": "1",
+      "unit": "pizca"
+    }
+  ],
+  "process": [
+    {
+      "process": "Pelar y cortar las patatas y la cebolla en rodajas finas.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Freír las patatas y la cebolla en abundante aceite caliente hasta que estén tiernas.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Escurrir las patatas y la cebolla, y mezclar con los huevos batidos y sal.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Verter la mezcla en una sartén con un poco de aceite y cocinar a fuego medio hasta que cuaje por un lado.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Dar la vuelta a la tortilla y cocinar por el otro lado hasta que esté dorada.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Servir caliente o fría, según tu preferencia.",
+      "picture": "",
+      "backupPicture": ""
+    }
+  ],
+  "__v": 0
+},{
+  "id": "gazpacho-andaluz-1236",
+  "name": "Gazpacho Andaluz",
+  "persons": 4,
+  "dificulty": "Fácil",
+  "autor": "Iván",
+  "image": "https://www.pronto.es/uploads/s1/17/42/41/5/PRONTO%202359_10823.jpg",
+  "backupImage": "https://www.pronto.es/uploads/s1/17/42/41/5/PRONTO%202359_10823.jpg",
+  "ingredients": [
+    {
+      "name": "Tomates maduros",
+      "quantity": "1",
+      "unit": "kg"
+    },
+    {
+      "name": "Pepino",
+      "quantity": "1",
+      "unit": "ud"
+    },
+    {
+      "name": "Pimiento verde",
+      "quantity": "1",
+      "unit": "ud"
+    },
+    {
+      "name": "Dientes de ajo",
+      "quantity": "2",
+      "unit": "uds"
+    },
+    {
+      "name": "Aceite de oliva",
+      "quantity": "50",
+      "unit": "ml"
+    },
+    {
+      "name": "Vinagre de vino",
+      "quantity": "30",
+      "unit": "ml"
+    },
+    {
+      "name": "Sal",
+      "quantity": "1",
+      "unit": "pizca"
+    }
+  ],
+  "process": [
+    {
+      "process": "Lavar y cortar los tomates, pepino y pimiento verde.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Pelar y picar los ajos.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Triturar todos los ingredientes en una batidora hasta obtener una mezcla homogénea.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Añadir el aceite de oliva, vinagre y sal al gusto, y volver a batir.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Pasar la mezcla por un colador para eliminar las pieles y semillas.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Refrigerar el gazpacho durante al menos 2 horas antes de servir.",
+      "picture": "",
+      "backupPicture": ""
+    }
+  ],
+  "__v": 0
+}
+,{
+  "id": "paella-valenciana-1237",
+  "name": "Paella Valenciana",
+  "persons": 4,
+  "dificulty": "Media",
+  "autor": "Iván",
+  "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.88bqluKyZHdJKY-VOEPA9QHaE7%26pid%3DApi&f=1&ipt=c91bade613749ad95ab3d9d52a6d97624e2809eb96d19a54ccb05a5762253f72&ipo=images",
+  "backupImage": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.88bqluKyZHdJKY-VOEPA9QHaE7%26pid%3DApi&f=1&ipt=c91bade613749ad95ab3d9d52a6d97624e2809eb96d19a54ccb05a5762253f72&ipo=images",
+  "ingredients": [
+    {
+      "name": "Arroz",
+      "quantity": "400",
+      "unit": "g"
+    },
+    {
+      "name": "Pollo",
+      "quantity": "500",
+      "unit": "g"
+    },
+    {
+      "name": "Conejo",
+      "quantity": "300",
+      "unit": "g"
+    },
+    {
+      "name": "Judías verdes",
+      "quantity": "150",
+      "unit": "g"
+    },
+    {
+      "name": "Garrofón",
+      "quantity": "100",
+      "unit": "g"
+    },
+    {
+      "name": "Tomate triturado",
+      "quantity": "200",
+      "unit": "g"
+    },
+    {
+      "name": "Pimentón",
+      "quantity": "1",
+      "unit": "cucharadita"
+    },
+    {
+      "name": "Aceite de oliva",
+      "quantity": "100",
+      "unit": "ml"
+    },
+    {
+      "name": "Azafrán",
+      "quantity": "1",
+      "unit": "pizca"
+    },
+    {
+      "name": "Agua",
+      "quantity": "1",
+      "unit": "litro"
+    },
+    {
+      "name": "Sal",
+      "quantity": "1",
+      "unit": "pizca"
+    }
+  ],
+  "process": [
+    {
+      "process": "Calentar el aceite en la paellera y dorar el pollo y el conejo.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Añadir las judías verdes y el garrofón, y rehogar unos minutos.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Incorporar el tomate triturado y el pimentón, y cocinar durante unos minutos.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Añadir el agua y el azafrán, y llevar a ebullición.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Incorporar el arroz y distribuirlo de manera uniforme. Cocinar a fuego medio hasta que el arroz absorba el caldo.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Dejar reposar unos minutos antes de servir.",
+      "picture": "",
+      "backupPicture": ""
+    }
+  ],
+  "__v": 0
+},{
+  "id": "fabada-asturiana-1238",
+  "name": "Fabada Asturiana",
+  "persons": 4,
+  "dificulty": "Media",
+  "autor": "María",
+  "image": "https://concucharaycucharon.com/wp-content/uploads/2018/12/fabada-asturiana2.jpg",
+  "backupImage": "https://concucharaycucharon.com/wp-content/uploads/2018/12/fabada-asturiana2.jpg",
+  "ingredients": [
+    {
+      "name": "Fabes",
+      "quantity": "500",
+      "unit": "g"
+    },
+    {
+      "name": "Chorizo",
+      "quantity": "2",
+      "unit": "uds"
+    },
+    {
+      "name": "Morcilla",
+      "quantity": "2",
+      "unit": "uds"
+    },
+    {
+      "name": "Panceta",
+      "quantity": "200",
+      "unit": "g"
+    },
+    {
+      "name": "Ajo",
+      "quantity": "2",
+      "unit": "dientes"
+    },
+    {
+      "name": "Laurel",
+      "quantity": "1",
+      "unit": "hoja"
+    },
+    {
+      "name": "Sal",
+      "quantity": "1",
+      "unit": "pizca"
+    }
+  ],
+  "process": [
+    {
+      "process": "Remojar las fabes en agua la noche anterior.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Cocer las fabes en agua fría con los ajos y la hoja de laurel.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Añadir el chorizo, la morcilla y la panceta a la cazuela y cocinar a fuego lento durante 2 horas.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Rectificar de sal y dejar reposar antes de servir.",
+      "picture": "",
+      "backupPicture": ""
+    }
+  ],
+  "__v": 0
+},{
+  "id": "pulpo-a-la-gallega-1239",
+  "name": "Pulpo a la Gallega",
+  "persons": 4,
+  "dificulty": "Media",
+  "autor": "Thomas",
+  "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SXj4BaGIurBDiUhUxuWxswHaE8%26pid%3DApi&f=1&ipt=e245d8a7320e507c5ccc0412a5003d6d6cd047d4438cb67a0137d1318b47321c&ipo=images",
+  "backupImage": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SXj4BaGIurBDiUhUxuWxswHaE8%26pid%3DApi&f=1&ipt=e245d8a7320e507c5ccc0412a5003d6d6cd047d4438cb67a0137d1318b47321c&ipo=images",
+  "ingredients": [
+    {
+      "name": "Pulpo",
+      "quantity": "1",
+      "unit": "ud"
+    },
+    {
+      "name": "Patatas",
+      "quantity": "4",
+      "unit": "uds"
+    },
+    {
+      "name": "Pimentón",
+      "quantity": "1",
+      "unit": "cucharada"
+    },
+    {
+      "name": "Aceite de oliva",
+      "quantity": "50",
+      "unit": "ml"
+    },
+    {
+      "name": "Sal gruesa",
+      "quantity": "1",
+      "unit": "pizca"
+    }
+  ],
+  "process": [
+    {
+      "process": "Cocer el pulpo en agua hirviendo durante 40 minutos, asustándolo 3 veces antes de introducirlo completamente.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Cocer las patatas en el mismo agua del pulpo hasta que estén tiernas.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Cortar el pulpo en rodajas y las patatas en rodajas gruesas.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Servir el pulpo sobre las patatas, espolvorear con pimentón y sal, y rociar con aceite de oliva.",
+      "picture": "",
+      "backupPicture": ""
+    }
+  ],
+  "__v": 0
+},{
+  "id": "cochinillo-asado-1240",
+  "name": "Cochinillo Asado",
+  "persons": 4,
+  "dificulty": "Difícil",
+  "autor": "Enrique",
+  "image": "https://www.eladerezo.com/wp-content/uploads/2014/12/cochinillo-de-segovia-asado.jpg",
+  "backupImage": "https://www.eladerezo.com/wp-content/uploads/2014/12/cochinillo-de-segovia-asado.jpg",
+  "ingredients": [
+    {
+      "name": "Cochinillo",
+      "quantity": "1",
+      "unit": "ud"
+    },
+    {
+      "name": "Manteca de cerdo",
+      "quantity": "100",
+      "unit": "g"
+    },
+    {
+      "name": "Ajo",
+      "quantity": "4",
+      "unit": "dientes"
+    },
+    {
+      "name": "Sal",
+      "quantity": "1",
+      "unit": "pizca"
+    },
+    {
+      "name": "Agua",
+      "quantity": "500",
+      "unit": "ml"
+    }
+  ],
+  "process": [
+    {
+      "process": "Precalentar el horno a 180°C.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Untar el cochinillo con manteca de cerdo y frotar con ajo y sal.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Colocar el cochinillo en una bandeja con agua y asar durante 2 horas, rociando con su propio jugo de vez en cuando.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Subir la temperatura a 200°C y asar durante 30 minutos más para dorar la piel.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Servir el cochinillo caliente, acompañado de su jugo.",
+      "picture": "",
+      "backupPicture": ""
+    }
+  ],
+  "__v": 0
+},{
+  "id": "gambas-al-ajillo-1241",
+  "name": "Gambas al Ajillo",
+  "persons": 4,
+  "dificulty": "Fácil",
+  "autor": "Jesper",
+  "image": "https://cdn.tasteatlas.com/images/dishes/b5ee089cc7ac4c19b56efba5e6364115.jpg?mw=1300",
+  "backupImage": "https://cdn.tasteatlas.com/images/dishes/b5ee089cc7ac4c19b56efba5e6364115.jpg?mw=1300",
+  "ingredients": [
+    {
+      "name": "Gambas",
+      "quantity": "400",
+      "unit": "g"
+    },
+    {
+      "name": "Ajo",
+      "quantity": "4",
+      "unit": "dientes"
+    },
+    {
+      "name": "Guindilla",
+      "quantity": "1",
+      "unit": "ud"
+    },
+    {
+      "name": "Aceite de oliva",
+      "quantity": "100",
+      "unit": "ml"
+    },
+    {
+      "name": "Sal",
+      "quantity": "1",
+      "unit": "pizca"
+    },
+    {
+      "name": "Perejil",
+      "quantity": "1",
+      "unit": "ramita"
+    }
+  ],
+  "process": [
+    {
+      "process": "Pelar las gambas y picar finamente el ajo.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Calentar el aceite en una sartén y dorar el ajo con la guindilla.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Añadir las gambas y cocinar hasta que estén rosadas.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Espolvorear con perejil picado y sal al gusto, y servir caliente.",
+      "picture": "",
+      "backupPicture": ""
+    }
+  ],
+  "__v": 0
+},{
+  "id": "calamares-en-su-tinta-1242",
+  "name": "Calamares en su Tinta",
+  "persons": 4,
+  "dificulty": "Media",
+  "autor": "Iván",
+  "image": "https://i0.wp.com/www.turimexico.com/wp-content/uploads/2016/04/Receta-Calamares-en-su-Tinta.jpg?fit=1100%2C825&ssl=1",
+  "backupImage": "https://i0.wp.com/www.turimexico.com/wp-content/uploads/2016/04/Receta-Calamares-en-su-Tinta.jpg?fit=1100%2C825&ssl=1",
+  "ingredients": [
+    {
+      "name": "Calamares",
+      "quantity": "1",
+      "unit": "kg"
+    },
+    {
+      "name": "Cebolla",
+      "quantity": "1",
+      "unit": "ud"
+    },
+    {
+      "name": "Ajo",
+      "quantity": "2",
+      "unit": "dientes"
+    },
+    {
+      "name": "Tomate triturado",
+      "quantity": "200",
+      "unit": "g"
+    },
+    {
+      "name": "Vino blanco",
+      "quantity": "100",
+      "unit": "ml"
+    },
+    {
+      "name": "Tinta de calamar",
+      "quantity": "2",
+      "unit": "sobres"
+    },
+    {
+      "name": "Aceite de oliva",
+      "quantity": "50",
+      "unit": "ml"
+    },
+    {
+      "name": "Sal",
+      "quantity": "1",
+      "unit": "pizca"
+    }
+  ],
+  "process": [
+    {
+      "process": "Limpiar y cortar los calamares en anillas.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Picar finamente la cebolla y el ajo, y pochar en una sartén con aceite.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Añadir el tomate triturado y cocinar unos minutos.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Incorporar los calamares, el vino blanco y la tinta, y cocinar a fuego lento durante 30 minutos.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Rectificar de sal y servir caliente.",
+      "picture": "",
+      "backupPicture": ""
+    }
+  ],
+  "__v": 0
+},{
+  "id": "patatas-bravas-1243",
+  "name": "Patatas Bravas",
+  "persons": 4,
+  "dificulty": "Fácil",
+  "autor": "Dolores",
+  "image": "https://www.annarecetasfaciles.com/files/dsc01788.jpg",
+  "backupImage": "https://www.annarecetasfaciles.com/files/dsc01788.jpg",
+  "ingredients": [
+    {
+      "name": "Patatas",
+      "quantity": "800",
+      "unit": "g"
+    },
+    {
+      "name": "Aceite de oliva",
+      "quantity": "200",
+      "unit": "ml"
+    },
+    {
+      "name": "Tomate triturado",
+      "quantity": "200",
+      "unit": "g"
+    },
+    {
+      "name": "Ajo",
+      "quantity": "1",
+      "unit": "diente"
+    },
+    {
+      "name": "Pimentón",
+      "quantity": "1",
+      "unit": "cucharadita"
+    },
+    {
+      "name": "Vinagre de vino",
+      "quantity": "20",
+      "unit": "ml"
+    },
+    {
+      "name": "Sal",
+      "quantity": "1",
+      "unit": "pizca"
+    }
+  ],
+  "process": [
+    {
+      "process": "Pelar y cortar las patatas en dados grandes.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Freír las patatas en abundante aceite caliente hasta que estén doradas y crujientes.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Para la salsa, pochar el ajo picado en una sartén con aceite, añadir el tomate triturado, el pimentón y el vinagre, y cocinar a fuego lento durante 10 minutos.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Servir las patatas con la salsa brava por encima.",
+      "picture": "",
+      "backupPicture": ""
+    }
+  ],
+  "__v": 0
+},{
+  "id": "churros-con-chocolate-1244",
+  "name": "Churros con Chocolate",
+  "persons": 4,
+  "dificulty": "Media",
+  "autor": "Thomas",
+  "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.3EKHO61xLLtc8xQ7PWhI8QHaGY%26pid%3DApi&f=1&ipt=bc942092ccd97526865397b0d1d2fb9d0ca5b209fa85a900952456548bc2af4d&ipo=images",
+  "backupImage": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.3EKHO61xLLtc8xQ7PWhI8QHaGY%26pid%3DApi&f=1&ipt=bc942092ccd97526865397b0d1d2fb9d0ca5b209fa85a900952456548bc2af4d&ipo=images",
+  "ingredients": [
+    {
+      "name": "Harina",
+      "quantity": "250",
+      "unit": "g"
+    },
+    {
+      "name": "Agua",
+      "quantity": "250",
+      "unit": "ml"
+    },
+    {
+      "name": "Sal",
+      "quantity": "1",
+      "unit": "pizca"
+    },
+    {
+      "name": "Aceite para freír",
+      "quantity": "500",
+      "unit": "ml"
+    },
+    {
+      "name": "Chocolate negro",
+      "quantity": "200",
+      "unit": "g"
+    },
+    {
+      "name": "Leche",
+      "quantity": "250",
+      "unit": "ml"
+    }
+  ],
+  "process": [
+    {
+      "process": "Calentar el agua con una pizca de sal hasta que hierva.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Añadir la harina de golpe y remover hasta obtener una masa homogénea.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Introducir la masa en una manga pastelera y formar los churros.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Freír los churros en abundante aceite caliente hasta que estén dorados.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Para el chocolate, calentar la leche y añadir el chocolate troceado, removiendo hasta que se derrita y espese.",
+      "picture": "",
+      "backupPicture": ""
+    },
+    {
+      "process": "Servir los churros acompañados del chocolate caliente.",
+      "picture": "",
+      "backupPicture": ""
+    }
+  ],
+  "__v": 0
+}
+]}

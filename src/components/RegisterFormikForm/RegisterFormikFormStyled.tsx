@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const RegisterFormikFormStyled = styled.div`
+  margin-top: 20px;
   width: 400px;
   min-height: 620px;
   display: flex;

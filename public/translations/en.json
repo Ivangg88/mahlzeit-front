@@ -24,7 +24,7 @@
     "emailPlaceholder": "Email",
     "emailConfirmInput": "Confirm Email",
     "yetRegister": "Yet Register?",
-    "registerLink": "Click to login",
+    "registerLink": "Click to register",
     "registerbutton": "Create account",
     "loginButton": "Login",
     "registerTitle":"Create an account"
@@ -46,5 +46,30 @@
       "checkEmail": "Email is not valid",
       "confirmEmail": "Emails do not match"
     }
+  },
+  "pagination":{
+        "from":"from",
+        "results":"results"
+    },
+   "recipeForm": {
+      "createRecipe": "Create your recipe",
+      "name": "Name:",
+      "namePlaceholder": "Fish and chips",
+      "difficulty": "Difficulty:",
+      "difficultyPlaceholder": "Easy",
+      "persons": "Persons:",
+      "personsPlaceholder": "0",
+      "ingredients": "Ingredients:",
+      "ingredientsPlaceholder": "Ingredient",
+      "quantity": "Quantity",
+      "quantityPlaceholder": "Quantity",
+      "nextButton": "Next",
+      "backButton": "Back",
+      "process": "Process",
+      "step": "Step",
+      "stepPlaceholder":"Description",
+      "addImage": "Add your picture",
+      "addImageLabel": "Add picture:",
+      "createRecipeButton": "Create"
   }
 }

@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { setupStore } from "./app/store";
-import { ThemeProvider } from "styled-components";
-import styledMainTheme from "./styles/styledMainTheme";
 import { BrowserRouter } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { ThemeProvider } from "styled-components";
+import App from "./App";
+import { setupStore } from "./app/store";
+import CustomToastContainer from "./components/CustomToastContainer/CustomToastContainer";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import styledMainTheme from "./styles/styledMainTheme";
 
 const store = setupStore();
 const root = ReactDOM.createRoot(
@@ -17,7 +17,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ToastContainer />
+      <CustomToastContainer />
       <BrowserRouter>
         <ThemeProvider theme={styledMainTheme}>
           <App />

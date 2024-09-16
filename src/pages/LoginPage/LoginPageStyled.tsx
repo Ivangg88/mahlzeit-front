@@ -11,7 +11,6 @@ const LoginPageStyled = styled.div`
 
   @media (min-width: 450px) {
     width: 100%;
-    padding: 10px 0;
   }
 `;
 

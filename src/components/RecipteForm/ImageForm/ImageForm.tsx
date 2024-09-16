@@ -1,3 +1,5 @@
+import { useAppSelector } from "../../../app/hooks";
+import { RootState } from "../../../app/store";
 import { ProtoRecipte } from "../../../types/interfaces";
 import Button from "../../Button/Button";
 import ImageFormStyled from "./ImageFormStyled";
@@ -15,6 +17,11 @@ const ImageForm = ({
   previousPage,
   submit,
 }: ImageFromProps): JSX.Element => {
+  const {
+    translations: {
+      recipeForm: { addImage, addImageLabel, backButton, createRecipeButton },
+    },
+  } = useAppSelector((state: RootState) => state.i8n);
   return (
     <ImageFormStyled
       data-testid="form-recipte"
@@ -22,11 +29,11 @@ const ImageForm = ({
       className="recipte-form"
       autoComplete="off"
     >
-      <h1 className="recipte-form__title">Añade tu imagen</h1>
+      <h1 className="recipte-form__title">{addImage}</h1>
       <div className="recipte-form__inputs-container">
         <div className="recipte-form__input-field">
           <label htmlFor="image" className="label">
-            Añadir imagen:
+            {addImageLabel}
           </label>
           <input
             id="image"
@@ -38,8 +45,8 @@ const ImageForm = ({
         </div>
       </div>
       <div className="recipte-form__buttons-container">
-        <Button type="button" text="Anterior" actionOnClick={previousPage} />
-        <Button type="submit" text="Crear Receta" />
+        <Button type="button" text={backButton} actionOnClick={previousPage} />
+        <Button type="submit" text={createRecipeButton} />
       </div>
     </ImageFormStyled>
   );

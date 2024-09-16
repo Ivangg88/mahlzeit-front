@@ -14,6 +14,10 @@ const RecipteCardStyled = styled.section`
   margin: 0;
   cursor: pointer;
 
+  box-shadow: 0px 0px 3px 2px ${(props) => props.theme.mainShadowColor};
+  -webkit-box-shadow: 0px 0px 3px 2px ${(props) => props.theme.mainShadowColor};
+  -moz-box-shadow: 0px 0px 3px 2px ${(props) => props.theme.mainShadowColor};
+
   .item-card__title {
     font-family: ${(props) => props.theme.fontMainType};
     text-align: center;

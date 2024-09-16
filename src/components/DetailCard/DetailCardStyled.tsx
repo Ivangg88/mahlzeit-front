@@ -14,6 +14,7 @@ const DetailCardStyled = styled.section`
   border-radius: 15px;
   padding: 20px;
   margin: 0;
+  margin-top: 10px;
 
   li > span {
     margin-right: 5px;
@@ -36,6 +37,7 @@ const DetailCardStyled = styled.section`
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
+    width: 100%;
 
     &--desktop {
       display: none;
@@ -45,19 +47,19 @@ const DetailCardStyled = styled.section`
   .detail-card__subtitle {
     font-size: 1.5rem;
     text-align: center;
-    margin: 0;
-    margin-bottom: 10px;
+    margin: 10px 0;
     display: flex;
     justify-content: space-between;
+    font-family: ${(props) => props.theme.fontMainType};
   }
 
   .detail-card__icon {
     position: absolute;
     height: 25px;
     top: 10px;
-    right: 10px;
+    left: 10px;
     width: 25px;
-    color: ${(props) => props.theme.firstColor};
+    color: gray;
     cursor: pointer;
   }
 
@@ -97,10 +99,17 @@ const DetailCardStyled = styled.section`
     margin-bottom: 20px;
   }
 
+  .detail-card__icon:hover {
+    box-sizing: content-box;
+    scale: 1.2;
+    padding: 5px;
+    border: 1px solid ${(props) => props.theme.fontMainColor};
+  }
+
   @media (min-width: 450px) {
     position: relative;
     padding: 0;
-    width: 30%;
+    width: 60%;
     min-width: 375px;
     max-width: 100%;
     display: flex;
@@ -117,13 +126,13 @@ const DetailCardStyled = styled.section`
       }
 
       &__title {
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-        padding: 5px 20px;
-
+        font-family: ${(props) => props.theme.fontMainType};
+        text-align: center;
         margin: 0;
-        font-size: 2rem;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
 
         &--mobile {
           display: none;
@@ -151,7 +160,7 @@ const DetailCardStyled = styled.section`
         width: 100%;
         flex: 1;
         line-height: 1.5;
-        padding: 20px;
+        padding: 0 20px;
       }
 
       &__process {
