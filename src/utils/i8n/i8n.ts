@@ -58,6 +58,28 @@ export interface Translations {
       confirmEmail: string;
     };
   };
+  pagination: { from: string; results: string };
+  recipeForm: {
+    createRecipe: string;
+    name: string;
+    namePlaceholder: string;
+    difficulty: string;
+    difficultyPlaceholder: string;
+    persons: string;
+    personsPlaceholder: string;
+    ingredients: string;
+    ingredientsPlaceholder: string;
+    quantity: string;
+    quantityPlaceholder: string;
+    nextButton: string;
+    backButton: string;
+    process: string;
+    step: string;
+    stepPlaceholder: string;
+    addImage: string;
+    addImageLabel: string;
+    createRecipeButton: string;
+  };
 }
 
 export const initialTranslations: Translations = { ...defaultLanguage };

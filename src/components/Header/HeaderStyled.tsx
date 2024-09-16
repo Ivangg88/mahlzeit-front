@@ -1,14 +1,12 @@
 import styled from "styled-components";
 
 const HeaderStyled = styled.header`
-  position: relative;
   width: 100%;
   border-radius: 15px;
   border: 1px solid ${(props) => props.theme.fontMainColor};
   color: ${(props) => props.theme.fontMainColor};
   background-color: ${(props) => props.theme.firstColor};
   font-family: ${(props) => props.theme.fontMainType};
-  position: relative;
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -61,34 +59,7 @@ const HeaderStyled = styled.header`
     font-size: 120%;
   }
 
-  .header__languages {
-    position: absolute;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    top: 5px;
-    right: 60px;
-    padding: 0;
-    margin: 0;
-  }
-
-  .languages-button {
-    all: unset;
-  }
-
-  .languages-button--current {
-    transform: scale(1.2);
-  }
-
-  .languages-button:hover {
-    cursor: pointer;
-    transform: scale(1.3);
-    color: gray;
-  }
-
-  @media (min-width: 450px) {
+  @media (min-width: 550px) {
     width: 100%;
     min-width: 480px;
     height: auto;
@@ -119,10 +90,6 @@ const HeaderStyled = styled.header`
       &--mobile {
         display: none;
       }
-    }
-
-    .header__languages {
-      position: relative;
     }
   }
 `;

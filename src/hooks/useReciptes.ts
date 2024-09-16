@@ -1,11 +1,13 @@
 import axios, { AxiosResponse } from "axios";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { RootState } from "../app/store";
 import {
   deleteRecipteActionCreator,
   loadRecipteActionCreator,
+  loadRecipteDetailActionCreator,
   loadReciptesActionCreator,
 } from "../store/recipte/recipteSlice";
 import {
@@ -29,7 +31,12 @@ const useReciptes = () => {
 
         const {
           data: { reciptes },
-        } = await axios.get(apiUrl);
+        } = await axios.get(`${apiUrl}`);
+
+        const timeOut = setTimeout(() => {
+          dispatch(closeLoadingModalActionCreator());
+          clearTimeout(timeOut);
+        }, 500);
 
         dispatch(loadReciptesActionCreator(reciptes));
       } catch (error) {
@@ -51,8 +58,9 @@ const useReciptes = () => {
 
       dispatch(loadRecipteActionCreator(response.data));
 
-      navigator("/home");
-    } catch (error) {
+      // navigator("/home");
+    } catch (error: unknown) {
+      toast.error("Error: " + (error as Error).message);
       dispatch(closeLoadingModalActionCreator());
     }
   };
@@ -81,7 +89,12 @@ const useReciptes = () => {
         dispatch(openLoadingModalActionCreator());
         const response = await axios.get(`${apiUrl}/${id}`);
 
-        dispatch(loadReciptesActionCreator([response.data.recipte]));
+        dispatch(loadRecipteDetailActionCreator(response.data.recipte));
+
+        const timeOut = setTimeout(() => {
+          dispatch(closeLoadingModalActionCreator());
+          clearTimeout(timeOut);
+        }, 500);
       } catch (error) {
         dispatch(closeLoadingModalActionCreator());
         return error;
@@ -94,3 +107,26 @@ const useReciptes = () => {
 };
 
 export default useReciptes;
+
+// function formDataToObject(formData: FormData): Recipte {
+//   // Helper function to get a value from FormData and parse JSON if needed
+//   function getValue(key: string, parseJson: boolean = false) {
+//     const value = formData.get(key);
+//     if (value === null) {
+//       return undefined;
+//     }
+//     return parseJson ? JSON.parse(value as string) : value;
+//   }
+
+//   return {
+//     name: getValue("name") as string,
+//     autor: getValue("autor") as string,
+//     dificulty: getValue("dificulty") as string,
+//     ingredients: getValue("ingredients", true) as Ingredient[],
+//     persons: Number(getValue("persons")),
+//     process: getValue("process", true) as Process[],
+//     image: getValue("image") as File | string,
+//     backupImage: getValue("image") as string,
+//     id: new Date().getTime().toString(),
+//   };
+// }

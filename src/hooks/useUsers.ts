@@ -1,6 +1,9 @@
 import { useAppDispatch } from "../app/hooks";
 import axios, { AxiosResponse } from "axios";
-import { loginUserActionCreator } from "../store/user/userSlice";
+import {
+  loginUserActionCreator,
+  logoutUserActionCreator,
+} from "../store/user/userSlice";
 import {
   TokenResponse,
   User,
@@ -63,7 +66,12 @@ const useUsers = () => {
     }
   };
 
-  return { sendUserToAPI, loginUser };
+  const logOut = () => {
+    dispatch(logoutUserActionCreator());
+    localStorage.removeItem("token");
+  };
+
+  return { sendUserToAPI, loginUser, logOut };
 };
 
 export default useUsers;

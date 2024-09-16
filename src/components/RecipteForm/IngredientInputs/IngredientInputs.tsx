@@ -1,3 +1,5 @@
+import { useAppSelector } from "../../../app/hooks";
+import { RootState } from "../../../app/store";
 import { Ingredient } from "../../../types/interfaces";
 import Button from "../../Button/Button";
 import { IngredientInputsStyled } from "./IngredientInputsStyled";
@@ -24,6 +26,15 @@ export const IngredientInputs = ({
   addInputField,
   deleteInputField,
 }: IngredientInputsProps): JSX.Element => {
+  const {
+    translations: {
+      recipeForm: {
+        ingredients: ingredientsLabel,
+        ingredientsPlaceholder,
+        quantityPlaceholder,
+      },
+    },
+  } = useAppSelector((state: RootState) => state.i8n);
   const inputs = ingredients.map((ingredient, index) => {
     return (
       <>
@@ -33,7 +44,7 @@ export const IngredientInputs = ({
               autoComplete="off"
               className="ingredient__name ingredient__input"
               name="name"
-              placeholder={`Ingrediente ${index + 1}`}
+              placeholder={`${ingredientsPlaceholder} ${index + 1}`}
               value={ingredient.name}
               onChange={(event) => handleFormChange(index, event)}
             />
@@ -42,7 +53,7 @@ export const IngredientInputs = ({
               autoComplete="off"
               className="ingredient__quantity ingredient__input"
               name="quantity"
-              placeholder="Cantidad"
+              placeholder={quantityPlaceholder}
               value={ingredient.quantity}
               onChange={(event) => handleFormChange(index, event)}
             />
@@ -68,7 +79,7 @@ export const IngredientInputs = ({
 
   return (
     <IngredientInputsStyled>
-      <label className="label">Ingredientes:</label>
+      <label className="label">{ingredientsLabel}</label>
       {inputs}
       <div className="buttons">
         <Button

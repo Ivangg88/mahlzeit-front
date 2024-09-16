@@ -1,3 +1,5 @@
+import { useAppSelector } from "../../../app/hooks";
+import { RootState } from "../../../app/store";
 import { ProtoRecipte } from "../../../types/interfaces";
 import Button from "../../Button/Button";
 import ProcessFormStyled from "./ProcessFormStyled";
@@ -15,12 +17,16 @@ const ProcessForm = ({
   previousPage,
   nextPage,
 }: ProcessFromProps): JSX.Element => {
+  const {
+    translations: {
+      recipeForm: { process, step, backButton, nextButton, stepPlaceholder },
+    },
+  } = useAppSelector((state: RootState) => state.i8n);
+  let data = [...recipte.process];
   const handleFormChange = (
     index: number,
     event: React.ChangeEvent<HTMLTextAreaElement>
   ) => {
-    let data = [...recipte.process];
-
     data[index].process = event.target.value;
 
     setRecipte({ ...recipte, process: data });
@@ -30,7 +36,7 @@ const ProcessForm = ({
     return (
       <li className="recipte-form__process">
         <label htmlFor="process" className="label">
-          <span>{`Paso ${index + 1}`}</span>
+          <span>{`${step} ${index + 1}`}</span>
         </label>
         <textarea
           className="recipte-form__process-text"
@@ -41,7 +47,7 @@ const ProcessForm = ({
           wrap="hard"
           autoCapitalize="sentences"
           onChange={(event) => handleFormChange(index, event)}
-          placeholder="Descripción del paso"
+          placeholder={stepPlaceholder}
         />
       </li>
     );
@@ -68,7 +74,7 @@ const ProcessForm = ({
 
   return (
     <ProcessFormStyled data-testid="form-recipt" className="recipte-form">
-      <h1 className="recipte-form__title">Procedimiento</h1>
+      <h1 className="recipte-form__title">{process}</h1>
 
       <ul className="recipte-form__process-list">{processFields}</ul>
 
@@ -91,12 +97,12 @@ const ProcessForm = ({
       <div className="recipte-form__buttons-container">
         <Button
           type="button"
-          text="Anterior"
+          text={backButton}
           actionOnClick={() => previousPage()}
         />
         <Button
           type="button"
-          text="Siguiente"
+          text={nextButton}
           actionOnClick={() => nextPage()}
         />
       </div>

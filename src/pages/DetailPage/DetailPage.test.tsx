@@ -12,7 +12,12 @@ describe("Given a component DetailPage", () => {
       const title = "Mahlzeit";
 
       renderWithProviders(<DetailPage />, {
-        preloadedState: { reciptes: mockItems },
+        preloadedState: {
+          reciptes: {
+            recipeDetail: preloadStore.mockRecipte,
+            recipesList: mockItems,
+          },
+        },
       });
 
       const headerTitle = screen.getByRole("heading", { name: title });

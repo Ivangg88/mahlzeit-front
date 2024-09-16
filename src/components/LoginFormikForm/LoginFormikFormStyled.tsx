@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const LoginFormikFormStyled = styled.div`
+  margin-top: 20px;
   width: 400px;
   height: 620px;
   display: flex;

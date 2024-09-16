@@ -1,5 +1,3 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { preloadStore } from "../../utils/storePreloadTest";
 import renderWithProviders from "../../utils/testStore";
 import DetailCard from "./DetailCard";
@@ -30,7 +28,9 @@ item.name = name;
 
 describe("Given a DetalCard", () => {
   test("It should render", () => {
-    renderWithProviders(<DetailCard />);
+    renderWithProviders(
+      <DetailCard recipteDetail={preloadStore.mockRecipte} />
+    );
   });
 });
 

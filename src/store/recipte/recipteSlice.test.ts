@@ -9,6 +9,7 @@ import {
 
 const newItem = preloadStore.mockRecipte;
 const items: Recipte[] = [newItem];
+const mockState = { recipesList: items, recipeDetail: newItem };
 
 describe("Given a loadReciptesActionCreator", () => {
   describe("When is called", () => {
@@ -48,7 +49,7 @@ describe("Given a reciptesReducer function", () => {
     test("Then it should return a copy of the loaded items", () => {
       const action = loadReciptesActionCreator(items);
 
-      const receivedItems = reciptesReducer(items, action);
+      const receivedItems = reciptesReducer(mockState, action);
 
       expect(receivedItems).toStrictEqual(items);
     });
@@ -58,9 +59,9 @@ describe("Given a reciptesReducer function", () => {
     test("Then it should delete the given recipte", () => {
       const action = deleteRecipteActionCreator(newItem.id);
 
-      const receivedItems = reciptesReducer(items, action);
+      const receivedItems = reciptesReducer(mockState, action);
 
-      expect(receivedItems.length).toBe(0);
+      expect(receivedItems.recipesList.length).toBe(0);
     });
   });
 });

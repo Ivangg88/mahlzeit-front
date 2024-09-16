@@ -46,6 +46,31 @@
       "checkEmail": "El email no es válido",
       "confirmEmail": "Los emails no coinciden"
     }
+  },
+  "pagination":{
+    "from":"de",
+    "results":"resultados"
+  },
+    "recipeForm": {
+      "createRecipe": "Crea tu receta",
+      "name": "Nombre:",
+      "namePlaceholder": "Alcachofas con jamón",
+      "difficulty": "Dificultad:",
+      "difficultyPlaceholder": "Fácil",
+      "persons": "Personas:",
+      "personsPlaceholder": "0",
+      "ingredients": "Ingredientes:",
+      "ingredientsPlaceholder": "Ingrediente",
+      "quantity": "Cantidad:",
+      "quantityPlaceholder": "Cantidad",
+      "nextButton": "Siguiente",
+      "backButton": "Atrás",
+      "process": "Proceso",
+      "step": "Paso",
+      "stepPlaceholder": "Descripción",
+      "addImage": "Añade tu foto",
+      "addImageLabel": "Añadir imagen:",
+      "createRecipeButton": "Crear"
   }
-
+  
 }

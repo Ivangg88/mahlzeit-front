@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
 import useReciptes from "../../hooks/useReciptes";
 import { Ingredient, ProtoRecipte } from "../../types/interfaces";
+import DetailsForm from "./DetailsForm/DetailsForm";
 import FormularBanner from "./FormularBanner/FormularBanner";
 import ImageForm from "./ImageForm/ImageForm";
-import DetailsForm from "./DetailsForm/DetailsForm";
 import ProcessForm from "./ProcessForm/ProcessForm";
 
 const RecipteForm = (): JSX.Element => {
@@ -31,7 +30,6 @@ const RecipteForm = (): JSX.Element => {
 
   const { createRecipte } = useReciptes();
   const user = useAppSelector((state) => state.user);
-  const navigate = useNavigate();
 
   const nextPage = () => {
     setPage(currentPage + 1);
@@ -66,7 +64,6 @@ const RecipteForm = (): JSX.Element => {
   const submit = (event: React.FormEvent<HTMLFormElement>, url: string) => {
     event.preventDefault();
     createRecipte(formData, url);
-    navigate("/home");
   };
 
   const selectedPage = (currentPage: number): JSX.Element => {

@@ -31,6 +31,10 @@ export interface ProtoRecipte {
   process: Process[];
   image: File | string;
 }
+export interface Recipte extends ProtoRecipte {
+  id: string;
+  backupImage: string;
+}
 
 export interface Ingredient {
   name: string;
@@ -42,11 +46,6 @@ export interface Process {
   process: string;
   picture: string;
   backupPicture: string;
-}
-
-export interface Recipte extends ProtoRecipte {
-  id: string;
-  backupImage: string;
 }
 
 export interface TokenResponse {
