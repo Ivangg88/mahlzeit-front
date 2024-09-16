@@ -13,15 +13,16 @@ const MyReciptesPage = () => {
       getReciptes("");
     })();
   }, [getReciptes]);
+
   const { recipesList } = useAppSelector((state: RootState) => state.reciptes);
   const user = useAppSelector((state: RootState) => state.user);
 
   const dispatch = useAppDispatch();
 
   dispatch(openLoadingModalActionCreator);
-  const myReciptes = recipesList.filter(
-    (recipte) => recipte.autor === user.userName
-  );
+  const myReciptes = Array.isArray(recipesList)
+    ? recipesList.filter((recipte) => recipte.autor === user.userName)
+    : [];
 
   return (
     <Layout>

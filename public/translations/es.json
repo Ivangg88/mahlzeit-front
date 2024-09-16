@@ -71,6 +71,7 @@
       "addImage": "Añade tu foto",
       "addImageLabel": "Añadir imagen:",
       "createRecipeButton": "Crear"
-  }
+  },
+  "emptylist":"No tienes recetas aún"
   
 }

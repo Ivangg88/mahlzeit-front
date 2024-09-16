@@ -71,5 +71,6 @@
   "addImage": "Tilføj dit billede",
   "addImageLabel": "Tilføj billede:",
   "createRecipeButton": "Opret"
-}
+},
+"emptylist":"Du har ikke nogen opskrift endnu."
 }

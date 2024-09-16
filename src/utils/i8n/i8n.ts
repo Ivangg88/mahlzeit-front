@@ -1,5 +1,5 @@
 import { dkFlag, enFlag, esFlag } from "../../assets/images/images";
-import defaultLanguage from "./initialTranslation.json";
+import defaultLanguage from "../../../public/translations/en.json";
 
 export type I8nLanguage = "es" | "en" | "dk";
 
@@ -80,6 +80,7 @@ export interface Translations {
     addImageLabel: string;
     createRecipeButton: string;
   };
+  emptylist: string;
 }
 
 export const initialTranslations: Translations = { ...defaultLanguage };
