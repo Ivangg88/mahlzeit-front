@@ -72,5 +72,11 @@
   "addImageLabel": "Tilføj billede:",
   "createRecipeButton": "Opret"
 },
-"emptylist":"Du har ikke nogen opskrift endnu."
+"emptylist":"Du har ikke nogen opskrift endnu.","notLoggedPage": {
+    "notAuthTitle": "Ikke autoriseret",
+    "notAuthMessage": "Adgang begrænset til loggede brugere",
+    "loginLink": "Gå til login",
+    "registerLink": "Gå til registrering"
+},
+  "loading":"Pålæsning"
 }

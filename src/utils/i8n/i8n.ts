@@ -81,6 +81,13 @@ export interface Translations {
     createRecipeButton: string;
   };
   emptylist: string;
+  notLoggedPage: {
+    notAuthTitle: string;
+    notAuthMessage: string;
+    loginLink: string;
+    registerLink: string;
+  };
+  loading: string;
 }
 
 export const initialTranslations: Translations = { ...defaultLanguage };

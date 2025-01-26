@@ -53,12 +53,16 @@ const HomePage = () => {
   return (
     <Layout>
       <ReciptesList reciptes={paginatedArray} />
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        setCurrentPage={setCurrentPage}
-        paginationText={paginationText}
-      />
+      {paginatedArray.length > 0 ? (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          setCurrentPage={setCurrentPage}
+          paginationText={paginationText}
+        />
+      ) : (
+        <></>
+      )}
     </Layout>
   );
 };

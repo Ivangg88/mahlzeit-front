@@ -8,6 +8,10 @@ import useReciptes from "../../hooks/useReciptes";
 const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/recipesByUser`;
 
 const MyReciptesPage = () => {
+  const {
+    translations: { emptylist },
+  } = useAppSelector((state) => state.i8n);
+
   const { getReciptesByAuthor } = useReciptes();
 
   useEffect(() => {
@@ -23,7 +27,7 @@ const MyReciptesPage = () => {
       {recipesList.length > 0 ? (
         <ReciptesList reciptes={recipesList} />
       ) : (
-        <span>No tienes recetas</span>
+        <span>{emptylist}</span>
       )}
     </Layout>
   );

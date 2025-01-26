@@ -72,5 +72,11 @@
       "addImageLabel": "Add picture:",
       "createRecipeButton": "Create"
   },
-  "emptylist":"You don’t have any recipe yet"
+  "emptylist":"You don’t have any recipe yet",
+  "notLoggedPage": {
+    "notAuthTitle": "Unauthorized",
+    "notAuthMessage": "Restricted access to logged-in users",
+    "loginLink": "Go to login",
+    "registerLink": "Go to register"
+  }
 }
