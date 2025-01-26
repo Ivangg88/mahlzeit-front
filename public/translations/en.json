@@ -78,5 +78,13 @@
     "notAuthMessage": "Restricted access to logged-in users",
     "loginLink": "Go to login",
     "registerLink": "Go to register"
-  }
+  },   
+  "loading":"Cargando",
+  "toastMessages": {
+  "user": "User",
+  "registerSuccess": "successfully registered.",
+  "registerError": "Problem registering the user.",
+  "loginSuccess": "Successfully logged in.",
+  "loginError": "Could not log in."
+}
 }

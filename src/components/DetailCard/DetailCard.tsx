@@ -51,7 +51,7 @@ const DetailCard = ({ recipteDetail }: DetailCardProps): JSX.Element => {
       {recipteDetail && (
         <>
           <h1 className="detail-card__title detail-card__title--mobile">
-            {recipteDetail.name}{" "}
+            {recipteDetail.name}
             <FontAwesomeIcon
               icon={faMinimize}
               onClick={() => {
