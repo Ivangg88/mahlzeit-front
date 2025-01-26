@@ -57,8 +57,7 @@ const useReciptes = () => {
       navigator("/myreciptes");
     } catch (error: unknown) {
       toast.error(
-        "Error: " +
-          (error as AxiosError<{ error: string }>).response?.data.error
+        (error as AxiosError<{ error: string }>).response?.data.error
       );
     } finally {
       dispatch(closeLoadingModalActionCreator());

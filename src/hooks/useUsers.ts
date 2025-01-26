@@ -1,4 +1,4 @@
-import { useAppDispatch } from "../app/hooks";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
 import axios, { AxiosResponse } from "axios";
 import {
   loginUserActionCreator,
@@ -18,8 +18,17 @@ import { failModal, sucessModal } from "../modals/modals";
 const useUsers = () => {
   const dispatch = useAppDispatch();
   const navigator = useNavigate();
+  const {
+    toastMessages: {
+      user: userText,
+      registerSuccess,
+      registerError,
+      loginError,
+      loginSuccess,
+    },
+  } = useAppSelector((state) => state.i8n.translations);
 
-  const sendUserToAPI = async (user: UserRegister, apiUrl: string) => {
+  const registerUser = async (user: UserRegister, apiUrl: string) => {
     let response: Response;
     const userRegister: User = {
       email: user.email,
@@ -28,9 +37,9 @@ const useUsers = () => {
     };
     try {
       response = await axios.post(`${apiUrl}/users/register`, userRegister);
-      sucessModal(`Usuario ${user.userName} registrado correctamente`);
+      sucessModal(`${userText} ${user.userName} ${registerSuccess}`);
     } catch (error) {
-      failModal("Problema al registrar usuario.");
+      failModal(`${registerError} ${user.userName}`);
       return 400;
     }
 
@@ -59,9 +68,10 @@ const useUsers = () => {
       dispatch(loginUserActionCreator(userLogged));
 
       localStorage.setItem("token", userLogged.token);
+      sucessModal(`${userText} ${user.userName} ${loginSuccess}`);
       navigator(navigateTarget);
     } catch (error) {
-      failModal("No se pudo logear");
+      failModal(loginError);
       return 400;
     }
   };
@@ -71,7 +81,7 @@ const useUsers = () => {
     localStorage.removeItem("token");
   };
 
-  return { sendUserToAPI, loginUser, logOut };
+  return { sendUserToAPI: registerUser, loginUser, logOut };
 };
 
 export default useUsers;

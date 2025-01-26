@@ -88,6 +88,13 @@ export interface Translations {
     registerLink: string;
   };
   loading: string;
+  toastMessages: {
+    user: string;
+    registerSuccess: string;
+    registerError: string;
+    loginSuccess: string;
+    loginError: string;
+  };
 }
 
 export const initialTranslations: Translations = { ...defaultLanguage };

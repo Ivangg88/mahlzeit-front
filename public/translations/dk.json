@@ -78,5 +78,12 @@
     "loginLink": "Gå til login",
     "registerLink": "Gå til registrering"
 },
-  "loading":"Pålæsning"
+  "loading":"Pålæsning",
+  "toastMessages": {
+  "user": "Bruger",
+  "registerSuccess": "registreret korrekt.",
+  "registerError": "Problem med at registrere brugeren.",
+  "loginSuccess": "Logget ind korrekt.",
+  "loginError": "Kunne ikke logge ind."
+}
 }

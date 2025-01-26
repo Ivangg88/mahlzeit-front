@@ -79,6 +79,12 @@
     "loginLink": "Ir a login",
     "registerLink": "Ir a registrar"
   },
-    "loading":"Cargando"
-  
+    "loading":"Cargando",
+    "toastMessages": {
+      "user": "Usuario",
+      "registerSuccess": "registrado correctamente.",
+      "registerError": "Problema al registrar el usuario.",
+      "loginSuccess": "No se pudo logear",
+      "loginError": "logueado correctamente."
+    }
 }
