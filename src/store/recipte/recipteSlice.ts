@@ -10,6 +10,7 @@ const initalRecipe: Recipte = {
   name: "",
   persons: 0,
   process: [{ backupPicture: "", picture: "", process: "" }],
+  authorId: "",
 };
 
 const reciptesInitialState: { recipesList: Recipte[]; recipeDetail: Recipte } =

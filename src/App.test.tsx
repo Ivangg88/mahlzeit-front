@@ -16,7 +16,9 @@ describe("Given a component App", () => {
   describe("When rendered with a logged user", () => {
     test("It should show the component Header with a link 'Logout'", () => {
       renderWithProviders(<App />, {
-        preloadedState: { user: { token: "", userName: "", isLogged: true } },
+        preloadedState: {
+          user: { token: "", userName: "", isLogged: true, id: "" },
+        },
       });
 
       const link = screen.getByRole("link", { name: "Logout" });
