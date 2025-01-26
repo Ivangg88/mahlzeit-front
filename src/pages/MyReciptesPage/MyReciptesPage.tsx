@@ -1,35 +1,33 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { useAppSelector } from "../../app/hooks";
 import { RootState } from "../../app/store";
 import Layout from "../../components/Layout/Layout";
 import ReciptesList from "../../components/ReciptesList/ReciptesList";
-import { openLoadingModalActionCreator } from "../../store/ui/uiSlice";
 import useReciptes from "../../hooks/useReciptes";
 
+const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/recipesByUser`;
+
 const MyReciptesPage = () => {
-  const { getReciptes } = useReciptes();
+  const {
+    translations: { emptylist },
+  } = useAppSelector((state) => state.i8n);
+
+  const { getReciptesByAuthor } = useReciptes();
+
   useEffect(() => {
     (async () => {
-      getReciptes("");
+      getReciptesByAuthor(apiUrl);
     })();
-  }, [getReciptes]);
+  }, [getReciptesByAuthor]);
 
   const { recipesList } = useAppSelector((state: RootState) => state.reciptes);
-  const user = useAppSelector((state: RootState) => state.user);
-
-  const dispatch = useAppDispatch();
-
-  dispatch(openLoadingModalActionCreator);
-  const myReciptes = Array.isArray(recipesList)
-    ? recipesList.filter((recipte) => recipte.autor === user.userName)
-    : [];
 
   return (
     <Layout>
-      {myReciptes.length > 0 ? (
-        <ReciptesList reciptes={myReciptes} />
+      {recipesList.length > 0 ? (
+        <ReciptesList reciptes={recipesList} />
       ) : (
-        <span>No tienes recetas</span>
+        <span>{emptylist}</span>
       )}
     </Layout>
   );

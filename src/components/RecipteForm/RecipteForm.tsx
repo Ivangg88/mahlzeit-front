@@ -22,6 +22,7 @@ const RecipteForm = (): JSX.Element => {
     ],
     persons: 0,
     process: [{ process: "", picture: "", backupPicture: "" }],
+    authorId: "",
   };
 
   const apiUrl = `${process.env.REACT_APP_API_URL}/reciptes/create`;

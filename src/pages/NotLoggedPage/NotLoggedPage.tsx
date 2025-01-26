@@ -1,8 +1,15 @@
 import { NavLink } from "react-router-dom";
 import NotLoggedPageStyled from "./NotLoggedPageStyled";
 import Layout from "../../components/Layout/Layout";
+import { useAppSelector } from "../../app/hooks";
 
 const NotLoggedPage = (): JSX.Element => {
+  const {
+    translations: {
+      notLoggedPage: { loginLink, notAuthMessage, notAuthTitle, registerLink },
+    },
+  } = useAppSelector((state) => state.i8n);
+
   return (
     <Layout>
       <NotLoggedPageStyled>
@@ -11,17 +18,14 @@ const NotLoggedPage = (): JSX.Element => {
         </NavLink>
         <img src="/images/flork-error404.png" alt="angry-flork" width={350} />
         <div className="container">
-          <span className="notfound">No autorizado</span>
-          <span className="message">
-            Acceso restringido a usuarios logueados
-          </span>
+          <span className="notfound">{notAuthTitle}</span>
+          <span className="message">{notAuthMessage}</span>
           <div className="links-container">
             <NavLink className="navigate" to={"/login"}>
-              Ir a login
+              {loginLink}
             </NavLink>
-            o
             <NavLink className="navigate" to={"/register"}>
-              Ir a registrar
+              {registerLink}
             </NavLink>
           </div>
         </div>

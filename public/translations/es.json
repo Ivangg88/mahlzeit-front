@@ -72,6 +72,13 @@
       "addImageLabel": "Añadir imagen:",
       "createRecipeButton": "Crear"
   },
-  "emptylist":"No tienes recetas aún"
+  "emptylist":"No tienes recetas aún",
+  "notLoggedPage": {
+    "notAuthTitle": "No autorizado",
+    "notAuthMessage": " Acceso restringido a usuarios logueados",
+    "loginLink": "Ir a login",
+    "registerLink": "Ir a registrar"
+  },
+    "loading":"Cargando"
   
 }

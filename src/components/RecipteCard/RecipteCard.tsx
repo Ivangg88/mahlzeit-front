@@ -66,7 +66,7 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
               ></FontAwesomeIcon>
               <span>{item.autor}</span>
             </li>
-            {user.userName === item.autor && (
+            {user.id === item.authorId && (
               <li className="info-list__info">
                 <FontAwesomeIcon
                   height={16}
@@ -75,7 +75,10 @@ const RecipteCard = ({ item }: ItemCardProps): JSX.Element => {
                 <button
                   aria-label="delete"
                   className="button"
-                  onClick={() => deleteRecipte(item.id, apiUrl)}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    deleteRecipte(item.id, apiUrl);
+                  }}
                 >
                   {deleteText}
                 </button>

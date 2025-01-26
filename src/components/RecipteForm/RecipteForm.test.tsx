@@ -1,10 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import React from "react";
 import { ProtoRecipte } from "../../types/interfaces";
 import { preloadStore } from "../../utils/storePreloadTest";
 import renderWithProviders from "../../utils/testStore";
-import Wrapper from "../../utils/Wrapper";
 import RecipteForm from "./RecipteForm";
 
 const recipte: ProtoRecipte = preloadStore.mockProtoRecipte;

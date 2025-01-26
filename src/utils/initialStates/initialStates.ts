@@ -14,6 +14,7 @@ export const getInitialUser = (): UserLoged => {
     isLogged: false,
     userName: "",
     token: "",
+    id: "",
   };
 };
 

@@ -1,7 +1,11 @@
+import { useAppSelector } from "../../app/hooks";
 import "./LoadingStyled";
 import LoadingStyled from "./LoadingStyled";
 
 const Loading = () => {
+  const {
+    translations: { loading },
+  } = useAppSelector((state) => state.i8n);
   return (
     <>
       <LoadingStyled>
@@ -17,7 +21,7 @@ const Loading = () => {
           <div className="dash three"></div>
           <div className="dash four"></div>
         </div>
-        <h1>Loading...</h1>
+        <h1>{`${loading}...`}</h1>
       </LoadingStyled>
     </>
   );

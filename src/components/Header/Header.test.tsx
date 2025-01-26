@@ -3,11 +3,13 @@ import userEvent from "@testing-library/user-event";
 import { setupStore } from "../../app/store";
 import renderWithProviders from "../../utils/testStore";
 import Header from "./Header";
+import { UserLoged } from "../../types/interfaces";
 
-const mockUser = {
+const mockUser: UserLoged = {
   userName: "Mock user",
   token: "1a2b3c4d",
   isLogged: true,
+  id: "",
 };
 const mockDispatch = jest.fn();
 

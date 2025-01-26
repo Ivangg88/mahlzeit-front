@@ -1,12 +1,13 @@
 import { renderHook } from "@testing-library/react";
 import { loginUserActionCreator } from "../store/user/userSlice";
-import { User, UserLoged, UserLogin, UserRegister } from "../types/interfaces";
+import { UserLoged, UserLogin, UserRegister } from "../types/interfaces";
 import Wrapper from "../utils/Wrapper";
 import useUsers from "./useUsers";
 
 const mockUserToken: UserLoged = {
   token: "1a2b3c4d",
   userName: "Mock user",
+  id: "",
 };
 const mockDispatch = jest.fn();
 const mockNavigate = jest.fn();
