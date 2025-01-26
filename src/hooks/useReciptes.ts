@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios, { AxiosError, AxiosResponse } from "axios";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -33,15 +33,11 @@ const useReciptes = () => {
           data: { reciptes },
         } = await axios.get(`${apiUrl}`);
 
-        const timeOut = setTimeout(() => {
-          dispatch(closeLoadingModalActionCreator());
-          clearTimeout(timeOut);
-        }, 500);
-
         dispatch(loadReciptesActionCreator(reciptes));
       } catch (error) {
-        dispatch(closeLoadingModalActionCreator());
         navigator("/error");
+      } finally {
+        dispatch(closeLoadingModalActionCreator());
       }
     },
     [dispatch, navigator]
@@ -58,9 +54,13 @@ const useReciptes = () => {
 
       dispatch(loadRecipteActionCreator(response.data));
 
-      // navigator("/home");
+      navigator("/myreciptes");
     } catch (error: unknown) {
-      toast.error("Error: " + (error as Error).message);
+      toast.error(
+        "Error: " +
+          (error as AxiosError<{ error: string }>).response?.data.error
+      );
+    } finally {
       dispatch(closeLoadingModalActionCreator());
     }
   };
@@ -76,10 +76,10 @@ const useReciptes = () => {
       await axios.delete(apiUrl, config);
 
       dispatch(deleteRecipteActionCreator(id));
-      navigator("/home");
     } catch (error) {
-      dispatch(closeLoadingModalActionCreator());
       return error;
+    } finally {
+      dispatch(closeLoadingModalActionCreator());
     }
   };
 
@@ -103,7 +103,40 @@ const useReciptes = () => {
     [dispatch]
   );
 
-  return { getReciptes, createRecipte, deleteRecipte, getRecipteById };
+  const getReciptesByAuthor = useCallback(
+    async (apiUrl: string) => {
+      try {
+        const config = {
+          headers: { Authorization: `Bearer ${user.token}` },
+        };
+        dispatch(openLoadingModalActionCreator());
+
+        const { data }: AxiosResponse<Recipte[]> = await axios.get(
+          `${apiUrl}`,
+          config
+        );
+
+        const timeOut = setTimeout(() => {
+          dispatch(closeLoadingModalActionCreator());
+          clearTimeout(timeOut);
+        }, 500);
+
+        dispatch(loadReciptesActionCreator(data));
+      } catch (error) {
+        dispatch(closeLoadingModalActionCreator());
+        navigator("/error");
+      }
+    },
+    [dispatch, navigator, user]
+  );
+
+  return {
+    getReciptes,
+    createRecipte,
+    deleteRecipte,
+    getRecipteById,
+    getReciptesByAuthor,
+  };
 };
 
 export default useReciptes;

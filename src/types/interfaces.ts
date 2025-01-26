@@ -15,6 +15,7 @@ export interface UserLoged {
   userName: string;
   token: string;
   isLogged?: boolean;
+  id: string;
 }
 
 export interface PasswordCheck {
@@ -30,6 +31,7 @@ export interface ProtoRecipte {
   ingredients: Ingredient[];
   process: Process[];
   image: File | string;
+  authorId: string;
 }
 export interface Recipte extends ProtoRecipte {
   id: string;

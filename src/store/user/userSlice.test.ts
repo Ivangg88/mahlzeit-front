@@ -12,6 +12,7 @@ describe("Given a loginUserActionCreator", () => {
       const newUser: UserLoged = {
         userName: "",
         token: "",
+        id: "",
       };
       const expectedAction = {
         type: actionType,
@@ -32,6 +33,7 @@ describe("Given a userReducer function", () => {
         userName: "Test user",
         token: "1a2b3c4d",
         isLogged: true,
+        id: "",
       };
 
       const action = loginUserActionCreator(newUser);
@@ -48,6 +50,7 @@ describe("Given a userReducer function", () => {
         userName: "Test user",
         token: "1a2b3c4d",
         isLogged: true,
+        id: "",
       };
 
       const action = logoutUserActionCreator();

@@ -1,5 +1,5 @@
 import { dkFlag, enFlag, esFlag } from "../../assets/images/images";
-import defaultLanguage from "../../../public/translations/en.json";
+import defaultLanguage from "./en.json";
 
 export type I8nLanguage = "es" | "en" | "dk";
 
