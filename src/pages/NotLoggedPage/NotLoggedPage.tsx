@@ -7,6 +7,7 @@ const NotLoggedPage = (): JSX.Element => {
   const {
     translations: {
       notLoggedPage: { loginLink, notAuthMessage, notAuthTitle, registerLink },
+      recipeForm: { backButton },
     },
   } = useAppSelector((state) => state.i8n);
 
@@ -14,7 +15,7 @@ const NotLoggedPage = (): JSX.Element => {
     <Layout>
       <NotLoggedPageStyled>
         <NavLink className={"return-link"} to={"/"}>
-          {"< Atrás"}
+          {`<- ${backButton}`}
         </NavLink>
         <img src="/images/flork-error404.png" alt="angry-flork" width={350} />
         <div className="container">
